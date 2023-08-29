@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "auth": {
+      "welcome": "Welcome to",
+      "loginOrRegister": "Log in, or create account",
+      "or": "or",
+      "email": "E-mail",
+      "emailPlaceholder": "nikita2000@gmail.com",
+      "password": "Password",
+      "passwordPlaceholder": "Password",
+      "forgotPassword": "Forgot password?",
+      "recover": "Recover",
+      "login": "Log in",
+      "noAccount": "Don't have account?",
+      "signUp": "Sign up"
+    }
+  }
+}

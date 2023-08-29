@@ -1,9 +1,19 @@
-import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import './i18n/config';
+import { Authentication } from './pages/authentication/Authentication';
+import { GlobalStyle } from './GlobalStyle';
 
 function App() {
   return (
     <div className="App">
-      Fora
+      <GlobalStyle />
+      <Router>
+        <Routes>
+          <Route path="/">
+            <Route path="authentication" element={<Authentication />} />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

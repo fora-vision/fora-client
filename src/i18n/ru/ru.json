@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "auth": {
+      "welcome": "Добро пожаловать в",
+      "loginOrRegister": "Войдите, либо создайте аккаунт",
+      "or": "или",
+      "email": "E-mail",
+      "emailPlaceholder": "nikita2000@gmail.com",
+      "password": "Пароль",
+      "passwordPlaceholder": "Пароль",
+      "forgotPassword": "Забыли пароль?",
+      "recover": "Восстановить",
+      "login": "Войти",
+      "noAccount": "Ещё нет аккаунта?",
+      "signUp": "Зарегистрироваться"
+    }
+  }
+}
