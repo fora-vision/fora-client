@@ -14,5 +14,8 @@
       "noAccount": "Don't have account?",
       "signUp": "Sign up"
     }
+  },
+  "header": {
+    "logout": "Log out"
   }
 }

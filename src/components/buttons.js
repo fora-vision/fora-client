@@ -83,6 +83,6 @@ export const LogOutButton = styled(ButtonPattern)`
   background: #252525;
   box-shadow: 0px -8px 32px 0px rgba(255, 255, 255, 0.10);
   padding: 8px 16px;
-  gap: 16px;
+  gap: 8px;
   color: #D06060;
 ` 
