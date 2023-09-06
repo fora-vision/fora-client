@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { LogOutButton } from '../../buttons'
-import LogoutIcon from '../../../images/logout.svg'
+import { ReactComponent as LogoutIcon } from '../../../images/logout.svg'
 
 const LogoutPopup = styled.div`
   position: absolute;
@@ -17,7 +17,7 @@ export const AccountLogout = () => {
     <LogoutPopup onClick={handleLogout}>
       <LogOutButton>
         {t('header.logout')}
-        <img src={LogoutIcon} alt="Log out" />
+        <LogoutIcon />
       </LogOutButton>
     </LogoutPopup>
   )

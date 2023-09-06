@@ -23,7 +23,7 @@ const ButtonPattern = styled.button`
 `
 
 export const PrimaryButton = styled(ButtonPattern)`
-  background: #F6D658;
+  background: #F6D658; 
   box-shadow: 0px 6px 24px 2px rgba(246, 214, 88, 0.12);
   &:hover {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #F6D658;
@@ -44,7 +44,7 @@ export const IconButton = styled(PrimaryButton)`
 export const SecondaryButton = styled(ButtonPattern)`
   background: #1D1D1D;
   color: #FFF;
-  padding: 18px 38px;
+  padding: 18px;
   gap: 10px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   &:hover {

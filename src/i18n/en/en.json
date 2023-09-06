@@ -13,9 +13,21 @@
       "login": "Log in",
       "noAccount": "Don't have account?",
       "signUp": "Sign up"
+    },
+    "dashboard": {
+      "yourCourses": "Your courses",
+      "joinCourse": "Join course"
     }
   },
   "header": {
     "logout": "Log out"
+  },
+  "components": {
+    "courseCard": {
+      "course": "Course",
+      "lessons": "lessons",
+      "overallProgress": "Overall progress",
+      "startTraining": "Start training"
+    }
   }
 }

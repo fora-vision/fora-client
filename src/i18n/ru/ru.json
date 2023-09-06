@@ -13,9 +13,21 @@
       "login": "Войти",
       "noAccount": "Ещё нет аккаунта?",
       "signUp": "Зарегистрироваться"
+    },
+    "dashboard": {
+      "yourCourses": "Ваши курсы",
+      "joinCourse": "Присоединиться к курсу"
     }
   },
-  "header":{
+  "header": {
     "logout": "Выйти"
+  },
+  "components": {
+    "courseCard": {
+      "course": "Курс",
+      "lessons": "занятий",
+      "overallProgress": "Общий прогресс",
+      "startTraining": "Начать тренировку"
+    }
   }
 }

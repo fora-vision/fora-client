@@ -13,7 +13,9 @@ const HeaderContainer = styled.div`
   padding: 24px 40px;
   width: 100%;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 `
 
 const HeaderLogo = styled.a`

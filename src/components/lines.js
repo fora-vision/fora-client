@@ -5,3 +5,9 @@ export const GrayLine = styled.div`
   background: rgba(245, 245, 245, 0.20);
   width: 100%
 `
+
+export const VerticalGrayLine = styled.div`
+  width: 1px;
+  background: rgba(245, 245, 245, 0.20);
+  height: 100%;
+`

@@ -1,0 +1,4 @@
+export interface IPProps {
+  transparent?: number;
+  fontWeight?: number;
+}
