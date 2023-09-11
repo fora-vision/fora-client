@@ -4,6 +4,7 @@ import { Authentication } from './pages/authentication/Authentication';
 import { GlobalStyle } from './GlobalStyle';
 import { Dashboard } from "./pages/dashboard/Dashboard";
 import { SharedLayout } from "./components/sharedLayout/SharedLayout";
+import { Reset } from "./pages/reset/Reset";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="authentication" element={<Authentication />} />
+          <Route path="reset" element={<Reset />} />
           <Route path="/" element={<SharedLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
           </Route>

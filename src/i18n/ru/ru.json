@@ -17,6 +17,13 @@
     "dashboard": {
       "yourCourses": "Ваши курсы",
       "joinCourse": "Присоединиться к курсу"
+    },
+    "reset": {
+      "forgotPassword": "Забыли пароль?",
+      "weWillSendCode": "Мы отправим код восстановления на ваш e-mail",
+      "sendCode": "Отправить код",
+      "email": "E-mail",
+      "emailPlaceholder": "nikita2000@gmail.com"
     }
   },
   "header": {
@@ -28,6 +35,13 @@
       "lessons": "занятий",
       "overallProgress": "Общий прогресс",
       "startTraining": "Начать тренировку"
+    }
+  },
+  "stepper": {
+    "steps": {
+      "email": "E-mail",
+      "code": "Код",
+      "newPassword": "Новый пароль"
     }
   }
 }

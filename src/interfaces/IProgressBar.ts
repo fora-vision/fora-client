@@ -1,3 +1,1 @@
-export interface IProgressBar {
-  width?: number;
-}
+export interface IProgressBar { width?: number }

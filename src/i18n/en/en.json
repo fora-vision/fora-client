@@ -17,6 +17,11 @@
     "dashboard": {
       "yourCourses": "Your courses",
       "joinCourse": "Join course"
+    },
+    "reset": {
+      "forgotPassword": "Forgot your password?",
+      "weWillSendCode": "We will send a recovery code to your e-mail",
+      "sendCode": "Send code"
     }
   },
   "header": {
@@ -28,6 +33,13 @@
       "lessons": "lessons",
       "overallProgress": "Overall progress",
       "startTraining": "Start training"
+    }
+  },
+  "stepper": {
+    "steps": {
+      "email": "E-mail",
+      "code": "Code",
+      "newPassword": "New password"
     }
   }
 }
