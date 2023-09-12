@@ -11,11 +11,11 @@ const ForgotPasswordWrapper = styled.div`
 
 export const ForgotPasswordSection = () => {
   const { t } = useTranslation();
-  const recoverLink = "https://www.google.com";
+  const resetPath = "/reset";
   return (
     <ForgotPasswordWrapper>
       <P transparent={0.5}>{t('pages.auth.forgotPassword')}</P>
-      <a href={recoverLink}>{t('pages.auth.recover')}</a>
+      <a href={resetPath}>{t('pages.auth.recover')}</a>
     </ForgotPasswordWrapper >
   )
 }

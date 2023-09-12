@@ -23,7 +23,12 @@
       "weWillSendCode": "Мы отправим код восстановления на ваш e-mail",
       "sendCode": "Отправить код",
       "email": "E-mail",
-      "emailPlaceholder": "nikita2000@gmail.com"
+      "emailPlaceholder": "nikita2000@gmail.com",
+      "newPassword": "Новый пароль",
+      "password": "Пароль",
+      "paste": "Вставить",
+      "code": "Код",
+      "newPasswordDescription": "Пароль должен содержать минимум 8 символов, 1 цифру, 1 букву и 1 специальный символ"
     }
   },
   "header": {
@@ -42,6 +47,11 @@
       "email": "E-mail",
       "code": "Код",
       "newPassword": "Новый пароль"
+    },
+    "buttons": {
+      "sendCode": "Отправить код",
+      "next": "Далее",
+      "confirm": "Подтвердить"
     }
   }
 }

@@ -22,9 +22,7 @@ export const PureInput = styled.input`
 
 export const PureLabel = styled.label`
   color: #F7F7F7;
-  font-family: Gravity;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 145%;
   padding-bottom: 8px;
