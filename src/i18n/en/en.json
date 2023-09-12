@@ -46,7 +46,10 @@
     "steps": {
       "email": "E-mail",
       "code": "Code",
-      "newPassword": "New password"
+      "newPassword": "New password",
+      "name": "Name",
+      "body": "Body",
+      "password": "Password"
     },
     "buttons": {
       "sendCode": "Send code",

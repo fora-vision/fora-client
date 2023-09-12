@@ -46,7 +46,10 @@
     "steps": {
       "email": "E-mail",
       "code": "Код",
-      "newPassword": "Новый пароль"
+      "newPassword": "Новый пароль",
+      "name": "Имя",
+      "body": "Тело",
+      "password": "Пароль"
     },
     "buttons": {
       "sendCode": "Отправить код",
