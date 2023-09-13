@@ -33,16 +33,8 @@ export const PrimaryButton = styled(ButtonPattern)`
   }
 `
 
-export const IconButton = styled(PrimaryButton)`
-  width: 72px;
-  height: 72px;
-  padding: 12px;
-  gap: 8px;
-  border-radius: 40px;
-`
-
 export const SecondaryButton = styled(ButtonPattern)`
-  background: #1D1D1D;
+  background: rgba(245, 245, 245, 0.04);
   color: #FFF;
   padding: 18px;
   gap: 10px;
@@ -70,6 +62,31 @@ export const TetriaryButton = styled(ButtonPattern)`
   &:active {
     background: rgba(255, 255, 255, 0.10);
   }
+`
+
+export const IconButton = styled(PrimaryButton)`
+  width: 54px;
+  height: 54px;
+  padding: 12px;
+  gap: 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+`
+
+export const IconSecondaryButton = styled(SecondaryButton)`
+  box-sizing: border-box;
+  width: 54px;
+  height: 54px;
+  padding: 12px;
+  gap: 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+`
+
+export const IconTetriaryButton = styled(IconSecondaryButton)`
+  width: 36px;
+  height: 36px;
+  padding: 8px;
 `
 
 export const LoginViaButton = styled(ButtonPattern)`

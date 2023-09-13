@@ -29,6 +29,20 @@
       "paste": "Вставить",
       "code": "Код",
       "newPasswordDescription": "Пароль должен содержать минимум 8 символов, 1 цифру, 1 букву и 1 специальный символ"
+    },
+    "signup": {
+      "haveAnAccount": "Зарегистрированы?",
+      "logIn": "Войти",
+      "firstName": "Имя",
+      "firstNamePlaceholder": "Никита",
+      "lastName": "Фамилия",
+      "lastNamePlaceholder": "Петров",
+      "birthdate": "Дата рождения",
+      "birthdatePlaceholder": "ДД / MM / ГГГГ",
+      "height": "Рост",
+      "weight": "Вес",
+      "sex": "Пол",
+      "password": "Пароль"
     }
   },
   "header": {
@@ -40,6 +54,11 @@
       "lessons": "занятий",
       "overallProgress": "Общий прогресс",
       "startTraining": "Начать тренировку"
+    },
+    "select": {
+      "default": "Выберите",
+      "male": "Мужской",
+      "female": "Женский"
     }
   },
   "stepper": {
@@ -54,7 +73,8 @@
     "buttons": {
       "sendCode": "Отправить код",
       "next": "Далее",
-      "confirm": "Подтвердить"
+      "confirm": "Подтвердить",
+      "signUp": "Зарегистрироваться"
     }
   }
 }

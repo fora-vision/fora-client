@@ -29,6 +29,20 @@
       "paste": "Paste",
       "code": "Code",
       "newPasswordDescription": "The password must contain a minimum of 8 characters, 1 number, 1 letter and 1 special character"
+    },
+    "signup": {
+      "haveAnAccount": "Have an account?",
+      "logIn": "Log In",
+      "firstName": "First name",
+      "firstNamePlaceholder": "Jon",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Doe",
+      "birthdate": "Date of birth",
+      "birthdatePlaceholder": "DD / MM / YYYY",
+      "height": "Height",
+      "weight": "Weight",
+      "sex": "Sex",
+      "password": "Password"
     }
   },
   "header": {
@@ -40,6 +54,11 @@
       "lessons": "lessons",
       "overallProgress": "Overall progress",
       "startTraining": "Start training"
+    },
+    "select": {
+      "default": "Select",
+      "male": "Male",
+      "female": "Female"
     }
   },
   "stepper": {
@@ -54,7 +73,8 @@
     "buttons": {
       "sendCode": "Send code",
       "next": "Next",
-      "confirm": "Confirm"
+      "confirm": "Confirm",
+      "signUp": "Sign up"
     }
   }
 }

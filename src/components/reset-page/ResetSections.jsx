@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import { LabeledInput } from '../authentication-page/LabeledInput'
+import { LabeledInput } from '../labeledInput/LabeledInput';
 
 const InputsSectionWrapper = styled.div`
   width: 100%;

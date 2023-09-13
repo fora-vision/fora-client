@@ -4,7 +4,7 @@ import { P } from '../typographic'
 import { TetriaryButton } from '../buttons'
 import { useNavigate } from 'react-router-dom';
 
-const SignUpSectionWrapper = styled.div`
+const LogInSectionnWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -12,14 +12,14 @@ const SignUpSectionWrapper = styled.div`
   align-items: center;
 `
 
-export const SignUpSection = () => {
+export const LogInSection = () => {
   const { t } = useTranslation();
   const navigate = useNavigate()
-  const handleSignup = () => { navigate('/signup') }
+  const handleLogin = () => { navigate('/authentication') }
   return (
-    <SignUpSectionWrapper>
-      <P transparent={0.5}>{t('pages.auth.noAccount')}</P>
-      <TetriaryButton onClick={handleSignup}>{t('pages.auth.signUp')}</TetriaryButton>
-    </SignUpSectionWrapper>
+    <LogInSectionnWrapper>
+      <P transparent={0.5}>{t('pages.signup.haveAnAccount')}</P>
+      <TetriaryButton onClick={handleLogin}>{t('pages.signup.logIn')}</TetriaryButton>
+    </LogInSectionnWrapper>
   )
 }

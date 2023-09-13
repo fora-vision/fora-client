@@ -32,13 +32,7 @@ export const Reset = () => {
 
   const createAndSendNewPassword = () => {
     console.log('Send new password to API - ', newPassword)
-    setStep((step) => {
-      if (step === totalSteps - 1) {
-        navigate('/authentication')
-        return step;
-      }
-      return step + 1;
-    })
+    navigate('/authentication')
   }
 
   const buttonDataBySteps = [{
