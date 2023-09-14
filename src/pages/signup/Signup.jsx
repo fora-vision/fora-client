@@ -7,10 +7,11 @@ import { LogInWrapper } from '../../components/wrappers'
 import { Stepper } from '../../components/stepper/Stepper'
 import { EllipseLeft, EllipseRight } from '../../components/ellipses'
 import { WelcomeToHeader } from '../../components/authentication-page/WelcomeToHeader'
-import { InputEmailSection, PasswordSection, NameSection, BodySection } from '../../components/signup-page/SignupSections'
+import { InputEmailSection, NameSection, BodySection, SignupCodeSection } from '../../components/signup-page/SignupSections'
 import { IconSecondaryButton, PrimaryButton, } from '../../components/buttons'
 import { ReactComponent as ArrowLeftIcon } from '../../images/arrow-left.svg'
 import { LogInSection } from '../../components/signup-page/LogInSection'
+import { useToggle } from '../../hooks/hookToggle'
 
 const SignupButtons = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ export const Signup = () => {
 
   const [step, setStep] = useState(0)
   const [email, setEmail] = useState('')
+  const [isAcceptDate, toggleAcceptData] = useToggle()
 
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -34,16 +36,16 @@ export const Signup = () => {
   const [weight, setWeight] = useState('')
   const [sex, setSex] = useState('')
 
-  const [password, setPassword] = useState('')
+  const [code, setCode] = useState('')
 
   const stepNames = [t('stepper.steps.email'), t('stepper.steps.name'), t('stepper.steps.body'), t('stepper.steps.password')]
   const totalSteps = stepNames.length
 
   const sectionComponents = [
-    <InputEmailSection state={email} setState={setEmail} />,
+    <InputEmailSection state={email} setState={setEmail} isAcceptDate={isAcceptDate} toggleAcceptData={toggleAcceptData} />,
+    <SignupCodeSection email={email} state={code} setState={setCode} />,
     <NameSection name={name} setName={setName} lastName={lastName} setLastName={setLastName} birth={birth} setBirth={setBirth} />,
-    <BodySection height={height} setHeight={setHeight} weight={weight} setWeight={setWeight} sex={sex} setSex={setSex} />,
-    <PasswordSection state={password} setState={setPassword} />
+    <BodySection height={height} setHeight={setHeight} weight={weight} setWeight={setWeight} sex={sex} setSex={setSex} />
   ];
 
   const handleBack = () => {
@@ -55,38 +57,41 @@ export const Signup = () => {
   }
 
   const sendEmail = () => {
-    console.log(`${email} to API`)
+    if (isAcceptDate) {
+      console.log(`${email} to API`) // сделать отправку ИМЕЙЛА + isAcceptDate (согласие с обработкой)  на апи и если ок - следующий шаг
+      setStep((step) => step + 1)
+    }
+  }
+
+  const sendCode = () => {
+    console.log(`${code} to API`)  // сделать отправку КОДА и если ок - следующий шаг
     setStep((step) => step + 1)
   }
 
   const sendName = () => {
-    console.log(`${name} ${lastName} ${birth} to API`)
+    console.log(`${name} ${lastName} ${birth} to API`)  // сделать отправку ПРОФИЛЯ и если ок - следующий шаг
     setStep((step) => step + 1)
   }
 
   const sendBody = () => {
-    console.log(`${height} ${weight} ${sex} to API`)
-    setStep((step) => step + 1)
-  }
-
-  const sendPassword = () => {
-    console.log(`${password} to API`)
+    console.log(`${height} ${weight} ${sex} to API`)  // сделать отправку ТЕЛА и если ок - следующий шаг
     navigate('/authentication')
   }
+
 
 
   const buttonDataBySteps = [{
     text: t('stepper.buttons.next'),
     callback: sendEmail,
   }, {
+    text: t('stepper.buttons.login'),
+    callback: sendCode,
+  }, {
     text: t('stepper.buttons.next'),
     callback: sendName,
   }, {
-    text: t('stepper.buttons.next'),
-    callback: sendBody,
-  }, {
     text: t('stepper.buttons.signUp'),
-    callback: sendPassword,
+    callback: sendBody,
   }]
 
 

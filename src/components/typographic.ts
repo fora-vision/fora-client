@@ -16,6 +16,10 @@ export const H2 = styled.h2`
   text-transform: uppercase;
 `
 
+export const H2Regular = styled(H2)`
+  text-transform: none;
+`
+
 export const P = styled.p.withConfig({
   shouldForwardProp: (prop) => !['transparent'].includes(prop)
 }) <IPProps>`

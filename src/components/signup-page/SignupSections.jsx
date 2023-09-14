@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import { useToggle } from '../../hooks/hookToggle'
 import { PersonalDataSection } from './PersonalDataSection'
 import { LabeledInput } from '../labeledInput/LabeledInput'
 import { LabeledSelect } from '../labeledSelect/LabeledSelect'
+import { CodeSection } from '../codeSection/CodeSection'
+import { WerePinSent } from '../authentication-page/WereCodeSent'
+import { LabeledDateInput } from '../labeledInput/LabeledDateInput'
 
 const InputsSectionWrapper = styled.div`
   width: 100%;
@@ -14,22 +16,21 @@ const InputsSectionWrapper = styled.div`
   gap: 16px;
 `
 
-export const InputEmailSection = ({ state, setState }) => {
+export const InputEmailSection = ({ state, setState, isAcceptDate, toggleAcceptData }) => {
   const { t } = useTranslation();
-  const [isCheck, toggleCheck] = useToggle()
   return (
     <InputsSectionWrapper>
       <LabeledInput label={t('pages.reset.email')} id="email" placeholder={t('pages.reset.emailPlaceholder')} state={state} setState={setState} />
-      <PersonalDataSection isCheck={isCheck} toggleCheck={toggleCheck} />
+      <PersonalDataSection isCheck={isAcceptDate} toggleCheck={toggleAcceptData} />
     </InputsSectionWrapper>
   )
 }
 
-export const PasswordSection = ({ state, setState }) => {
-  const { t } = useTranslation();
+export const SignupCodeSection = ({ email, state, setState }) => {
   return (
     <InputsSectionWrapper>
-      <LabeledInput label={t('pages.signup.password')} id="password" placeholder={t('pages.signup.password')} state={state} setState={setState} />
+      <WerePinSent email={email} />
+      <CodeSection state={state} setState={setState} />
     </InputsSectionWrapper>
   )
 }
@@ -40,7 +41,7 @@ export const NameSection = ({ name, setName, lastName, setLastName, birth, setBi
     <InputsSectionWrapper>
       <LabeledInput label={t('pages.signup.firstName')} id="firstName" placeholder={t('pages.signup.firstNamePlaceholder')} state={name} setState={setName} />
       <LabeledInput label={t('pages.signup.lastName')} id="lastName" placeholder={t('pages.signup.lastNamePlaceholder')} state={lastName} setState={setLastName} />
-      <LabeledInput label={t('pages.signup.birthdate')} id="birthdate" placeholder={t('pages.signup.birthdatePlaceholder')} state={birth} setState={setBirth} />
+      <LabeledDateInput label={t('pages.signup.birthdate')} id="birthdate" placeholder={t('pages.signup.birthdatePlaceholder')} state={birth} setState={setBirth} />
     </InputsSectionWrapper>
   )
 }

@@ -10,9 +10,15 @@
       "passwordPlaceholder": "Password",
       "forgotPassword": "Forgot password?",
       "recover": "Recover",
-      "login": "Log in",
+      "next": "Next",
       "noAccount": "Don't have account?",
-      "signUp": "Sign up"
+      "signUp": "Sign up",
+      "logIn": "Log in",
+      "weSentCode": "We have sent a login link to the e-mail address provided:",
+      "weSentPin": "Enter the PIN code from the e-mail:",
+      "toLoginWriteCode": "To log in, follow the link or enter the one-time PIN from the email",
+      "openEmail": "Open email",
+      "enterCode": "Enter code manually"
     },
     "dashboard": {
       "yourCourses": "Your courses",
@@ -74,7 +80,8 @@
       "sendCode": "Send code",
       "next": "Next",
       "confirm": "Confirm",
-      "signUp": "Sign up"
+      "signUp": "Sign up",
+      "login": "Log in"
     }
   }
 }

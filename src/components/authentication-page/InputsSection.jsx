@@ -9,12 +9,11 @@ const InputsSectionWrapper = styled.div`
   flex-direction: column;
 `
 
-export const InputsSection = () => {
+export const InputsSection = ({ state, setState }) => {
   const { t } = useTranslation();
   return (
     <InputsSectionWrapper>
-      <LabeledInput label={t('pages.auth.email')} id="email" placeholder={t('pages.auth.emailPlaceholder')} />
-      <LabeledInput label={t('pages.auth.password')} id="password" placeholder={t('pages.auth.passwordPlaceholder')} />
+      <LabeledInput label={t('pages.auth.email')} id="email" placeholder={t('pages.auth.emailPlaceholder')} state={state} setState={setState} />
     </InputsSectionWrapper>
   )
 }

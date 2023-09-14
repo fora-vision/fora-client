@@ -7,11 +7,11 @@ const LoginButtonWrapper = styled.div`
   padding: 16px 0;
 `
 
-export const LoginButtonSection = () => {
+export const LoginButtonSection = ({ callback }) => {
   const { t } = useTranslation();
   return (
     <LoginButtonWrapper>
-      <PrimaryButton>{t('pages.auth.login')}</PrimaryButton>
+      <PrimaryButton onClick={callback}>{t('pages.auth.next')}</PrimaryButton>
     </LoginButtonWrapper>
   )
 }

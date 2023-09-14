@@ -8,7 +8,7 @@ import { PrimaryButton } from '../../components/buttons'
 import { ResetHeader } from '../../components/reset-page/ResetHeader'
 import { Stepper } from '../../components/stepper/Stepper'
 import { InputEmailSection, NewPasswordSection } from '../../components/reset-page/ResetSections'
-import { ResetCodeSection } from '../../components/reset-page/ResetCodeSection'
+import { CodeSection } from '../../components/codeSection/CodeSection'
 
 export const Reset = () => {
   const { t } = useTranslation();
@@ -48,7 +48,7 @@ export const Reset = () => {
 
   const sectionComponents = [
     <InputEmailSection state={email} setState={setEmail} />,
-    <ResetCodeSection state={otpCode} setState={setOtpCode} />,
+    <CodeSection state={otpCode} setState={setOtpCode} />,
     <NewPasswordSection state={newPassword} setState={setNewPassword} />
   ];
 

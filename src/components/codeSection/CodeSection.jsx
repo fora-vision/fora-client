@@ -4,7 +4,7 @@ import OTPInput from 'react-otp-input'
 import { P } from '../typographic'
 import { TetriaryButton } from '../buttons'
 import { ReactComponent as PasteIcon } from '../../images/left-icon.svg'
-import { OtpCodeInput } from './OtpCodeInput'
+import { CodeInput } from './CodeInput'
 
 const Code = styled.div`
   display: flex;
@@ -26,8 +26,14 @@ const CodeWrapper = styled.div`
   width: 100%;
 `
 
-export const ResetCodeSection = ({ state, setState }) => {
+export const CodeSection = ({ state, setState }) => {
   const { t } = useTranslation();
+  async function handlePaste() {
+    try {
+      const text = await navigator.clipboard.readText();
+      setState(text);
+    } catch { setState('error') }
+  }
   return (
     <Code>
       <CodeLabel>
@@ -38,11 +44,11 @@ export const ResetCodeSection = ({ state, setState }) => {
           value={state}
           onChange={setState}
           numInputs={6}
-          renderInput={(props) => <OtpCodeInput {...props} />}
+          renderInput={(props) => <CodeInput {...props} />}
           containerStyle={{ gap: '8px' }}
         />
       </CodeWrapper>
-      <TetriaryButton>
+      <TetriaryButton onClick={handlePaste}>
         <PasteIcon />
         {t('pages.reset.paste')}
       </TetriaryButton>

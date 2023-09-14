@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const OtpCodeInput = styled.input`
+export const CodeInput = styled.input`
   min-width: 63.3333333px;
   border: 1.5px solid rgba(245, 245, 245, 0.04);
   color: #F5F5F5;

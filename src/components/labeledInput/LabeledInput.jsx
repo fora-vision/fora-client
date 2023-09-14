@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 import { PureInput, PureLabel } from '../inputs'
 import { Description } from '../inputDescription/Description'
 
-const LabeledInputWrapper = styled.div`
+export const LabeledInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
