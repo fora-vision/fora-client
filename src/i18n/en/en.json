@@ -83,5 +83,31 @@
       "signUp": "Sign up",
       "login": "Log in"
     }
+  },
+  "calendar": {
+    "today": "Today",
+    "week":{
+      "monday": "MO",
+      "tuesday": "TU",
+      "wednesday": "WE",
+      "thurstday": "TH",
+      "friday": "FR",
+      "saturday": "SA",
+      "sunday": "SU"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
   }
 }
