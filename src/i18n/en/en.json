@@ -86,7 +86,7 @@
   },
   "calendar": {
     "today": "Today",
-    "week":{
+    "week": {
       "monday": "MO",
       "tuesday": "TU",
       "wednesday": "WE",
@@ -109,5 +109,23 @@
       "november": "November",
       "december": "December"
     }
+  },
+  "errorMessages": {
+    "email": {
+      "notValid": "Incorrect format. Please enter e-mail in the format: valeriy1980@ya.ru."
+    },
+    "code": {
+      "invalid": "The code is invalid. Please enter another one.",
+      "length": "The code must be 6 characters long. You have entered "
+    },
+    "alreadyRegistered": "This e-mail address is already in use. Please enter another one or login.",
+    "acceptData": "Please confirm your agreement with the Processing of Personal Data",
+    "server": "Server error",
+    "name": "The name must contain more than 2 characters",
+    "lastName": "Last name must contain more than 2 characters",
+    "birth": "Date of birth must be in the format DD/MM/YYYY and between 1900 and 2009",
+    "height": "Incorrect height. Please enter a value between 120 cm and 220 cm.",
+    "weight": "Incorrect weight. Please enter a value between 30 kg and 300 kg.",
+    "sex": "Please select a gender"
   }
 }

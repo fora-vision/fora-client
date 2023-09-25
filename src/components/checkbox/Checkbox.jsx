@@ -8,7 +8,7 @@ const Label = styled.label`
   width: 24px;
   height: 24px;
   border-radius: 4px;
-  border: 1px solid rgba(245, 245, 245, 0.04);
+  border: ${props => (props.$error ? '1px solid #C84848' : '1px solid rgba(245, 245, 245, 0.04)')};
   cursor: pointer;
 `;
 
@@ -46,11 +46,11 @@ const CheckWrapper = styled.div`
   height: 26px;
 `
 
-export const Checkbox = ({ isCheck, toggleCheck }) => {
+export const Checkbox = ({ isCheck, toggleCheck, error }) => {
   return (
     <CheckWrapper >
       <Input id="input" type="checkbox" checked={isCheck} onChange={toggleCheck} />
-      <Label htmlFor="input" checked={isCheck} />
+      <Label htmlFor="input" checked={isCheck} $error={error} />
       {isCheck ? <CheckBlackIcon onClick={toggleCheck} /> : <CheckIcon onClick={toggleCheck} />}
     </CheckWrapper>
   )

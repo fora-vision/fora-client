@@ -5,6 +5,7 @@ import { P } from '../typographic'
 import { TetriaryButton } from '../buttons'
 import { ReactComponent as PasteIcon } from '../../images/left-icon.svg'
 import { CodeInput } from './CodeInput'
+import { ErrorField } from '../errorField/ErrorField'
 
 const Code = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const CodeWrapper = styled.div`
   width: 100%;
 `
 
-export const CodeSection = ({ state, setState }) => {
+export const CodeSection = ({ state, setState, error }) => {
   const { t } = useTranslation();
   async function handlePaste() {
     try {
@@ -48,6 +49,7 @@ export const CodeSection = ({ state, setState }) => {
           containerStyle={{ gap: '8px' }}
         />
       </CodeWrapper>
+      {error && <ErrorField message={error} />}
       <TetriaryButton onClick={handlePaste}>
         <PasteIcon />
         {t('pages.reset.paste')}
