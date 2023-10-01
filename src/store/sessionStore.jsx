@@ -12,6 +12,10 @@ class SessionStore {
     localStorage.setItem("sessionCode", code);
   }
 
+  deleteSessionCode() {
+    localStorage.removeItem("sessionCode")
+  }
+
   getSessionCode() {
     return localStorage.getItem("sessionCode");
   }

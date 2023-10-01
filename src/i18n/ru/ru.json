@@ -22,7 +22,10 @@
     },
     "dashboard": {
       "yourCourses": "Ваши курсы",
-      "joinCourse": "Присоединиться к курсу"
+      "joinCourse": "Присоединиться к курсу",
+      "workoutsCompleted": "Тренировок пройдено",
+      "exercisesCompleted": "Упражнений выполнено",
+      "averageCourseComplete": "Средний % пройденности курсов"
     },
     "reset": {
       "forgotPassword": "Забыли пароль?",
@@ -127,5 +130,25 @@
     "height": "Неверный рост. Пожалуйста, введите значение в пределах 120 см и 220 см.",
     "weight": "Неверный вес. Пожалуйста, введите значение в пределах 30 кг и 300 кг.",
     "sex": "Пожалуйста, выберите пол"
+  },
+  "difficulty": {
+    "easy": "Легкая",
+    "medium": "Средняя",
+    "hard": "Высокая"
+  },
+  "statuses": {
+    "finished": "Закончен",
+    "finishedForDays": "за {{days}} дней",
+    "inProgress": "В процессе",
+    "expired": "Просроченно",
+    "unavailable": "Недоступно"
+  },
+  "course": {
+    "course": "Курс",
+    "author": "Автор",
+    "duration": "Продолжительность",
+    "trainingNumber": "Количество тренировок",
+    "users": "Участников",
+    "difficulty": "Сложность"
   }
 }

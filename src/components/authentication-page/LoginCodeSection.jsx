@@ -8,6 +8,7 @@ import { sendCode } from '../../utils/API/auth/api-auth'
 import { sessionStore } from '../../store/sessionStore'
 import { getUserInfo } from '../../utils/API/user/api-user'
 import { useNavigate } from 'react-router-dom'
+import { userStore } from '../../store/profileStore.jsx'
 
 const Wrapper = styled.div`
   padding-bottom: 16px;
@@ -30,12 +31,12 @@ export const LoginCodeSection = ({ email }) => {
         const sessionCode = await sendCode(email, code).then(result => {
           return result.session
         })
-        // const userInfo = await getUserInfo(sessionCode) ------ Ниже временное решение пока путь апи не работает, потом меняй на это
-        const userInfo = { name: '' }
+        const userInfo = await getUserInfo(sessionCode)
         if (!userInfo.name) {
           navigate('/signup', { state: { step: 2, tempSessionCode: sessionCode } });
         } else {
           sessionStore.setSessionCode(sessionCode)
+          userStore.setUserProfile(userInfo)
           window.location.reload();
         }
       } catch (error) {

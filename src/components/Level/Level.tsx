@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { LevelStick } from './LevelStick'
 import { H2 } from '../typographic'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   border-radius: 2px;
   border: 1px solid rgba(245, 245, 245, 0.04);
   padding: 16px; 

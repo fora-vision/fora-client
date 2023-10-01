@@ -33,7 +33,13 @@ export const P = styled.p.withConfig({
 export const PSmall = styled(P)`
   font-size: 14px;
 `
-
+export const BoldPSmall = styled(PSmall)`
+    font-weight: 700;
+`
+export const BoldBlackPSmall = styled(PSmall)`
+    color: #11100E;
+    font-weight: 700;
+`
 export const YellowA = styled.a`
   color: #F6D658;
 `

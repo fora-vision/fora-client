@@ -4,6 +4,8 @@ import { H1, H2, P, PSmall } from '../typographic'
 import { VerticalGrayLine } from '../lines'
 import { ReactComponent as LeaderboardIcon } from '../../images/leaderboard-icon.svg'
 import { ReactComponent as GroupIcon } from '../../images/group-icon.svg'
+import { ICourse } from '../../interfaces/ICourse'
+import dayjs from 'dayjs'
 
 const CardInfoWrapper = styled.div`
   display: flex;
@@ -37,32 +39,42 @@ const MetricBox = styled.div`
   align-items: center;
 `
 
-export const CardInfo = () => {
+const TotalLessonsInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`
+
+export const CardInfo = ({ course }: { course: ICourse }) => {
   const { t } = useTranslation();
+  const totalLessons = course.program.workouts.length;
+  const formattedStartDate = '1/01' // пока что с апи не призодит старт
+  const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM'); // это дедлайн, с апи пока что не приходит начало курса дата
+  const courseLeaderboard = 1; // с апи пока что не приходит позиция в лидершипе
   return (
     <CardInfoWrapper>
       <CourseInfo>
         <div>
           <PSmall transparent={0.5}>{t('components.courseCard.course')}</PSmall>
-          <H2>Сильные руки</H2>
+          <H2>{course.name}</H2>
         </div>
         <VerticalGrayLine />
         <div>
-          <PSmall transparent={0.5}>1/08-24/08</PSmall>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <H1>8</H1>
+          <PSmall transparent={0.5}>{formattedStartDate}-{formattedDeadline}</PSmall>
+          <TotalLessonsInfo>
+            <H1>{totalLessons}</H1>
             <P>{t('components.courseCard.lessons')}</P>
-          </div>
+          </TotalLessonsInfo>
         </div>
       </CourseInfo>
       <CourseMetrics>
         <MetricBox>
           <LeaderboardIcon />
-          <P>2</P>
+          <P>{courseLeaderboard}</P>
         </MetricBox>
         <MetricBox>
           <GroupIcon />
-          <P>24</P>
+          <P>{course.users_count}</P>
         </MetricBox>
       </CourseMetrics>
     </CardInfoWrapper>

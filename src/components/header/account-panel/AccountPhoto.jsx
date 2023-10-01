@@ -1,7 +1,7 @@
-import React from 'react'
 import { styled } from 'styled-components'
+import { userStore } from '../../../store/profileStore'
 
-const AccountPhotoWrapper = styled.div`
+export const AccountPhotoWrapper = styled.div`
   display: block;
   width: 50px;
   height: 50px;
@@ -15,10 +15,22 @@ const AccountPhotoWrapper = styled.div`
   }
 `
 
-export const AccountPhoto = ({ photoUrl }) => {
+export const EmptyPhoto = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const AccountPhoto = () => {
+  const user = userStore.getUserProfile();
+  const photoUrl = user?.avatar || false;
+  const usernameFirstLetter = user?.name[0] || '?'
   return (
     <AccountPhotoWrapper>
-      <img src={photoUrl} alt="Account" />
+      {photoUrl ? <img src={photoUrl} alt="Account" /> : <EmptyPhoto >{usernameFirstLetter}</EmptyPhoto>}
     </AccountPhotoWrapper>
   )
 }

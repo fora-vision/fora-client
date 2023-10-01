@@ -22,7 +22,10 @@
     },
     "dashboard": {
       "yourCourses": "Your courses",
-      "joinCourse": "Join course"
+      "joinCourse": "Join course",
+      "workoutsCompleted": "Training completed",
+      "exercisesCompleted": "Exercises completed",
+      "averageCourseComplete": "Average % of courses completed"
     },
     "reset": {
       "forgotPassword": "Forgot your password?",
@@ -127,5 +130,25 @@
     "height": "Incorrect height. Please enter a value between 120 cm and 220 cm.",
     "weight": "Incorrect weight. Please enter a value between 30 kg and 300 kg.",
     "sex": "Please select a gender"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "statuses": {
+    "finished": "Finished",
+    "finishedForDays": "in {{days}} days",
+    "inProgress": "In progress",
+    "expired": "Expired",
+    "unavailable": "Unavailable"
+  },
+  "course": {
+    "course": "Course",
+    "author": "Author",
+    "duration": "Duration",
+    "trainingNumber": "Number of workouts",
+    "users": "Users",
+    "difficulty": "Difficulty"
   }
 }

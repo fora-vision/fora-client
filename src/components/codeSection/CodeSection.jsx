@@ -6,6 +6,7 @@ import { TetriaryButton } from '../buttons'
 import { ReactComponent as PasteIcon } from '../../images/left-icon.svg'
 import { CodeInput } from './CodeInput'
 import { ErrorField } from '../errorField/ErrorField'
+import { SuccessField } from '../successField/SuccessField'
 
 const Code = styled.div`
   display: flex;
@@ -25,10 +26,12 @@ const CodeWrapper = styled.div`
   gap: 8px;
   padding-bottom: 4px;
   width: 100%;
+  justify-content: space-between;
 `
 
-export const CodeSection = ({ state, setState, error }) => {
+export const CodeSection = ({ state, setState, error, nums, success }) => {
   const { t } = useTranslation();
+  const numInputs = nums || 6
   async function handlePaste() {
     try {
       const text = await navigator.clipboard.readText();
@@ -44,12 +47,13 @@ export const CodeSection = ({ state, setState, error }) => {
         <OTPInput
           value={state}
           onChange={setState}
-          numInputs={6}
+          numInputs={numInputs}
           renderInput={(props) => <CodeInput {...props} />}
-          containerStyle={{ gap: '8px' }}
+          containerStyle={{ gap: '8px', justifyContent: 'center', width: '100%', alignContent: 'center' }}
         />
       </CodeWrapper>
       {error && <ErrorField message={error} />}
+      {success && <SuccessField message={success} />}
       <TetriaryButton onClick={handlePaste}>
         <PasteIcon />
         {t('pages.reset.paste')}

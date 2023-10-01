@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { AccountPhoto } from './AccountPhoto'
 import { ReactComponent as ArrowIcon } from '../../../images/arrow-icon.svg'
 import { AccountLogout } from './AccountLogout'
+import { AccountPhoto } from './AccountPhoto'
 
 const AccountToolbarWrapper = styled.div`
   display: flex;
@@ -14,10 +14,10 @@ const ArrowIconImage = styled(ArrowIcon)`
   transition: all 0.1s linear;
 `
 
-export const AccountToolbar = ({ userPhotoUrl, isPopupOpen }) => {
+export const AccountToolbar = ({ isPopupOpen }) => {
   return (
     <AccountToolbarWrapper>
-      <AccountPhoto photoUrl={userPhotoUrl} />
+      <AccountPhoto />
       <ArrowIconImage $reverse={isPopupOpen} />
       {isPopupOpen && <AccountLogout />}
     </AccountToolbarWrapper>

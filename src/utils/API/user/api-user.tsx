@@ -9,5 +9,5 @@ export const getUserInfo = async (token: string) => {
 }
 
 export const updateProfile = async (profileData: IUpdateProfile, token: string) => {
-  return await axios.post(userProfileApiUrl, profileData, { headers: { Authorization: token } }).then((res) => { return res.data }).catch(error => { throw new Error() })
+  return await axios.post(userProfileApiUrl, profileData, { headers: { Authorization: token } }).then((res) => { return res.data }).catch(() => { throw new Error() })
 }

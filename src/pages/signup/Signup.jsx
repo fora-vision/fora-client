@@ -14,8 +14,10 @@ import { LogInSection } from '../../components/signup-page/LogInSection'
 import { useToggle } from '../../hooks/hookToggle'
 import { isValidDate, isValidName, validateEmail, validateHeight, validateWeight } from '../../utils/validation-utils'
 import { sexOptions } from '../../utils/constants'
-import { updateProfile } from '../../utils/API/user/api-user'
+import { getUserInfo, updateProfile } from '../../utils/API/user/api-user'
 import { sendCode, sendEmail } from '../../utils/API/auth/api-auth'
+import { sessionStore } from '../../store/sessionStore'
+import { userStore } from '../../store/profileStore'
 
 const SignupButtons = styled.div`
   display: flex;
@@ -111,8 +113,7 @@ export const Signup = () => {
         const sessionCode = await sendCode(email, code).then(result => {
           return result.session
         })
-        // const userInfo = await getUserInfo(sessionCode) ------ Ниже временное решение пока путь апи не работает, потом меняй на это
-        const userInfo = { name: 'Nikitos ' }
+        const userInfo = await getUserInfo(sessionCode)
         if (userInfo.name) {
           setCodeError(t('errorMessages.alreadyRegistered'))
         } else {
@@ -149,7 +150,7 @@ export const Signup = () => {
     setStep((step) => step + 1);
   };
 
-  const sendBody = () => {
+  const sendBody = async () => {
     if (!validateHeight(height)) {
       setErrorHeight(t('errorMessages.height'))
       return;
@@ -181,15 +182,11 @@ export const Signup = () => {
       birthday_year: Number(birth.slice(6, 10)),
       birthday_month: Number(birth.slice(3, 5)),
     };
-    console.log(updateProfileData)
-
-    console.log(tempSessionCode)
-
-    const updateProfileReult = updateProfile(updateProfileData, tempSessionCode)
-    console.log(updateProfileReult)
-
-    // ... выполните отправку данных на сервер
-    // navigate('/dashboard');
+    await updateProfile(updateProfileData, tempSessionCode)
+    const userInfo = await getUserInfo(tempSessionCode)
+    userStore.setUserProfile(userInfo)
+    sessionStore.setSessionCode(tempSessionCode)
+    window.location.reload();
   }
 
   const buttonDataBySteps = [{
