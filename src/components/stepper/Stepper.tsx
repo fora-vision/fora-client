@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { generateSteps } from '../../utils/Stepper-utils'
+import { generateSteps } from '../../utils/stepper-utils'
 import { IStepper } from '../../interfaces/IStepper'
 
 const StepperWrapper = styled.div`

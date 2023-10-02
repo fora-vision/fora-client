@@ -12,7 +12,9 @@ const DifficultWrapper = styled(Wrapper)`
 export const DifficultLevel = ({ difficultLevel }: { difficultLevel: number }) => {
     const { t } = useTranslation();
     let levelText;
-    if (difficultLevel === 1) {
+    if (difficultLevel === 0) {
+        levelText = t('difficulty.unspecified')
+    } else if (difficultLevel === 1) {
         levelText = t('difficulty.easy')
     } else if (difficultLevel === 2) {
         levelText = t('difficulty.medium')

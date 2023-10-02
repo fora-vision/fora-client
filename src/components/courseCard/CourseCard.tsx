@@ -2,11 +2,7 @@ import { styled } from 'styled-components'
 import { CardInfo } from './CardInfo'
 import { CardActions } from './CardActions'
 import { ICourse } from '../../interfaces/ICourse'
-import { ExpiredStatus, InProgressStatus, SuccessStatus, UnavailableStatus } from '../Statuses'
-
-const StatusSection = styled.div`
-
-`
+import { getCourseStatus } from '../Statuses'
 
 const CardWrapper = styled.div`
   background-color: rgba(245, 245, 245, 0.04);
@@ -24,13 +20,14 @@ const CardContainer = styled.div`
 `
 
 export const CourseCard = ({ course }: { course: ICourse }) => {
-  const totalLessons = course.program.workouts.length;
-  const doneLessons = 0; // c апи пока что не понятно какие из них выполнены
+  const totalLessons = course.workouts_count;
+  const doneLessons = course.workout_num;
+  const courseStatus = getCourseStatus(course.status);
   return (
     <CardWrapper>
-      <StatusSection>
-        <InProgressStatus />
-      </StatusSection>
+      <div>
+        {courseStatus}
+      </div>
       <CardContainer>
         <CardInfo course={course} />
         <CardActions lessonsDone={doneLessons} lessonsTotal={totalLessons} />

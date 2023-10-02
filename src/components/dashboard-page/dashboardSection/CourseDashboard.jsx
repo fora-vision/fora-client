@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { useTranslation } from "react-i18next"
 import { H2Regular } from "../../typographic"
-import { PrimaryButton, SecondaryButton, TetriaryButton } from "../../buttons"
+import { TetriaryButton } from "../../buttons"
 import { CourseCalendar } from "../../calendar/CourseCalendar"
 import { CourseCard } from "../../courseCard/CourseCard"
 
@@ -14,18 +15,6 @@ const YourCoursesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-`
-
-const CoursesJoin = styled.div`
-  margin-top: 16px;
-  border-radius: 4px;
-  border: 1px dashed rgba(245, 245, 245, 0.20);
-  background: rgba(245, 245, 245, 0.04);
-  display: flex;
-  padding: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `
 
 const HeaderCourses = styled.div`
@@ -42,13 +31,14 @@ const CoursesSection = styled.div`
 `
 
 export const CoursesDashboard = ({ courses, toggleModal }) => {
+  const { t } = useTranslation()
   return (
     <DashboardWrapper>
       <CourseCalendar />
       <YourCoursesWrapper>
         <HeaderCourses>
-          <H2Regular>Ваши курсы</H2Regular>
-          <TetriaryButton onClick={toggleModal}>Присоединится к курсу</TetriaryButton>
+          <H2Regular>{t('pages.dashboard.yourCourses')}</H2Regular>
+          <TetriaryButton onClick={toggleModal}>{t('pages.dashboard.joinCourse')}</TetriaryButton>
         </HeaderCourses>
         <CoursesSection>
           {courses.map(course => {

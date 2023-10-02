@@ -29,7 +29,7 @@ const UnavailableWrapper = styled(StatusWrapper)`
     border: 1px solid rgba(245, 245, 245, 0.04);
     background: rgba(245, 245, 245, 0.20);
 `
-export const SuccessStatus = ({ days }: { days: number }) => {
+const SuccessStatus = ({ days }: { days: number }) => {
     const { t } = useTranslation();
     return <SuccessWrapper>
         <CheckIcon />
@@ -37,7 +37,7 @@ export const SuccessStatus = ({ days }: { days: number }) => {
     </SuccessWrapper>
 }
 
-export const InProgressStatus = () => {
+const InProgressStatus = () => {
     const { t } = useTranslation();
     return <ProgressWrapper>
         <ClockIcon />
@@ -45,7 +45,7 @@ export const InProgressStatus = () => {
     </ProgressWrapper>
 }
 
-export const ExpiredStatus = () => {
+const ExpiredStatus = () => {
     const { t } = useTranslation();
     return <ExpiredWrapper>
         <WarningIcon />
@@ -53,10 +53,26 @@ export const ExpiredStatus = () => {
     </ExpiredWrapper>
 }
 
-export const UnavailableStatus = () => {
+const UnavailableStatus = () => {
     const { t } = useTranslation();
     return <UnavailableWrapper>
         <GrayClockIcon />
         <BoldPSmall transparent={0.75}>{t('statuses.unavailable')}</BoldPSmall>
     </UnavailableWrapper>
+}
+
+export const getCourseStatus = (status: number) => {
+    if (status === 0) {
+        return <UnavailableStatus />
+    }
+    if (status === 1) {
+        return <InProgressStatus />
+    }
+    if (status === 2) {
+        return <SuccessStatus days={1} />
+    }
+    if (status === 3) {
+        return <ExpiredStatus />
+    }
+    return;
 }

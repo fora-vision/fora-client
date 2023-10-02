@@ -47,10 +47,10 @@ const TotalLessonsInfo = styled.div`
 
 export const CardInfo = ({ course }: { course: ICourse }) => {
   const { t } = useTranslation();
-  const totalLessons = course.program.workouts.length;
-  const formattedStartDate = '1/01' // пока что с апи не призодит старт
-  const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM'); // это дедлайн, с апи пока что не приходит начало курса дата
-  const courseLeaderboard = 1; // с апи пока что не приходит позиция в лидершипе
+  const totalLessons = course.workouts_count;
+  const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM')
+  const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM');
+  const courseLeaderboard = '-'; // с апи пока что не приходит позиция будет course.ranking 
   return (
     <CardInfoWrapper>
       <CourseInfo>
@@ -74,7 +74,7 @@ export const CardInfo = ({ course }: { course: ICourse }) => {
         </MetricBox>
         <MetricBox>
           <GroupIcon />
-          <P>{course.users_count}</P>
+          <P>{course.members}</P>
         </MetricBox>
       </CourseMetrics>
     </CardInfoWrapper>

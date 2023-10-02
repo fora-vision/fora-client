@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 
 export const HeaderStats = ({ courses }) => {
     const { t } = useTranslation();
-    const completedWorkouts = '-';
+    const completedWorkouts = courses.reduce((total, obj) => total + obj.workout_num, 0);
     const completedExercises = '-';
     const averageCourseComplete = '-'
     return (

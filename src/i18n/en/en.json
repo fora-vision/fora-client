@@ -25,7 +25,12 @@
       "joinCourse": "Join course",
       "workoutsCompleted": "Training completed",
       "exercisesCompleted": "Exercises completed",
-      "averageCourseComplete": "Average % of courses completed"
+      "averageCourseComplete": "Average % of courses completed",
+      "join": "Join",
+      "enterAnotherCode": "Enter another code",
+      "enterCode": "Please enter a code to access the course",
+      "cancel": "Cancel",
+      "continue": "Continue"
     },
     "reset": {
       "forgotPassword": "Forgot your password?",
@@ -119,7 +124,8 @@
     },
     "code": {
       "invalid": "The code is invalid. Please enter another one.",
-      "length": "The code must be 6 characters long. You have entered "
+      "length": "The code must be 6 characters long. You have entered ",
+      "courseLength": "The course code must contain 4 characters"
     },
     "alreadyRegistered": "This e-mail address is already in use. Please enter another one or login.",
     "acceptData": "Please confirm your agreement with the Processing of Personal Data",
@@ -132,6 +138,7 @@
     "sex": "Please select a gender"
   },
   "difficulty": {
+    "unspecified": "Unspecified",
     "easy": "Easy",
     "medium": "Medium",
     "hard": "Hard"
@@ -149,6 +156,7 @@
     "duration": "Duration",
     "trainingNumber": "Number of workouts",
     "users": "Users",
-    "difficulty": "Difficulty"
+    "difficulty": "Difficulty",
+    "courseFound": "Course found."
   }
 }

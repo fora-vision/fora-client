@@ -1,13 +1,14 @@
 import dayjs from "dayjs"
 import styled from "styled-components"
+import { useTranslation } from "react-i18next"
 import { AccountPhotoWrapper, EmptyPhoto } from "../header/account-panel/AccountPhoto"
-import { GrayLine } from "../lines"
-import { H2, P, PSmall } from "../typographic"
+import { DarkGrayLine, GrayLine } from "../lines"
+import { BlackH2, BlackP, BlackPSmall, P, PSmall } from "../typographic"
 import { ReactComponent as CalendarIcon } from "../../images/calendar.svg"
 import { ReactComponent as ArrowRightIcon } from "../../images/arrow-right.svg"
 import { ReactComponent as UsersIcon } from "../../images/user-group.svg"
 import { DifficultLevel } from "../Level/DifficultLevel"
-import { useTranslation } from "react-i18next"
+import { IExpandedCourse } from "../../interfaces/ICourse"
 
 const Wrapper = styled.div`
     width: 100%
@@ -24,7 +25,6 @@ const CourseHeader = styled.div`
     align-items: flex-start;
     gap: 8px;
 `
-
 
 const CourseData = styled.div`
     margin-top: 8px;
@@ -44,11 +44,6 @@ const AuthorWrapper = styled.div`
     gap: 15px;
 `
 
-const DarkPSmall = styled(PSmall)`color: #11100E`
-const DarkP = styled(P)`color: #11100E`
-const DarkH2 = styled(H2)`color: #11100E`
-const DarkGrayLine = styled(GrayLine)`background: rgba(17, 16, 12, 0.25);`
-
 const InfoBlock = styled.div`
     display: flex;
     gap: 2px;
@@ -61,17 +56,18 @@ const TextWithIcon = styled.div`
     align-items: center;
 `
 
-export const CoursePreview = ({ course }: { course: any }) => {
+export const CoursePreview = ({ course }: { course: IExpandedCourse }) => {
     const { t } = useTranslation()
     const courseAuthorPhoto = course.author.avatar_url;
+    const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM');
     const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM');
-    const courseLevel = 3
+    const courseLevel = course.level;
     return (
         <Wrapper>
             <CourseHeader>
                 <InfoBlock>
-                    <DarkPSmall>{t('course.course')}</DarkPSmall>
-                    <DarkH2>{course.name}</DarkH2>
+                    <BlackPSmall>{t('course.course')}</BlackPSmall>
+                    <BlackH2>{course.name}</BlackH2>
                 </InfoBlock>
                 <DarkGrayLine />
                 <AuthorWrapper>
@@ -79,8 +75,8 @@ export const CoursePreview = ({ course }: { course: any }) => {
                         {courseAuthorPhoto ? <img src={courseAuthorPhoto} alt="Author" /> : <EmptyPhoto >{course.author.name[0]}</EmptyPhoto>}
                     </AccountPhotoWrapper>
                     <InfoBlock>
-                        <DarkPSmall>{t('course.author')}</DarkPSmall>
-                        <DarkP>{course.author.name}</DarkP>
+                        <BlackPSmall>{t('course.author')}</BlackPSmall>
+                        <BlackP>{course.author.name}</BlackP>
                     </InfoBlock>
                 </AuthorWrapper>
             </CourseHeader>
@@ -89,7 +85,7 @@ export const CoursePreview = ({ course }: { course: any }) => {
                     <PSmall transparent={0.5}>{t('course.duration')}</PSmall>
                     <TextWithIcon>
                         <CalendarIcon />
-                        <P>{formattedDeadline}</P>
+                        <P>{formattedStartDate} - {formattedDeadline}</P>
                     </TextWithIcon>
                 </InfoBlock>
                 <GrayLine />

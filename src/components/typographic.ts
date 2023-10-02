@@ -16,6 +16,8 @@ export const H2 = styled.h2`
   text-transform: uppercase;
 `
 
+export const BlackH2 = styled(H2)`color: #11100E`
+
 export const H2Regular = styled(H2)`
   text-transform: none;
 `
@@ -30,16 +32,24 @@ export const P = styled.p.withConfig({
   opacity: ${(p) => (p.transparent ? p.transparent : 1)};
 `;
 
+export const BlackP = styled(P)`color: #11100E`
+
 export const PSmall = styled(P)`
   font-size: 14px;
 `
+
+export const BlackPSmall = styled(PSmall)`color: #11100E`
+
 export const BoldPSmall = styled(PSmall)`
     font-weight: 700;
 `
+
 export const BoldBlackPSmall = styled(PSmall)`
     color: #11100E;
     font-weight: 700;
 `
+
 export const YellowA = styled.a`
   color: #F6D658;
 `
+

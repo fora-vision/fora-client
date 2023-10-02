@@ -6,6 +6,7 @@ import { PrimaryButton, SecondaryButton } from "../buttons"
 import { CoursePreview } from "../coursePreview/CoursePreview"
 import { sessionStore } from "../../store/sessionStore"
 import { addUserCourse, getCourseInfo } from "../../utils/API/courses/api-courses"
+import { useTranslation } from "react-i18next"
 
 const JoinModal = styled.div`
   display: flex;
@@ -46,6 +47,7 @@ const CoursePreviewButtons = styled.div`
 `
 
 export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
+  const { t } = useTranslation()
   const sessionCode = sessionStore.getSessionCode()
   const [course, setCourse] = useState(null)
   const [coursePreview, setCoursePreview] = useState(false)
@@ -65,18 +67,17 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
       return;
     }
     if (code.length !== 4) {
-      setCourseError('Код курса должен содержать 4 символа')
+      setCourseError(t('errorMessages.code.courseLength'))
       return;
     }
     setCourseError('')
     setCourseSuccess('')
     try {
       const result = await getCourseInfo(sessionCode, code)
-      console.log(result)
       setCourse(result)
-      setCourseSuccess('Курс найден.')
+      setCourseSuccess(t('course.courseFound'))
     } catch (error) {
-      setCourseError('Код недействителен. Пожалуйста, введите другой')
+      setCourseError(t('errorMessages.code.invalid'))
     }
   }
   useEffect(() => {
@@ -90,23 +91,23 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
   return (
     <ModalWrapper>
       <JoinModal >
-        <H1>Присоединиться к курсу</H1>
+        <H1>{t('pages.dashboard.joinCourse')}</H1>
         {coursePreview
           ?
           <>
             <CoursePreview course={course} />
             <CoursePreviewButtons>
-              <PrimaryButton onClick={handleAddCourse}>Присоединиться</PrimaryButton>
-              <SecondaryButton onClick={handleAnotherCode}>Ввести другой код</SecondaryButton>
+              <PrimaryButton onClick={handleAddCourse}>{t('pages.dashboard.join')}</PrimaryButton>
+              <SecondaryButton onClick={handleAnotherCode}>{t('pages.dashboard.enterAnotherCode')}</SecondaryButton>
             </CoursePreviewButtons>
           </>
           :
           <>
-            <P transparent={0.75}>Пожалуйста, введите код доступа к курсу</P>
+            <P transparent={0.75}>{t('pages.dashboard.enterCode')}</P>
             <CodeSection state={code} setState={setCode} nums={4} success={courseSuccess} error={courseError} />
             <ModalButtons>
-              <SecondaryButton onClick={toggleModal}>Отмена</SecondaryButton>
-              <PrimaryButton onClick={handleGetCourseByCode}>Продолжить</PrimaryButton>
+              <SecondaryButton onClick={toggleModal}>{t('pages.dashboard.cancel')}</SecondaryButton>
+              <PrimaryButton onClick={handleGetCourseByCode}>{t('pages.dashboard.continue')}</PrimaryButton>
             </ModalButtons>
           </>}
       </JoinModal>
