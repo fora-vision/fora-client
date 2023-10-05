@@ -25,11 +25,13 @@ const ButtonPattern = styled.button`
 export const PrimaryButton = styled(ButtonPattern)`
   background: #F6D658; 
   box-shadow: 0px 6px 24px 2px rgba(246, 214, 88, 0.12);
-  &:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #F6D658;
-  }
-  &:active {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #F6D658;
+  &:not(:disabled) {
+    &:hover {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #F6D658;
+    }
+    &:active {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #F6D658;
+    }
   }
 `
 

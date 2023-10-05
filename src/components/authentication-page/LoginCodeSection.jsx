@@ -9,6 +9,8 @@ import { sessionStore } from '../../store/sessionStore'
 import { getUserInfo } from '../../utils/API/user/api-user'
 import { useNavigate } from 'react-router-dom'
 import { userStore } from '../../store/profileStore.jsx'
+import { useToggle } from '../../hooks/hookToggle'
+import { Loader } from '../loader/Loader'
 
 const Wrapper = styled.div`
   padding-bottom: 16px;
@@ -23,10 +25,12 @@ export const LoginCodeSection = ({ email }) => {
   const navigate = useNavigate()
   const [code, setCode] = useState('')
   const [codeError, setCodeError] = useState(false)
+  const [isCodeSending, toggleCodeSending] = useToggle()
 
   const handleCode = async () => {
     if (code.length === 6) {
       setCodeError(false)
+      toggleCodeSending()
       try {
         const sessionCode = await sendCode(email, code).then(result => {
           return result.session
@@ -42,6 +46,7 @@ export const LoginCodeSection = ({ email }) => {
       } catch (error) {
         setCodeError(t('errorMessages.code.invalid'))
       }
+      toggleCodeSending()
     } else {
       setCodeError(`${t('errorMessages.code.length')} ${code.length}`)
     }
@@ -53,7 +58,7 @@ export const LoginCodeSection = ({ email }) => {
       <CodeWrapper>
         <CodeSection state={code} setState={setCode} error={codeError} />
       </CodeWrapper>
-      <PrimaryButton onClick={handleCode}>{t('pages.auth.logIn')}</PrimaryButton>
+      <PrimaryButton onClick={handleCode} disabled={isCodeSending}>{isCodeSending ? <Loader /> : t('pages.auth.logIn')}</PrimaryButton>
     </Wrapper>
   )
 }

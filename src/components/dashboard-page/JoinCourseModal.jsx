@@ -7,6 +7,8 @@ import { CoursePreview } from "../coursePreview/CoursePreview"
 import { sessionStore } from "../../store/sessionStore"
 import { addUserCourse, getCourseInfo } from "../../utils/API/courses/api-courses"
 import { useTranslation } from "react-i18next"
+import { useToggle } from "../../hooks/hookToggle"
+import { Loader } from "../loader/Loader"
 
 const JoinModal = styled.div`
   display: flex;
@@ -49,6 +51,7 @@ const CoursePreviewButtons = styled.div`
 export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
   const { t } = useTranslation()
   const sessionCode = sessionStore.getSessionCode()
+  const [isCodeSending, toggleCodeSending] = useToggle()
   const [course, setCourse] = useState(null)
   const [coursePreview, setCoursePreview] = useState(false)
   const [courseError, setCourseError] = useState('')
@@ -68,6 +71,7 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
     }
     setCourseError('')
     setCourseSuccess('')
+    toggleCodeSending()
     try {
       const result = await getCourseInfo(sessionCode, code)
       setCourse(result)
@@ -76,6 +80,7 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
     } catch (error) {
       setCourseError(t('errorMessages.code.invalid'))
     }
+    toggleCodeSending()
   }
   useEffect(() => {
     setCourse(null)
@@ -85,9 +90,15 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
   const handleAnotherCode = () => {
     setCoursePreview(false)
   }
+  const handleWrapperClick = (event) => {
+    if (event.target.closest('.modal')) {
+      return;
+    }
+    toggleModal()
+  };
   return (
-    <ModalWrapper>
-      <JoinModal >
+    <ModalWrapper onClick={handleWrapperClick}>
+      <JoinModal className="modal" >
         <H1>{t('pages.dashboard.joinCourse')}</H1>
         {coursePreview
           ?
@@ -104,7 +115,7 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
             <CodeSection state={code} setState={setCode} nums={4} success={courseSuccess} error={courseError} />
             <ModalButtons>
               <SecondaryButton onClick={toggleModal}>{t('pages.dashboard.cancel')}</SecondaryButton>
-              <PrimaryButton onClick={handleGetCourseByCode}>{t('pages.dashboard.continue')}</PrimaryButton>
+              <PrimaryButton onClick={handleGetCourseByCode} disabled={isCodeSending}>{isCodeSending ? <Loader /> : t('pages.dashboard.continue')}</PrimaryButton>
             </ModalButtons>
           </>}
       </JoinModal>

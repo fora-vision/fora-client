@@ -35,6 +35,7 @@ export interface ICourse {
     status: number;
     deadline: number;
     start_date: number;
+    exercises_complete: number;
 }
 
 export interface IExpandedCourse {

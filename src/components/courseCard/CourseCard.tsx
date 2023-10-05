@@ -30,7 +30,7 @@ export const CourseCard = ({ course }: { course: ICourse }) => {
       </div>
       <CardContainer>
         <CardInfo course={course} />
-        <CardActions lessonsDone={doneLessons} lessonsTotal={totalLessons} />
+        <CardActions lessonsDone={doneLessons} lessonsTotal={totalLessons} course={course} />
       </CardContainer>
     </CardWrapper>
   )

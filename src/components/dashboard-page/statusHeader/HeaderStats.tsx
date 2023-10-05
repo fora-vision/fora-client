@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 export const HeaderStats = ({ courses }: { courses: ICourse[] }) => {
     const { t } = useTranslation();
     const completedWorkouts = courses.reduce((total, obj) => total + obj.workout_num, 0);
-    // const totalExercises = courses.reduce((total, obj) => total + obj.workouts_count, 0);
+    const completedExercises = courses.reduce((total, obj) => total + obj.exercises_complete, 0);
     const averageCourseComplete = countAverageCourseDone(courses)
     return (
         <Wrapper>
@@ -21,7 +21,7 @@ export const HeaderStats = ({ courses }: { courses: ICourse[] }) => {
                 <PSmall transparent={0.75}>{t('pages.dashboard.workoutsCompleted')}</PSmall>
             </div>
             <div>
-                <H1>{completedWorkouts}</H1>
+                <H1>{completedExercises}</H1>
                 <PSmall transparent={0.75}>{t('pages.dashboard.exercisesCompleted')}</PSmall>
             </div>
             <div>

@@ -4,6 +4,11 @@ import { PrimaryButton } from '../buttons'
 import { ReactComponent as RightArrowsIcon } from '../../images/right-icon-black.svg'
 import { H1, P } from '../typographic'
 import { ProgressLine } from '../progress/ProgressLine'
+import { sessionStore } from '../../store/sessionStore'
+import { getRoomUrl } from '../../utils/API/courses/api-courses'
+import { ICourse } from '../../interfaces/ICourse'
+import { Loader } from '../loader/Loader'
+import { useToggle } from '../../hooks/hookToggle'
 
 const CardActionsWrapper = styled.div`
   width: 420px; 
@@ -29,9 +34,23 @@ const NumericalProgress = styled.div`
   gap: 8px;
 `
 
-export const CardActions = ({ lessonsDone, lessonsTotal }: { lessonsDone: number, lessonsTotal: number }) => {
+export const CardActions = ({ lessonsDone, lessonsTotal, course }: { lessonsDone: number, lessonsTotal: number, course: ICourse }) => {
   const { t } = useTranslation();
+  const [isLoadingExercise, toggleLoadingExercise] = useToggle()
   const lessonsProgress = Number(((lessonsDone / lessonsTotal) * 100).toFixed(0));
+  const token = sessionStore.getSessionCode()
+  const handleLink = async () => {
+    if (token) {
+      toggleLoadingExercise()
+      try {
+        const result = await getRoomUrl(token, course.id, course.workout_num)
+        window.open(result.url, '_blank');
+      } catch (error) {
+        console.log(error)
+      }
+      toggleLoadingExercise()
+    }
+  }
   return (
     <CardActionsWrapper>
       <OverallProgress>
@@ -45,9 +64,11 @@ export const CardActions = ({ lessonsDone, lessonsTotal }: { lessonsDone: number
           </ProgressInfo>
           <ProgressLine progress={lessonsProgress} />
         </div>
-        <PrimaryButton>
-          {t('components.courseCard.startTraining')}
-          <RightArrowsIcon />
+        <PrimaryButton onClick={handleLink} disabled={isLoadingExercise}>
+          {isLoadingExercise ? <Loader /> : <>
+            {t('components.courseCard.startTraining')}
+            <RightArrowsIcon />
+          </>}
         </PrimaryButton>
       </OverallProgress>
     </CardActionsWrapper>

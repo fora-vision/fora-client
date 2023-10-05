@@ -19,15 +19,18 @@ export const Authentication = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false)
   const [isEmailSent, toggleIsEmailSent] = useToggle()
+  const [isSending, toggleSending] = useToggle()
   const handleEmail = async () => {
     const isEmailValid = validateEmail(email)
     if (isEmailValid) {
+      toggleSending()
       try {
         await sendEmail(email)
         toggleIsEmailSent()
       } catch (error) {
         setEmailError(t('errorMessages.server'))
       }
+      toggleSending()
     } else {
       setEmailError(t('errorMessages.email.notValid'))
     }
@@ -42,7 +45,7 @@ export const Authentication = () => {
           <>
             <InputsSection state={email} setState={setEmail} />
             {emailError && <ErrorField message={emailError} />}
-            <LoginButtonSection callback={handleEmail} />
+            <LoginButtonSection callback={handleEmail} isSending={isSending} />
           </>
         }
         <SignUpSection />
