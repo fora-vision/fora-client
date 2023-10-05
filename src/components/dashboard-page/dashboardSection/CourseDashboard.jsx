@@ -5,26 +5,26 @@ import { TetriaryButton } from "../../buttons"
 import { CourseCalendar } from "../../calendar/CourseCalendar"
 import { CourseCard } from "../../courseCard/CourseCard"
 
-const DashboardWrapper = styled.div`
+export const DashboardWrapper = styled.div`
   display: flex;
   justify-content: space-between; 
   gap: 32px;
 `
 
-const YourCoursesWrapper = styled.div`
+export const YourCoursesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
 `
 
-const HeaderCourses = styled.div`
+export const HeaderCourses = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 12px;
 `
 
-const CoursesSection = styled.div`
+export const CoursesSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;

@@ -14,3 +14,12 @@ export const getCourseInfo = async (token: string, courseCode: string) => {
     const courseDetailsApiUrl = courseApiUrl + `/search?invite_code=${courseCode}`
     return axios.get(courseDetailsApiUrl, { headers: { Authorization: token } }).then(result => result.data).catch(() => { throw new Error() })
 }
+
+export const getRoomUrl = async (token: string, courseId: number, workoutNum: number) => {
+    const roomUrlApi = courseApiUrl + '/workout/room_url';
+    const params = {
+        course_id: courseId,
+        workout_index: workoutNum
+    };
+    return axios.get(roomUrlApi, { headers: { Authorization: token }, params: params }).then(result => result.data).catch(() => { throw new Error() })
+}

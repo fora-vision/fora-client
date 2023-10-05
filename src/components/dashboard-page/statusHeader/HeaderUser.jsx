@@ -9,11 +9,15 @@ const Wrapper = styled.div`
   gap: 8px;
 `
 
+const HeaderUsername = styled(P)`
+  padding-right: 15px;
+`
+
 export const HeaderUser = ({ userName, level }) => {
   return (
     <Wrapper>
       <AccountPhoto />
-      <P>{userName}</P>
+      <HeaderUsername>{userName}</HeaderUsername>
       <Level score={level} />
     </Wrapper>
   )

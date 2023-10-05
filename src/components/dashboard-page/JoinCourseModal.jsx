@@ -62,10 +62,6 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
     }
   }
   const handleGetCourseByCode = async () => {
-    if (course) {
-      setCoursePreview(true)
-      return;
-    }
     if (code.length !== 4) {
       setCourseError(t('errorMessages.code.courseLength'))
       return;
@@ -76,6 +72,7 @@ export const JoinCourseModal = ({ code, setCode, toggleModal }) => {
       const result = await getCourseInfo(sessionCode, code)
       setCourse(result)
       setCourseSuccess(t('course.courseFound'))
+      setCoursePreview(true)
     } catch (error) {
       setCourseError(t('errorMessages.code.invalid'))
     }

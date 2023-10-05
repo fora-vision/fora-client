@@ -69,16 +69,18 @@ export const CoursePreview = ({ course }: { course: IExpandedCourse }) => {
                     <BlackPSmall>{t('course.course')}</BlackPSmall>
                     <BlackH2>{course.name}</BlackH2>
                 </InfoBlock>
-                <DarkGrayLine />
-                <AuthorWrapper>
-                    <AccountPhotoWrapper>
-                        {courseAuthorPhoto ? <img src={courseAuthorPhoto} alt="Author" /> : <EmptyPhoto >{course.author.name[0]}</EmptyPhoto>}
-                    </AccountPhotoWrapper>
-                    <InfoBlock>
-                        <BlackPSmall>{t('course.author')}</BlackPSmall>
-                        <BlackP>{course.author.name}</BlackP>
-                    </InfoBlock>
-                </AuthorWrapper>
+                {course.author.name && <>
+                    <DarkGrayLine />
+                    <AuthorWrapper>
+                        <AccountPhotoWrapper>
+                            {courseAuthorPhoto ? <img src={courseAuthorPhoto} alt="Author" /> : <EmptyPhoto >{course.author.name[0]}</EmptyPhoto>}
+                        </AccountPhotoWrapper>
+                        <InfoBlock>
+                            <BlackPSmall>{t('course.author')}</BlackPSmall>
+                            <BlackP>{course.author.name}</BlackP>
+                        </InfoBlock>
+                    </AuthorWrapper>
+                </>}
             </CourseHeader>
             <CourseData>
                 <InfoBlock>
