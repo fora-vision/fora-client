@@ -42,6 +42,7 @@ function App() {
           <Route path="reset" element={sessionStore.sessionCode ? <Navigate to="/dashboard" /> : <Reset />} />
           <Route path="/" element={<SharedLayout />}>
             <Route path="dashboard" element={!sessionStore.sessionCode ? <Navigate to="/authentication" /> : <Dashboard />} />
+            <Route path="" element={<Navigate to="/authentication" />} />
           </Route>
         </Routes>
       </Router>

@@ -28,7 +28,7 @@ export const WeSentCodeSection = ({ email }) => {
       <WereCodeSent email={email} />
       <Description transparent={0.75}>{t('pages.auth.toLoginWriteCode')}</Description>
       <ColumnSection>
-        <PrimaryButton>{t('pages.auth.openEmail')}</PrimaryButton>
+        {/* <PrimaryButton>{t('pages.auth.openEmail')}</PrimaryButton> */}
         <SecondaryButton onClick={toggleManualCode}>{t('pages.auth.enterCode')}</SecondaryButton>
       </ColumnSection>
     </Wrapper>

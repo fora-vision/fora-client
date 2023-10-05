@@ -16,7 +16,7 @@
       "logIn": "Log in",
       "weSentCode": "We have sent a login link to the e-mail address provided:",
       "weSentPin": "Enter the PIN code from the e-mail:",
-      "toLoginWriteCode": "To log in, follow the link or enter the one-time PIN from the email",
+      "toLoginWriteCode": "To log in, enter the one-time PIN from the email",
       "openEmail": "Open email",
       "enterCode": "Enter code manually"
     },
