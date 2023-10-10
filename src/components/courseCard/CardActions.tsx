@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import { PrimaryButton } from '../buttons'
+import { PrimaryButton, SecondaryButton } from '../buttons'
 import { ReactComponent as RightArrowsIcon } from '../../images/right-icon-black.svg'
 import { H1, P } from '../typographic'
 import { ProgressLine } from '../progress/ProgressLine'
@@ -64,12 +64,15 @@ export const CardActions = ({ lessonsDone, lessonsTotal, course }: { lessonsDone
           </ProgressInfo>
           <ProgressLine progress={lessonsProgress} />
         </div>
-        <PrimaryButton onClick={handleLink} disabled={isLoadingExercise}>
-          {isLoadingExercise ? <Loader /> : <>
-            {t('components.courseCard.startTraining')}
-            <RightArrowsIcon />
-          </>}
-        </PrimaryButton>
+        {lessonsProgress === 100 ?
+          <SecondaryButton disabled>{t('components.courseCard.openCourse')}</SecondaryButton>
+          : <PrimaryButton onClick={handleLink} disabled={isLoadingExercise}>
+            {isLoadingExercise ? <Loader /> : <>
+              {t('components.courseCard.startTraining')}
+              <RightArrowsIcon />
+            </>}
+          </PrimaryButton>
+        }
       </OverallProgress>
     </CardActionsWrapper>
   )

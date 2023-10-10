@@ -67,7 +67,8 @@
       "course": "Курс",
       "lessons": "занятий",
       "overallProgress": "Общий прогресс",
-      "startTraining": "Начать тренировку"
+      "startTraining": "Начать тренировку",
+      "openCourse": "Открыть курс"
     },
     "select": {
       "default": "Выберите",

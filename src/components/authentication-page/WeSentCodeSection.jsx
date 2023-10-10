@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { P } from '../typographic'
-import { PrimaryButton, SecondaryButton } from '../buttons'
+import { SecondaryButton } from '../buttons'
 import { WereCodeSent } from './WereCodeSent'
 import { useTranslation } from 'react-i18next'
 import { useToggle } from '../../hooks/hookToggle'
@@ -28,7 +28,6 @@ export const WeSentCodeSection = ({ email }) => {
       <WereCodeSent email={email} />
       <Description transparent={0.75}>{t('pages.auth.toLoginWriteCode')}</Description>
       <ColumnSection>
-        {/* <PrimaryButton>{t('pages.auth.openEmail')}</PrimaryButton> */}
         <SecondaryButton onClick={toggleManualCode}>{t('pages.auth.enterCode')}</SecondaryButton>
       </ColumnSection>
     </Wrapper>

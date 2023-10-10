@@ -13,11 +13,11 @@ const HeaderUsername = styled(P)`
   padding-right: 15px;
 `
 
-export const HeaderUser = ({ userName, level }) => {
+export const HeaderUser = ({ username, level }: { username: string, level: number }) => {
   return (
     <Wrapper>
       <AccountPhoto />
-      <HeaderUsername>{userName}</HeaderUsername>
+      <HeaderUsername>{username}</HeaderUsername>
       <Level score={level} />
     </Wrapper>
   )

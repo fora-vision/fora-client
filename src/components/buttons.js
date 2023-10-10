@@ -14,12 +14,6 @@ const ButtonPattern = styled.button`
   border-radius: 4px;
   border: 1px solid rgba(245, 245, 245, 0.04);
   width: ${(button) => (button.width ? button.width : "100%")};
-
-  &:disabled {
-    cursor: default;
-    color: #65656d;
-    background: #b8b8b8;
-  }
 `
 
 export const PrimaryButton = styled(ButtonPattern)`
@@ -32,7 +26,13 @@ export const PrimaryButton = styled(ButtonPattern)`
     &:active {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #F6D658;
     }
-  }
+  };
+  &:disabled {
+    cursor: default;
+    color: #11100E;
+    background: linear-gradient(0deg, rgba(17, 16, 14, 0.75) 0%, rgba(17, 16, 14, 0.75) 100%), #F6D658;
+    box-shadow: none;
+  }  
 `
 
 export const SecondaryButton = styled(ButtonPattern)`
@@ -41,10 +41,17 @@ export const SecondaryButton = styled(ButtonPattern)`
   padding: 18px;
   gap: 10px;
   border: 1px solid rgba(255, 255, 255, 0.03);
-  &:hover {
-    background: rgba(245, 245, 245, 0.20);
+  &:not(:disabled) {
+    &:hover {
+      background: rgba(245, 245, 245, 0.20);
+    }
+    &:active {
+      background: rgba(245, 245, 245, 0.20);
+      color: rgba(245, 245, 245, 0.20);
+    }
   }
-  &:active {
+  &:disabled {
+    cursor: default;
     background: rgba(245, 245, 245, 0.20);
     color: rgba(245, 245, 245, 0.20);
   }

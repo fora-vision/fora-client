@@ -7,7 +7,7 @@ export const countAverageCourseDone = (courses: ICourse[]) => {
         }
         return (course.workouts_count / course.workout_num) * 100;
     });
-
     const nonZeroPercentages = totalPercentages.filter(percentage => percentage !== Infinity);
-    return nonZeroPercentages.reduce((total, percentage) => total + percentage, 0) / nonZeroPercentages.length;
+    const result = nonZeroPercentages.reduce((total, percentage) => total + percentage, 0) / nonZeroPercentages.length
+    return parseFloat(result.toFixed(1));
 }

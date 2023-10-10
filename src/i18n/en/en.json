@@ -67,7 +67,8 @@
       "course": "Course",
       "lessons": "lessons",
       "overallProgress": "Overall progress",
-      "startTraining": "Start training"
+      "startTraining": "Start training",
+      "openCourse": "Open course"
     },
     "select": {
       "default": "Select",

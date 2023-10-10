@@ -2,17 +2,16 @@ import { useState } from 'react';
 import { EllipseLeft, EllipseRight } from '../../components/ellipses';
 import { PageContainer } from '../../components/pageContainer';
 import { LogInWrapper } from '../../components/wrappers';
-
 import { WelcomeToHeader } from '../../components/authentication-page/WelcomeToHeader';
 import { SignUpSection } from '../../components/authentication-page/SignUpSection';
 import { InputsSection } from '../../components/authentication-page/InputsSection';
 import { LoginButtonSection } from '../../components/authentication-page/LoginButtonSection';
-import { WeSentCodeSection } from '../../components/authentication-page/WeSentCodeSection';
 import { useToggle } from '../../hooks/hookToggle';
 import { sendEmail } from '../../utils/API/auth/api-auth';
 import { validateEmail } from '../../utils/validation-utils';
 import { ErrorField } from '../../components/errorField/ErrorField';
 import { useTranslation } from 'react-i18next';
+import { LoginCodeSection } from '../../components/authentication-page/LoginCodeSection';
 
 export const Authentication = () => {
   const { t } = useTranslation();
@@ -40,7 +39,7 @@ export const Authentication = () => {
       <LogInWrapper>
         <WelcomeToHeader />
         {isEmailSent ?
-          <WeSentCodeSection email={email} />
+          <LoginCodeSection email={email} />
           :
           <>
             <InputsSection state={email} setState={setEmail} />

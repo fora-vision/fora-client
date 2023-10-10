@@ -19,7 +19,7 @@ export const ProgressBar = styled.div.withConfig({
   top: 0;
   left: 0;
   border-radius: 4px;
-  background: #F6D658;
+  background: ${(prop) => (prop.width === 100 ? '#5FB768' : '#F6D658')};
   height: 8px;
   width: ${(prop) => (prop.width ? prop.width : 0)}%;
   transition: width 0.4s linear;
