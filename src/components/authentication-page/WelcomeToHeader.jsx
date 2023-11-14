@@ -6,7 +6,6 @@ import { H2, P } from '../typographic'
 
 const WelcomeHeaderWrapper = styled.div`
   display: flex;
-  flexDirection: row;
   alignItems: start;
   gap: 16px;
   width: 100%;

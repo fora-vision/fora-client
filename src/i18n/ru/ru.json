@@ -10,9 +10,154 @@
       "passwordPlaceholder": "Пароль",
       "forgotPassword": "Забыли пароль?",
       "recover": "Восстановить",
-      "login": "Войти",
+      "next": "Далее",
       "noAccount": "Ещё нет аккаунта?",
-      "signUp": "Зарегистрироваться"
+      "signUp": "Зарегистрироваться",
+      "logIn": "Войти",
+      "weSentCode": "Мы отправили ссылку для входа на указанный e-mail:",
+      "weSentPin": "Введите PIN-код из письма, отправленного на e-mail:",
+      "toLoginWriteCode": "Чтобы войти, введите одноразовый PIN-код из письма",
+      "openEmail": "Открыть почту",
+      "enterCode": "Ввести код вручную"
+    },
+    "dashboard": {
+      "yourCourses": "Ваши курсы",
+      "joinCourse": "Присоединиться к курсу",
+      "workoutsCompleted": "Тренировок пройдено",
+      "exercisesCompleted": "Упражнений выполнено",
+      "averageCourseComplete": "Средний % пройденности курсов",
+      "join": "Присоединиться",
+      "enterAnotherCode": "Ввести другой код",
+      "enterCode": "Пожалуйста, введите код доступа к курсу",
+      "cancel": "Отмена",
+      "continue": "Продолжить"
+    },
+    "reset": {
+      "forgotPassword": "Забыли пароль?",
+      "weWillSendCode": "Мы отправим код восстановления на ваш e-mail",
+      "sendCode": "Отправить код",
+      "email": "E-mail",
+      "emailPlaceholder": "nikita2000@gmail.com",
+      "newPassword": "Новый пароль",
+      "password": "Пароль",
+      "paste": "Вставить",
+      "code": "Код",
+      "newPasswordDescription": "Пароль должен содержать минимум 8 символов, 1 цифру, 1 букву и 1 специальный символ"
+    },
+    "signup": {
+      "haveAnAccount": "Зарегистрированы?",
+      "logIn": "Войти",
+      "firstName": "Имя",
+      "firstNamePlaceholder": "Никита",
+      "lastName": "Фамилия",
+      "lastNamePlaceholder": "Петров",
+      "birthdate": "Дата рождения",
+      "birthdatePlaceholder": "ДД / MM / ГГГГ",
+      "height": "Рост",
+      "weight": "Вес",
+      "sex": "Пол",
+      "password": "Пароль"
     }
+  },
+  "header": {
+    "logout": "Выйти"
+  },
+  "components": {
+    "courseCard": {
+      "course": "Курс",
+      "lessons": "занятий",
+      "overallProgress": "Общий прогресс",
+      "startTraining": "Начать тренировку",
+      "openCourse": "Открыть курс"
+    },
+    "select": {
+      "default": "Выберите",
+      "male": "Мужской",
+      "female": "Женский"
+    }
+  },
+  "stepper": {
+    "steps": {
+      "email": "E-mail",
+      "code": "Код",
+      "newPassword": "Новый пароль",
+      "name": "Имя",
+      "body": "Тело",
+      "password": "Пароль"
+    },
+    "buttons": {
+      "sendCode": "Отправить код",
+      "next": "Далее",
+      "confirm": "Подтвердить",
+      "signUp": "Зарегистрироваться",
+      "login": "Войти"
+    }
+  },
+  "calendar": {
+    "today": "Сегодня",
+    "week": {
+      "monday": "ПН",
+      "tuesday": "ВТ",
+      "wednesday": "СР",
+      "thurstday": "ЧТ",
+      "friday": "ПТ",
+      "saturday": "СБ",
+      "sunday": "ВС"
+    },
+    "months": {
+      "january": "Январь",
+      "february": "Февраль",
+      "march": "Март",
+      "april": "Апрель",
+      "may": "Май",
+      "june": "Июнь",
+      "july": "Июль",
+      "august": "Август",
+      "september": "Сентябрь",
+      "october": "Октябрь",
+      "november": "Ноябрь",
+      "december": "Декабрь"
+    }
+  },
+  "errorMessages": {
+    "email": {
+      "notValid": "Неверный формат. Пожалуйста, введите e-mail в формате: valeriy1980@ya.ru."
+    },
+    "code": {
+      "invalid": "Код недействителен. Пожалуйста, введите другой.",
+      "length": "Код должен состоять из 6 символов. Вы ввели ",
+      "courseLength": "Код курса должен содержать 4 символа"
+    },
+    "alreadyRegistered": "Данный e-mail уже используется. Пожалуйста, введите другой, либо войдите.",
+    "acceptData": "Пожалуйста, подтвердите соглашение с Обработкой персональных данных",
+    "server": "Ошибка сервера",
+    "name": "Имя должно содержать более 2 символов",
+    "lastName": "Фамилия должна содержать более 2 символов",
+    "birth": "Дата рождения должна быть в формате ДД/ММ/ГГГГ и в промежутке от 1900 до 2009 года",
+    "height": "Неверный рост. Пожалуйста, введите значение в пределах 120 см и 220 см.",
+    "weight": "Неверный вес. Пожалуйста, введите значение в пределах 30 кг и 300 кг.",
+    "sex": "Пожалуйста, выберите пол"
+  },
+  "difficulty": {
+    "unspecified": "Не указана",
+    "easy": "Низкая",
+    "medium": "Средняя",
+    "hard": "Высокая"
+  },
+  "statuses": {
+    "finished": "Закончен",
+    "finishedForDays": "за {{days}} дней",
+    "inProgress": "В процессе",
+    "expired": "Просроченно",
+    "unavailable": "Недоступно"
+  },
+  "course": {
+    "course": "Курс",
+    "author": "Автор",
+    "duration": "Продолжительность",
+    "trainingNumber": "Количество тренировок",
+    "users": "Участников",
+    "difficulty": "Сложность",
+    "courseFound": "Курс найден."
   }
 }

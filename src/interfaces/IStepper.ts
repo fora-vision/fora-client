@@ -1,0 +1,1 @@
+export interface IStepper { totalSteps: number, activeStep: number, stepNames: Array<string> }

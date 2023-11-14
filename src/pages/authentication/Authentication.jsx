@@ -1,27 +1,52 @@
+import { useState } from 'react';
 import { EllipseLeft, EllipseRight } from '../../components/ellipses';
 import { PageContainer } from '../../components/pageContainer';
 import { LogInWrapper } from '../../components/wrappers';
-
 import { WelcomeToHeader } from '../../components/authentication-page/WelcomeToHeader';
-import { GrayLine } from '../../components/lines';
-import { LoginViaSection } from '../../components/authentication-page/LoginViaSection';
-import { OrLine } from '../../components/authentication-page/OrLine';
-import { ForgotPasswordSection } from '../../components/authentication-page/ForgotPasswordSection';
 import { SignUpSection } from '../../components/authentication-page/SignUpSection';
 import { InputsSection } from '../../components/authentication-page/InputsSection';
 import { LoginButtonSection } from '../../components/authentication-page/LoginButtonSection';
+import { useToggle } from '../../hooks/hookToggle';
+import { sendEmail } from '../../utils/API/auth/api-auth';
+import { validateEmail } from '../../utils/validation-utils';
+import { ErrorField } from '../../components/errorField/ErrorField';
+import { useTranslation } from 'react-i18next';
+import { LoginCodeSection } from '../../components/authentication-page/LoginCodeSection';
 
 export const Authentication = () => {
+  const { t } = useTranslation();
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false)
+  const [isEmailSent, toggleIsEmailSent] = useToggle()
+  const [isSending, toggleSending] = useToggle()
+  const handleEmail = async () => {
+    const isEmailValid = validateEmail(email)
+    if (isEmailValid) {
+      toggleSending()
+      try {
+        await sendEmail(email)
+        toggleIsEmailSent()
+      } catch (error) {
+        setEmailError(t('errorMessages.server'))
+      }
+      toggleSending()
+    } else {
+      setEmailError(t('errorMessages.email.notValid'))
+    }
+  }
   return (
     <PageContainer>
       <LogInWrapper>
         <WelcomeToHeader />
-        <GrayLine />
-        <LoginViaSection />
-        <OrLine />
-        <InputsSection />
-        <ForgotPasswordSection />
-        <LoginButtonSection />
+        {isEmailSent ?
+          <LoginCodeSection email={email} />
+          :
+          <>
+            <InputsSection state={email} setState={setEmail} />
+            {emailError && <ErrorField message={emailError} />}
+            <LoginButtonSection callback={handleEmail} isSending={isSending} />
+          </>
+        }
         <SignUpSection />
       </LogInWrapper>
       <EllipseLeft />

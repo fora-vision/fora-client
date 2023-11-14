@@ -10,9 +10,154 @@
       "passwordPlaceholder": "Password",
       "forgotPassword": "Forgot password?",
       "recover": "Recover",
-      "login": "Log in",
+      "next": "Next",
       "noAccount": "Don't have account?",
-      "signUp": "Sign up"
+      "signUp": "Sign up",
+      "logIn": "Log in",
+      "weSentCode": "We have sent a login link to the e-mail address provided:",
+      "weSentPin": "Enter the PIN code from the e-mail:",
+      "toLoginWriteCode": "To log in, enter the one-time PIN from the email",
+      "openEmail": "Open email",
+      "enterCode": "Enter code manually"
+    },
+    "dashboard": {
+      "yourCourses": "Your courses",
+      "joinCourse": "Join course",
+      "workoutsCompleted": "Training completed",
+      "exercisesCompleted": "Exercises completed",
+      "averageCourseComplete": "Average % of courses completed",
+      "join": "Join",
+      "enterAnotherCode": "Enter another code",
+      "enterCode": "Please enter a code to access the course",
+      "cancel": "Cancel",
+      "continue": "Continue"
+    },
+    "reset": {
+      "forgotPassword": "Forgot your password?",
+      "weWillSendCode": "We will send a recovery code to your e-mail",
+      "sendCode": "Send code",
+      "email": "E-mail",
+      "emailPlaceholder": "nikita2000@gmail.com",
+      "newPassword": "New password",
+      "password": "Password",
+      "paste": "Paste",
+      "code": "Code",
+      "newPasswordDescription": "The password must contain a minimum of 8 characters, 1 number, 1 letter and 1 special character"
+    },
+    "signup": {
+      "haveAnAccount": "Have an account?",
+      "logIn": "Log In",
+      "firstName": "First name",
+      "firstNamePlaceholder": "Jon",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Doe",
+      "birthdate": "Date of birth",
+      "birthdatePlaceholder": "DD / MM / YYYY",
+      "height": "Height",
+      "weight": "Weight",
+      "sex": "Sex",
+      "password": "Password"
     }
+  },
+  "header": {
+    "logout": "Log out"
+  },
+  "components": {
+    "courseCard": {
+      "course": "Course",
+      "lessons": "lessons",
+      "overallProgress": "Overall progress",
+      "startTraining": "Start training",
+      "openCourse": "Open course"
+    },
+    "select": {
+      "default": "Select",
+      "male": "Male",
+      "female": "Female"
+    }
+  },
+  "stepper": {
+    "steps": {
+      "email": "E-mail",
+      "code": "Code",
+      "newPassword": "New password",
+      "name": "Name",
+      "body": "Body",
+      "password": "Password"
+    },
+    "buttons": {
+      "sendCode": "Send code",
+      "next": "Next",
+      "confirm": "Confirm",
+      "signUp": "Sign up",
+      "login": "Log in"
+    }
+  },
+  "calendar": {
+    "today": "Today",
+    "week": {
+      "monday": "MO",
+      "tuesday": "TU",
+      "wednesday": "WE",
+      "thurstday": "TH",
+      "friday": "FR",
+      "saturday": "SA",
+      "sunday": "SU"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
+  },
+  "errorMessages": {
+    "email": {
+      "notValid": "Incorrect format. Please enter e-mail in the format: valeriy1980@ya.ru."
+    },
+    "code": {
+      "invalid": "The code is invalid. Please enter another one.",
+      "length": "The code must be 6 characters long. You have entered ",
+      "courseLength": "The course code must contain 4 characters"
+    },
+    "alreadyRegistered": "This e-mail address is already in use. Please enter another one or login.",
+    "acceptData": "Please confirm your agreement with the Processing of Personal Data",
+    "server": "Server error",
+    "name": "The name must contain more than 2 characters",
+    "lastName": "Last name must contain more than 2 characters",
+    "birth": "Date of birth must be in the format DD/MM/YYYY and between 1900 and 2009",
+    "height": "Incorrect height. Please enter a value between 120 cm and 220 cm.",
+    "weight": "Incorrect weight. Please enter a value between 30 kg and 300 kg.",
+    "sex": "Please select a gender"
+  },
+  "difficulty": {
+    "unspecified": "Unspecified",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "statuses": {
+    "finished": "Finished",
+    "finishedForDays": "in {{days}} days",
+    "inProgress": "In progress",
+    "expired": "Expired",
+    "unavailable": "Unavailable"
+  },
+  "course": {
+    "course": "Course",
+    "author": "Author",
+    "duration": "Duration",
+    "trainingNumber": "Number of workouts",
+    "users": "Users",
+    "difficulty": "Difficulty",
+    "courseFound": "Course found."
   }
 }
