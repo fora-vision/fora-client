@@ -3,7 +3,7 @@ import { P } from '../typographic'
 import { SecondaryButton } from '../buttons'
 import { WereCodeSent } from './WereCodeSent'
 import { useTranslation } from 'react-i18next'
-import { useToggle } from '../../hooks/hookToggle'
+import { useToggle } from '../../hooks/use-toggle.hook'
 import { LoginCodeSection } from './LoginCodeSection'
 
 const ColumnSection = styled.div`

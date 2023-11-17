@@ -20,7 +20,7 @@ export const PureInput = styled.input`
   }
 `
 
-export const PureSelect = styled.select`
+export const PureSelect = styled.select<{ width?: string }>`
   border-radius: 4px;
   border: 1.5px solid rgba(245, 245, 245, 0.04);
   background: rgba(245, 245, 245, 0.04);

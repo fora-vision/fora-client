@@ -3,6 +3,7 @@ import { CardInfo } from './CardInfo'
 import { CardActions } from './CardActions'
 import { ICourse } from '../../interfaces/ICourse'
 import { getCourseStatus } from '../Statuses'
+import { useNavigate } from 'react-router-dom'
 
 const CardWrapper = styled.div`
   background-color: rgba(245, 245, 245, 0.04);
@@ -12,6 +13,11 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(245, 245, 245, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
 `
 
 const CardContainer = styled.div`
@@ -20,17 +26,19 @@ const CardContainer = styled.div`
 `
 
 export const CourseCard = ({ course }: { course: ICourse }) => {
-  const totalLessons = course.workouts_count;
-  const doneLessons = course.workout_num;
+  const navigate = useNavigate()
   const courseStatus = getCourseStatus(course.status);
+  const handleClick = () => {
+    navigate(`/course/${course.id}`)
+  }
   return (
-    <CardWrapper>
+    <CardWrapper onClick={handleClick}>
       <div>
         {courseStatus}
       </div>
       <CardContainer>
         <CardInfo course={course} />
-        <CardActions lessonsDone={doneLessons} lessonsTotal={totalLessons} course={course} />
+        <CardActions course={course} />
       </CardContainer>
     </CardWrapper>
   )

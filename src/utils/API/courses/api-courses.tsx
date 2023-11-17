@@ -23,3 +23,8 @@ export const getRoomUrl = async (token: string, courseId: number, workoutNum: nu
     };
     return axios.get(roomUrlApi, { headers: { Authorization: token }, params: params }).then(result => result.data).catch(() => { throw new Error() })
 }
+
+export const getCourse = async (token: string, courseId: string) => {
+    const courseDetailsApiUrl = courseApiUrl + `/${courseId}`
+    return axios.get(courseDetailsApiUrl, { headers: { Authorization: token } }).then(result => result.data).catch(() => { throw new Error() })
+}

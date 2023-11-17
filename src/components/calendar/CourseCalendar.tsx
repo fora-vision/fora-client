@@ -6,12 +6,10 @@ import { GrayLine } from "../lines"
 import { useTranslation } from "react-i18next"
 import { P } from "../typographic"
 import { Calendar } from "./Calendar"
+import { PureWrapper } from "../wrappers"
 
-const FutureCalendar = styled.div`
+const FutureCalendar = styled(PureWrapper)`
   min-width: 392px;
-  border-radius: 4px;
-  border: 1px solid rgba(245, 245, 245, 0.04);
-  background: rgba(245, 245, 245, 0.04);
   padding: 20px;
   display: flex;
   flex-direction: column;

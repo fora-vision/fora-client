@@ -57,10 +57,41 @@
       "weight": "Вес",
       "sex": "Пол",
       "password": "Пароль"
+    },
+    "course": {
+      "yourPosition": "Ваша позиция",
+      "you": "Вы",
+      "trainingProgram": "Программа тренировки",
+      "minutes": "минут",
+      "repeats": "повторов",
+      "leaderboardDescription": "Как только кто-то пройдет первую тренировку, здесь появится таблица лидеров. Вперед к чемпионству!",
+      "leaderboard": "Таблица лидеров"
+    },
+    "profile": {
+      "myProfile": "Мой профиль",
+      "logout": "Выйти",
+      "currentEmail": "Нынешний e-mail",
+      "save": "Сохранить",
+      "dragPhoto": "Перетяните фотографию сюда или выберите в проводнике",
+      "select": "Выбрать",
+      "avatarUpload": "Загрузка аватара",
+      "requirements": "Требования:",
+      "brightFace": "Лицо светлое, четкое и разборчивое;",
+      "yourPhoto": "На фотографии действительно вы. Фейковые изображения не допускаются;",
+      "maxSize": "Максимальный размер изображения 1 Мб;",
+      "photoFormat": "Допустимый формат — jpeg, jpg, png, tiff.",
+      "cancel": "Отмена",
+      "uploaded": "Загружено",
+      "mb": "Мб",
+      "change": "Заменить",
+      "uploadAnother": "Пожалуйста, загрузите другое изображение: неверный формат.",
+      "imageSize": "Пожалуйста, загрузите другое изображение: превышен размер файла ({{size}}Мб).",
+      "preview": "Предпросмотр"
     }
   },
   "header": {
-    "logout": "Выйти"
+    "logout": "Выйти",
+    "profile": "Профиль"
   },
   "components": {
     "courseCard": {
@@ -158,6 +189,32 @@
     "trainingNumber": "Количество тренировок",
     "users": "Участников",
     "difficulty": "Сложность",
-    "courseFound": "Курс найден."
+    "courseFound": "Курс найден.",
+    "yourPosition": "Ваша позиция"
+  },
+  "exercises": {
+    "star": "Звезда",
+    "pushups": "Отжимания",
+    "twisting": "Twisting",
+    "squats": "Приседания",
+    "side_plank-straight": "Боковая планка прямо",
+    "side_plank-back": "Боковая планка назад",
+    "jumping": "Прыжки",
+    "knees_raising": "Подъем коленей",
+    "side_leglifts-right": "Боковые подъемы ног вправо",
+    "side_leglifts-left": "Боковые подъемы ног влево",
+    "hip_thrust": "Упор на бедра",
+    "burpee": "Burpee",
+    "folding_bed": "Раскладушка",
+    "toe_touches": "Касания пальцами ног",
+    "leglifts": "Подъемы ног",
+    "lunges-right": "Выпады вправо",
+    "lunges-left": "Выпады влево",
+    "knee_tightening": "Подтягивание колена",
+    "reverse_pushups": "Обратные отжимания",
+    "superman_lie": "Супермен обратный",
+    "angel_wings": "Ангельские крылья",
+    "superman_side": "Супермен",
+    "sit_up": "Присед"
   }
 }

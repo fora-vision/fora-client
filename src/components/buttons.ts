@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const ButtonPattern = styled.button`
+export const ButtonPattern = styled.button<{ width?: string }>`
   cursor: pointer;
   font-size: 16px;  
   font-style: normal;

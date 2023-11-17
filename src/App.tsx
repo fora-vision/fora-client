@@ -9,6 +9,8 @@ import { Reset } from "./pages/reset/Reset";
 import { Signup } from "./pages/signup/Signup";
 import { sessionStore } from './store/sessionStore';
 import { Loading } from './pages/loading/Loading';
+import { CoursePage } from './pages/course/CoursePage';
+import { Profile } from './pages/profile/Profile';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +44,8 @@ function App() {
           <Route path="reset" element={sessionStore.sessionCode ? <Navigate to="/dashboard" /> : <Reset />} />
           <Route path="/" element={<SharedLayout />}>
             <Route path="dashboard" element={!sessionStore.sessionCode ? <Navigate to="/authentication" /> : <Dashboard />} />
+            <Route path="profile" element={!sessionStore.sessionCode ? <Navigate to="/authentication" /> : <Profile />} />
+            <Route path="course/:courseId" element={sessionStore.sessionCode ? <CoursePage /> : <Navigate to="/authentication" />} />
             <Route path="" element={<Navigate to="/authentication" />} />
           </Route>
         </Routes>

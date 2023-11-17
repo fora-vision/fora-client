@@ -29,3 +29,15 @@ export const validateWeight = (weight: number) => {
   const max = 300;
   return weight >= min && weight <= max;
 };
+
+export const setValidatedName = (value: string, setter: (value: string) => void) => {
+  if (/^[A-Za-zА-Яа-я-]*$/.test(value)) {
+    setter(value);
+  }
+};
+
+export const setValidatedNumber = (value: string, setter: (value: number) => void) => {
+  if (/^\d*\.?\d*$/.test(value)) {
+    setter(value === '' ? 0 : parseFloat(value));
+  }
+};

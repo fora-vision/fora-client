@@ -18,6 +18,10 @@ export const H2 = styled.h2`
 
 export const BlackH2 = styled(H2)`color: #11100E`
 
+export const BlackH2Regular = styled(BlackH2)`
+  text-transform: none;
+`
+
 export const H2Regular = styled(H2)`
   text-transform: none;
 `
@@ -32,13 +36,25 @@ export const P = styled.p.withConfig({
   opacity: ${(p) => (p.transparent ? p.transparent : 1)};
 `;
 
+export const BoldP = styled(P)`
+    font-weight: 700;
+`
+
+export const YellowBoldP = styled(BoldP)`
+    color: #F6D658;
+`
+
 export const BlackP = styled(P)`color: #11100E`
+
+export const BoldBlackP = styled(BlackP)`font-weight: 700`
 
 export const PSmall = styled(P)`
   font-size: 14px;
 `
 
 export const BlackPSmall = styled(PSmall)`color: #11100E`
+
+export const BlackUppercasePSmall = styled(BlackPSmall)`text-transform: uppercase`
 
 export const BoldPSmall = styled(PSmall)`
     font-weight: 700;

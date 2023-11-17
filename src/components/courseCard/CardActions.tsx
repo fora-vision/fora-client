@@ -1,14 +1,15 @@
+import React from 'react'
 import { styled } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { PrimaryButton, SecondaryButton } from '../buttons'
 import { ReactComponent as RightArrowsIcon } from '../../images/right-icon-black.svg'
-import { H1, P } from '../typographic'
-import { ProgressLine } from '../progress/ProgressLine'
 import { sessionStore } from '../../store/sessionStore'
 import { getRoomUrl } from '../../utils/API/courses/api-courses'
 import { ICourse } from '../../interfaces/ICourse'
 import { Loader } from '../loader/Loader'
-import { useToggle } from '../../hooks/hookToggle'
+import { useToggle } from '../../hooks/use-toggle.hook'
+import { CourseProgress } from './CourseProgress'
+import { countTotalProgress } from '../../utils/course-utils'
 
 const CardActionsWrapper = styled.div`
   width: 420px; 
@@ -21,25 +22,13 @@ const OverallProgress = styled.div`
   height: 100%; 
 `
 
-const ProgressInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 8px;
-  align-items: center;
-`
-
-const NumericalProgress = styled.div`
-  display: flex;
-  align-items: end;
-  gap: 8px;
-`
-
-export const CardActions = ({ lessonsDone, lessonsTotal, course }: { lessonsDone: number, lessonsTotal: number, course: ICourse }) => {
+export const CardActions = ({ course }: { course: ICourse }) => {
   const { t } = useTranslation();
   const [isLoadingExercise, toggleLoadingExercise] = useToggle()
-  const lessonsProgress = Number(((lessonsDone / lessonsTotal) * 100).toFixed(0));
+  const lessonsProgress = countTotalProgress(course);
   const token = sessionStore.getSessionCode()
-  const handleLink = async () => {
+  const handleLink = async (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (token) {
       toggleLoadingExercise()
       try {
@@ -54,16 +43,7 @@ export const CardActions = ({ lessonsDone, lessonsTotal, course }: { lessonsDone
   return (
     <CardActionsWrapper>
       <OverallProgress>
-        <div>
-          <ProgressInfo>
-            <NumericalProgress>
-              <H1>{lessonsProgress}%</H1>
-              <P transparent={0.75}>({lessonsDone}/{lessonsTotal})</P>
-            </NumericalProgress>
-            <P>{t('components.courseCard.overallProgress')}</P>
-          </ProgressInfo>
-          <ProgressLine progress={lessonsProgress} />
-        </div>
+        <CourseProgress course={course} />
         {lessonsProgress === 100 ?
           <SecondaryButton disabled>{t('components.courseCard.openCourse')}</SecondaryButton>
           : <PrimaryButton onClick={handleLink} disabled={isLoadingExercise}>

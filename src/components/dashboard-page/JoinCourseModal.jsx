@@ -7,10 +7,10 @@ import { CoursePreview } from "../coursePreview/CoursePreview"
 import { sessionStore } from "../../store/sessionStore"
 import { addUserCourse, getCourseInfo } from "../../utils/API/courses/api-courses"
 import { useTranslation } from "react-i18next"
-import { useToggle } from "../../hooks/hookToggle"
+import { useToggle } from "../../hooks/use-toggle.hook"
 import { Loader } from "../loader/Loader"
 
-const JoinModal = styled.div`
+export const JoinModal = styled.div`
   display: flex;
   width: 314px;
   padding: 32px;
@@ -26,7 +26,7 @@ const JoinModal = styled.div`
   transform: translate(-50%, -50%);
 `
 
-const ModalWrapper = styled.div`
+export const ModalWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;

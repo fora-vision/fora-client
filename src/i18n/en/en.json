@@ -57,10 +57,41 @@
       "weight": "Weight",
       "sex": "Sex",
       "password": "Password"
+    },
+    "course": {
+      "yourPosition": "Your position",
+      "you": "You",
+      "trainingProgram": "Training Program",
+      "minutes": "minutes",
+      "repeats": "repeats",
+      "leaderboardDescription": "As soon as someone makes it through the first practice, the leaderboard will appear here. Let's go for the championship!",
+      "leaderboard": "Leaderboard"
+    },
+    "profile": {
+      "myProfile": "My profile",
+      "logout": "Log out",
+      "currentEmail": "Current e-mail",
+      "save": "Save",
+      "dragPhoto": "Drag the photo here or select it in explorer",
+      "select": "Select",
+      "avatarUpload": "Avatar Upload",
+      "requirements": "Requirements:",
+      "brightFace": "Face is bright, clear and legible;",
+      "yourPhoto": "The photo is really you. Fake images are not allowed;",
+      "maxSize": "Maximum image size 1 MB;",
+      "photoFormat": "Acceptable format - jpeg, jpg, png, tiff.",
+      "cancel": "Cancel",
+      "uploaded": "Uploaded",
+      "mb": "MB",
+      "change": "Change",
+      "uploadAnother": "Please upload another image: wrong format.",
+      "imageSize": "Please upload another image: file size exceeded ({{size}}Mb).",
+      "preview": "Preview"
     }
   },
   "header": {
-    "logout": "Log out"
+    "logout": "Log out",
+    "profile": "Profile"
   },
   "components": {
     "courseCard": {
@@ -158,6 +189,32 @@
     "trainingNumber": "Number of workouts",
     "users": "Users",
     "difficulty": "Difficulty",
-    "courseFound": "Course found."
+    "courseFound": "Course found.",
+    "yourPosition": "Your position"
+  },
+  "exercises": {
+    "star": "Star",
+    "pushups": "Pushups",
+    "twisting": "Twisting",
+    "squats": "Squats",
+    "side_plank-straight": "Side plank straight",
+    "side_plank-back": "Side plank back",
+    "jumping": "Jumping",
+    "knees_raising": "Knees raising",
+    "side_leglifts-right": "Side leglifts right",
+    "side_leglifts-left": "Side leglifts left",
+    "hip_thrust": "Hip thrust",
+    "burpee": "Burpee",
+    "folding_bed": "Folding bed",
+    "toe_touches": "Toe touches",
+    "leglifts": "Leglifts",
+    "lunges-right": "Lunges right",
+    "lunges-left": "Lunges left",
+    "knee_tightening": "Knee tightening",
+    "reverse_pushups": "Reverse pushups",
+    "superman_lie": "Superman lie",
+    "angel_wings": "Angel wings",
+    "superman_side": "Superman side",
+    "sit_up": "Sit up"
   }
 }

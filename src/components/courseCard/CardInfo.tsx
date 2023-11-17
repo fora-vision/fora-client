@@ -48,7 +48,7 @@ const TotalLessonsInfo = styled.div`
 export const CardInfo = ({ course }: { course: ICourse }) => {
   const { t } = useTranslation();
   const totalLessons = course.workouts_count;
-  const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM')
+  const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM');
   const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM');
   const courseLeaderboard = '-'; // с апи пока что не приходит позиция будет course.ranking 
   return (

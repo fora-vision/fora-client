@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { EllipseLeft, EllipseRight } from '../../components/ellipses';
 import { PageContainer } from '../../components/pageContainer';
 import { LogInWrapper } from '../../components/wrappers';
@@ -6,34 +5,13 @@ import { WelcomeToHeader } from '../../components/authentication-page/WelcomeToH
 import { SignUpSection } from '../../components/authentication-page/SignUpSection';
 import { InputsSection } from '../../components/authentication-page/InputsSection';
 import { LoginButtonSection } from '../../components/authentication-page/LoginButtonSection';
-import { useToggle } from '../../hooks/hookToggle';
-import { sendEmail } from '../../utils/API/auth/api-auth';
-import { validateEmail } from '../../utils/validation-utils';
 import { ErrorField } from '../../components/errorField/ErrorField';
-import { useTranslation } from 'react-i18next';
 import { LoginCodeSection } from '../../components/authentication-page/LoginCodeSection';
+import { useAuthPage } from '../../hooks/use-authPage.hook';
 
 export const Authentication = () => {
-  const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState(false)
-  const [isEmailSent, toggleIsEmailSent] = useToggle()
-  const [isSending, toggleSending] = useToggle()
-  const handleEmail = async () => {
-    const isEmailValid = validateEmail(email)
-    if (isEmailValid) {
-      toggleSending()
-      try {
-        await sendEmail(email)
-        toggleIsEmailSent()
-      } catch (error) {
-        setEmailError(t('errorMessages.server'))
-      }
-      toggleSending()
-    } else {
-      setEmailError(t('errorMessages.email.notValid'))
-    }
-  }
+  const { email, emailError, isEmailSent, isSending, handleEmail, setEmail } = useAuthPage()
+
   return (
     <PageContainer>
       <LogInWrapper>

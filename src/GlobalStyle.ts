@@ -29,4 +29,17 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: #F5F5F5;
   } 
+
+  ul {
+    padding: 0 0 0 30px;
+    margin: 0
+  }
+
+  ul::marker {
+    padding: 0
+  }
+
+  *:focus {
+    outline: 1px solid #F6D658
+  }
 `

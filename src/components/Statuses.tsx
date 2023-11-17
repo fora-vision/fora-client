@@ -14,6 +14,7 @@ export const StatusWrapper = styled.div`
     align-items: center;
     gap: 4px;
 `
+
 const SuccessWrapper = styled(StatusWrapper)`
     border: 1px solid #5FB768;
     background: #487048;
@@ -21,6 +22,7 @@ const SuccessWrapper = styled(StatusWrapper)`
 const ProgressWrapper = styled(StatusWrapper)`
     background: #F6D658;
 `
+
 const ExpiredWrapper = styled(StatusWrapper)`
     border: 1px solid #C84848;
     background: #623434;

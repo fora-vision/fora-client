@@ -49,7 +49,7 @@ export const CodeSection = ({ state, setState, error, nums, success }) => {
           onChange={setState}
           numInputs={numInputs}
           renderInput={(props) => <CodeInput {...props} />}
-          containerStyle={{ gap: '8px', justifyContent: 'center', width: '100%', alignContent: 'center' }}
+          containerStyle={{ gap: '8px', justifyContent: 'space-between', width: '100%', alignContent: 'center' }}
         />
       </CodeWrapper>
       {error && <ErrorField message={error} />}

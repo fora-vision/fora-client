@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 import foraLogo from '../../images/Fora-logo.png'
 import { HeaderAccount } from './HeaderAccount'
@@ -30,7 +31,8 @@ const HeaderLogo = styled.a`
 `
 
 export const Header = () => {
-  const handleLogoClick = () => { console.log('logo click') };
+  const navigate = useNavigate()
+  const handleLogoClick = () => { navigate('/dashboard') };
   return (
     <HeaderWrapper>
       <HeaderContainer>

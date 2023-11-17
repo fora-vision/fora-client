@@ -1,3 +1,4 @@
+import React from 'react'
 import { styled } from 'styled-components'
 import { PureInput, PureLabel } from '../inputs'
 import { Description } from '../inputDescription/Description'
@@ -7,8 +8,18 @@ export const LabeledInputWrapper = styled.div`
   flex-direction: column;
 `
 
-export const LabeledInput = ({ label, id, placeholder, type, description, state, setState }) => {
-  const handleChange = (event) => {
+interface ILabeledInput {
+  label: string;
+  id: string;
+  placeholder?: string;
+  type?: string;
+  description?: string;
+  state: any;
+  setState: React.Dispatch<React.SetStateAction<any>>;
+}
+
+export const LabeledInput: React.FC<ILabeledInput> = ({ label, id, placeholder, type, description, state, setState }) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState(event.target.value)
   }
   return (

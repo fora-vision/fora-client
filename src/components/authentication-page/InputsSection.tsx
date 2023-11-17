@@ -9,7 +9,7 @@ const InputsSectionWrapper = styled.div`
   flex-direction: column;
 `
 
-export const InputsSection = ({ state, setState }) => {
+export const InputsSection = ({ state, setState }: { state: string | number, setState: (value: string) => void }) => {
   const { t } = useTranslation();
   return (
     <InputsSectionWrapper>
