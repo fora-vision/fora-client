@@ -17,6 +17,9 @@ const HeaderContainer = styled.div`
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
+  @media(max-width: 1000px) {
+    padding: 24px 20px;
+  }
 `
 
 const HeaderLogo = styled.a`

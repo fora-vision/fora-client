@@ -15,4 +15,7 @@ export const LogInWrapper = styled(PureWrapper)`
   gap: 16px;
   width: 418px;
   margin: 0 auto;
+  @media(max-width: 1000px) {
+    margin-top: 50px
+  }
 `

@@ -12,6 +12,9 @@ import { CourseHand } from './CourseHand';
 const Wrapper = styled(PureWrapper)`
   width: 290.2px;
   padding: 12px;
+  @media(max-width: 1200px) {
+    width: calc(100% - 24px);
+  }
 `
 
 const UsersList = styled.div` 

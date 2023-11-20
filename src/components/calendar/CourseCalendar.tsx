@@ -18,6 +18,12 @@ const FutureCalendar = styled(PureWrapper)`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media(max-width: 1400px) {
+    margin: 0 200px
+  }
+  @media(max-width: 900px) {
+    margin: 0;
+  }
 `
 
 const TodaySection = styled.div`

@@ -56,7 +56,9 @@
       "height": "Height",
       "weight": "Weight",
       "sex": "Sex",
-      "password": "Password"
+      "password": "Password",
+      "group": "Group/class (for students and apprentices)",
+      "optionally": "Optionally"
     },
     "course": {
       "yourPosition": "Your position",

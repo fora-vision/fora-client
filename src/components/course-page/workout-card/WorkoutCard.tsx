@@ -30,6 +30,9 @@ const WorkoutHeader = styled.div`
 
 const ButtonConteiner = styled.div`
   width: 300px;
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const WorkoutTitleBox = styled(PureWrapper)`

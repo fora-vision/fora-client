@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Level } from '../../level/Level'
 import { AccountPhoto } from '../../header/account-panel/AccountPhoto'
-import { HeaderUserWrapper, HeaderUsername } from './Styled'
+import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from './Styled'
 
 interface IHeaderUser {
   username: string,
@@ -16,7 +16,9 @@ export const HeaderUser = ({ username, level }: IHeaderUser) => {
 
   return (
     <HeaderUserWrapper onClick={handleClick}>
-      <AccountPhoto />
+      <PhotoWrapper>
+        <AccountPhoto />
+      </PhotoWrapper>
       <HeaderUsername>{username}</HeaderUsername>
       <Level score={level} />
     </HeaderUserWrapper>

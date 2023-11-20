@@ -8,19 +8,20 @@ import { setValidatedName, setValidatedNumber } from '../utils/validation-utils'
 export const useProfileUpdate = (profile: IProfile) => {
   const splittedName = profile.name.split(' ')
   const [name, setName] = useState<string>(splittedName[0])
+  const [group, setGroup] = useState<string>("")
   const [lastName, setLastName] = useState<string>(splittedName[1])
   const [height, setHeight] = useState<number>(profile.height)
   const [weight, setWeight] = useState<number>(profile.weight)
   const [isUpdating, setIsUpdating] = useState(false)
 
-  const states = useMemo(() => ({ name, lastName, height, weight }), [name, lastName, height, weight]);
+  const states = useMemo(() => ({ name, lastName, height, weight, group }), [name, lastName, height, weight, group]);
 
   const handleSetName = (value: string) => setValidatedName(value, setName);
   const handleSetLastName = (value: string) => setValidatedName(value, setLastName);
   const handleSetHeight = (value: string) => setValidatedNumber(value, setHeight);
   const handleSetWeight = (value: string) => setValidatedNumber(value, setWeight);
 
-  const setStates = { setName: handleSetName, setLastName: handleSetLastName, setHeight: handleSetHeight, setWeight: handleSetWeight }
+  const setStates = { setName: handleSetName, setLastName: handleSetLastName, setHeight: handleSetHeight, setWeight: handleSetWeight, setGroup }
 
   const [isChanged, setIsChanged] = useState(false)
   const [initialState] = useState(states)

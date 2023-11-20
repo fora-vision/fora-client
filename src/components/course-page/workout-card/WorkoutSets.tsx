@@ -3,7 +3,7 @@ import { ISet } from '../../../interfaces/ICourse'
 import { Set } from './Set'
 
 const Wrapper = styled.div`
-  width: 380px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -13,6 +13,9 @@ import { countTotalProgress } from '../../utils/course-utils'
 
 const CardActionsWrapper = styled.div`
   width: 420px; 
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const OverallProgress = styled.div`
@@ -20,6 +23,9 @@ const OverallProgress = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%; 
+  @media(max-width: 1000px) {
+    gap: 16px;
+  }
 `
 
 export const CardActions = ({ course }: { course: ICourse }) => {

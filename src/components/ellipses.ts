@@ -14,9 +14,15 @@ export const EllipsePatter = styled.div`
 export const EllipseLeft = styled(EllipsePatter)`
   left: 0;
   transform: translate(-100%, 0);
+  @media(max-width: 1200px) {
+    transform: translate(-150%, 0);
+  }
 `
 
 export const EllipseRight = styled(EllipsePatter)`
   right: 0;
   transform: translate(100%, 0);
+  @media(max-width: 1200px) {
+    transform: translate(150%, 0);
+  }
 `

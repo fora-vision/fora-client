@@ -15,5 +15,4 @@ export const Courses = ({ coursesLoading, courses, toggleJoin }: ICourses) => {
   }
 
   return !!courses.length ? <CoursesDashboard courses={courses} toggleModal={toggleJoin} /> : <EmptyDashboard toggleModal={toggleJoin} />
-
 }

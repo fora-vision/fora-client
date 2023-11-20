@@ -15,6 +15,7 @@ export const ProfileDataSection = ({ profile }: { profile: IProfile }) => {
     <ProfileSectionWrapper>
       <form onSubmit={handleSubmit}>
         <InputsWrapper>
+          <LabeledInput label={t('pages.signup.group')} id='group' state={states.group} setState={setStates.setGroup} placeholder={t('pages.signup.optionally')} />
           <LabeledInput label={t('pages.signup.firstName')} id='name' state={states.name} setState={setStates.setName} />
           <LabeledInput label={t('pages.signup.lastName')} id='last-name' state={states.lastName} setState={setStates.setLastName} />
           <LabeledInput label={t('pages.signup.height')} id='height' state={states.height} setState={setStates.setHeight} />

@@ -9,6 +9,9 @@ export const DashboardWrapper = styled.div`
   display: flex;
   justify-content: space-between; 
   gap: 32px;
+  @media(max-width: 1400px) {
+    flex-direction: column;
+  }
 `
 
 export const YourCoursesWrapper = styled.div`

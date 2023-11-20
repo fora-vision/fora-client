@@ -7,6 +7,9 @@ export const CoursePageContent = styled.div`
   gap: 32px;
   justify-content: space-between;
   padding-top: 15px;
+  @media(max-width: 1200px) {
+    flex-direction: column;
+  }
 `
 
 export const CoursePageContainer = styled(PageContainer)`

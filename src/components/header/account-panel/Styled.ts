@@ -42,6 +42,7 @@ export const MenuPopup = styled.div`
   position: absolute;
   top: 55px;
   right: 3px;
+  z-index: 100;
 `
 
 export const ContextLogoutItem = styled(ContextItem)`

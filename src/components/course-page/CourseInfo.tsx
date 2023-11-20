@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @media(max-width: 1200px) {
+    width: 100%;
+  }
 `
 
 const SectionWrapper = styled(PureWrapper)`

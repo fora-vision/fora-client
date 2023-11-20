@@ -12,6 +12,10 @@ const CardInfoWrapper = styled.div`
   flex-direction: column;
   gap: 14px;
   align-items: flex-start;
+  @media(max-width: 1000px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `
 
 const CourseInfo = styled.div`
@@ -21,6 +25,9 @@ const CourseInfo = styled.div`
   padding: 12px 16px;  
   display: flex;
   gap: 24px;
+  @media(max-width: 1000px) {
+    width: calc(100% - 32px);
+  }
 `
 
 const CourseMetrics = styled.div`

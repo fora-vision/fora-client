@@ -23,6 +23,10 @@ const CardWrapper = styled.div`
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 `
 
 export const CourseCard = ({ course }: { course: ICourse }) => {

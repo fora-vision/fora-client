@@ -16,6 +16,9 @@ export const HeaderUserWrapper = styled.div`
 
 export const HeaderUsername = styled(P)`
   padding-right: 15px;
+  @media(max-width: 1000px) {
+    display: none;
+  }
 `
 
 export const StatusHeaderWrapper = styled(PureWrapper)`
@@ -26,4 +29,10 @@ export const StatusHeaderWrapper = styled(PureWrapper)`
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 32px;
+`
+
+export const PhotoWrapper = styled.div`
+  @media(max-width: 1000px) {
+    display: none;
+  }
 `
