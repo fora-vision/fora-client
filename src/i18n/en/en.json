@@ -89,6 +89,12 @@
       "uploadAnother": "Please upload another image: wrong format.",
       "imageSize": "Please upload another image: file size exceeded ({{size}}Mb).",
       "preview": "Preview"
+    },
+    "sorry": {
+      "needBigger": "We need something bigger...",
+      "foraNotSupport": "Unfortunately, Fora is not supported on smartphone screens.",
+      "useLaptop": "Please use a laptop or tablet to do the workouts.",
+      "home": "Home"
     }
   },
   "header": {

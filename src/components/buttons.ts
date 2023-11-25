@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const ButtonPattern = styled.button<{ width?: string }>`
   cursor: pointer;
   font-size: 16px;  
+  color: #11100E;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
