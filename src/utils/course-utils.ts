@@ -1,4 +1,4 @@
-import { ICourse, IExpandedCourse, IUser } from "../interfaces/ICourse";
+import { ICourse, IExpandedCourse, ILeaderboardUser } from "../interfaces/ICourse";
 
 export const countTotalProgress = (course: ICourse | IExpandedCourse) => {
   // const totalLessons = course.workouts_count;
@@ -8,6 +8,6 @@ export const countTotalProgress = (course: ICourse | IExpandedCourse) => {
   return Number(((doneLessons / totalLessons) * 100).toFixed(0))
 }
 
-export const sortByPosition = (a: IUser, b: IUser) => {
-  return a.position - b.position;
+export const sortByScore = (a: ILeaderboardUser, b: ILeaderboardUser) => {
+  return b.score - a.score;
 }

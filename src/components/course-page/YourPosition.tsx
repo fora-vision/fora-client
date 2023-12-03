@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { IUser } from '../../interfaces/ICourse'
+import { ILeaderboardUser } from '../../interfaces/ICourse'
 import { PSmall } from '../typographic'
-import { Trend } from './leaderboard/Trend'
-import { Position } from './leaderboard/Position'
+// import { Trend } from './leaderboard/Trend'
+// import { Position } from './leaderboard/Position'
 import { UserLevel } from '../level/UserLevel'
-import { CourseHand } from './CourseHand'
+// import { CourseHand } from './CourseHand'
 
 export const Wrapper = styled.div`
   padding: 16px;
@@ -28,19 +28,15 @@ const PUpSmall = styled(PSmall)`
   text-transform: uppercase;
 `
 
-export const YourPosition = ({ user }: { user?: IUser }) => {
+export const YourPosition = ({ user }: { user?: ILeaderboardUser }) => {
   const { t } = useTranslation()
-  return user ? (
-    <Wrapper>
-      <PUpSmall>{t('pages.course.yourPosition')}</PUpSmall>
-      <User>
-        <Trend position={user.position} previousPosition={user.previousPosition} />
-        <Position position={user.position} />
-        <PSmall>{user.name}</PSmall>
-        <UserLevel score={user.level} />
-      </User>
-    </Wrapper>
-  ) : (
-    <CourseHand />
-  )
+  return user ? <Wrapper>
+    <PUpSmall>{t('pages.course.yourPosition')}</PUpSmall>
+    <User>
+      {/* <Trend position={user.position} previousPosition={user.previousPosition} /> */}
+      {/* <Position position={user.position} /> */}
+      <PSmall>{user.name}</PSmall>
+      <UserLevel score={user.score} />
+    </User>
+  </Wrapper> : <></>
 }

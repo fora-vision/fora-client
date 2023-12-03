@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { IUser } from '../../../interfaces/ICourse'
+import { ILeaderboardUser } from '../../../interfaces/ICourse'
 import { GrayLine } from '../../lines'
 import { Position } from './Position'
-import { Trend } from './Trend'
+// import { Trend } from './Trend'
 import { UserLevel } from '../../level/UserLevel'
 import { PSmall } from '../../typographic'
 import { You } from './You'
@@ -15,15 +15,15 @@ export const Wrapper = styled.div`
   gap: 6px; 
 `
 
-export const LeaderboardItem = ({ user, index, totalUsers, myName }: { user: IUser, index: number, totalUsers: number, myName?: string }) => {
+export const LeaderboardItem = ({ user, index, totalUsers, myName }: { user: ILeaderboardUser, index: number, totalUsers: number, myName?: string }) => {
   return (
     <>
       <Wrapper>
         {myName === user.name && <You />}
-        <Trend position={user.position} previousPosition={user.previousPosition} />
-        <Position position={user.position} />
+        {/* <Trend position={user.position} previousPosition={user.previousPosition} /> */}
+        <Position position={index + 1} />
         <PSmall>{user.name}</PSmall>
-        <UserLevel score={user.level} />
+        <UserLevel score={user.score} />
       </Wrapper>
       {totalUsers - index !== 1 && <GrayLine />}
     </>

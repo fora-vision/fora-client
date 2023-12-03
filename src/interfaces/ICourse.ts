@@ -52,6 +52,12 @@ export interface IUser {
     previousPosition: number;
 };
 
+export interface ILeaderboardUser {
+    name: string;
+    score: number;
+    avatar_url: string | null;
+};
+
 export interface IExpandedCourse {
     max_users_count: number;
     name: string;

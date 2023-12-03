@@ -20,10 +20,14 @@ const PositionNumber = styled.div`
   top: 5%;
 `
 
+const PositionBigNumber = styled(PositionNumber)`
+  left: 10%;
+`
+
 export const Position = ({ position }: { position: number }) => {
   return (
     <Wrapper>
-      <PositionNumber><SmallP>{position}</SmallP></PositionNumber>
+      {position >= 10 ? <PositionBigNumber><SmallP>{position}</SmallP></PositionBigNumber> : <PositionNumber><SmallP>{position}</SmallP></PositionNumber>}
       {position === 1 && <FirstPolygon />}
       {position === 2 && <SecondPolygon />}
       {position === 3 && <ThirdPolygon />}

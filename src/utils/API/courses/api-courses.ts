@@ -28,3 +28,8 @@ export const getCourse = async (token: string, courseId: string) => {
     const courseDetailsApiUrl = courseApiUrl + `/${courseId}`
     return axios.get(courseDetailsApiUrl, { headers: { Authorization: token } }).then(result => result.data).catch(() => { throw new Error() })
 }
+
+export const getCourseLeaderboard = async (courseId: number) => {
+    const courseLeaderboardApiUrl = courseApiUrl + `/${courseId}/ranking`;
+    return axios.get(courseLeaderboardApiUrl).then(result => result.data).catch(() => { throw new Error() })
+}
