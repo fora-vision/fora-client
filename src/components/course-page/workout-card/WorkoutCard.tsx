@@ -3,11 +3,13 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { IWorkout } from '../../../interfaces/ICourse'
 import { getCourseIconStatus } from '../../IconStatuses'
-import { H2, P } from '../../typographic'
+import { H2 } from '../../typographic'
 import { WorkoutProgram } from './WorkoutProgram'
 import { PrimaryButton } from '../../buttons'
 import { ReactComponent as RightArrowsIcon } from '../../../images/right-icon-black.svg'
 import { PureWrapper } from '../../wrappers'
+import { SafetyModal } from '../safetyModal/SafetyModal'
+import { useToggle } from '../../../hooks/use-toggle.hook'
 
 const Wrapper = styled(PureWrapper)`
   background:  rgba(245, 245, 245, 0.08);
@@ -43,35 +45,39 @@ const WorkoutTitleBox = styled(PureWrapper)`
 `
 
 export const WorkoutCard = ({ workout }: { workout: IWorkout }) => {
+  const [isSafetyModal, toggleSafetyModal] = useToggle()
   const { t } = useTranslation()
   const status = getCourseIconStatus(workout.status);
   // const formattedStartDate = dayjs.unix(workout.start_date).format('DD/MM');
   // const formattedDeadline = dayjs.unix(workout.deadline).format('DD/MM');
 
-  const handleStart = () => {
-    window.open(workout.program_video_link, '_blank');
+  const handleSafetyModal = () => {
+    toggleSafetyModal()
   }
 
   return (
-    <Wrapper>
-      <WorkoutHeader>
-        <WorkoutTitleBox>
-          {status}
-          <H2>{workout.name}</H2>
-        </WorkoutTitleBox>
-        {/* <WorkoutTitleBox>
+    <>
+      <Wrapper>
+        <WorkoutHeader>
+          <WorkoutTitleBox>
+            {status}
+            <H2>{workout.name}</H2>
+          </WorkoutTitleBox>
+          {/* <WorkoutTitleBox>
           <P>{formattedStartDate} - {formattedDeadline}</P>
         </WorkoutTitleBox> */}
-      </WorkoutHeader>
-      <WorkoutProgram workout={workout} />
-      <ButtonWrapper>
-        <ButtonConteiner>
-          <PrimaryButton disabled={workout.status === 0} onClick={handleStart}>
-            {t('components.courseCard.startTraining')}
-            <RightArrowsIcon />
-          </PrimaryButton>
-        </ButtonConteiner>
-      </ButtonWrapper>
-    </Wrapper>
+        </WorkoutHeader>
+        <WorkoutProgram workout={workout} />
+        <ButtonWrapper>
+          <ButtonConteiner>
+            <PrimaryButton disabled={workout.status === 0} onClick={handleSafetyModal}>
+              {t('components.courseCard.startTraining')}
+              <RightArrowsIcon />
+            </PrimaryButton>
+          </ButtonConteiner>
+        </ButtonWrapper>
+      </Wrapper>
+      {isSafetyModal && <SafetyModal link={workout.program_video_link} toggleModal={toggleSafetyModal} />}
+    </>
   )
 }

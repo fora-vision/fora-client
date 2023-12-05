@@ -14,7 +14,7 @@ export interface ISet {
 
 export interface IWorkout {
     name: string;
-    program_video_link?: string;
+    program_video_link: string;
     sets: ISet[];
     status: number;
     deadline: number;
