@@ -3,7 +3,7 @@ import { CoursesDashboard } from './dashboardSection/CourseDashboard'
 import { EmptyDashboard } from './dashboardSection/EmptyDashboard'
 import { IExpandedCourse } from '../../interfaces/ICourse'
 
-interface ICourses {
+type ICourses = {
   coursesLoading: boolean,
   courses: IExpandedCourse[],
   toggleJoin: () => void

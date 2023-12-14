@@ -30,7 +30,8 @@
       "enterAnotherCode": "Enter another code",
       "enterCode": "Please enter a code to access the course",
       "cancel": "Cancel",
-      "continue": "Continue"
+      "continue": "Continue",
+      "upcomingWorkouts": "Upcoming workouts"
     },
     "reset": {
       "forgotPassword": "Forgot your password?",

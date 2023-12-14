@@ -30,7 +30,8 @@
       "enterAnotherCode": "Ввести другой код",
       "enterCode": "Пожалуйста, введите код доступа к курсу",
       "cancel": "Отмена",
-      "continue": "Продолжить"
+      "continue": "Продолжить",
+      "upcomingWorkouts": "Предстоящие тренировки"
     },
     "reset": {
       "forgotPassword": "Забыли пароль?",

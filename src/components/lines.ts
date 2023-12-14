@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const GrayLine = styled.div`
   height: 1px;
   background: rgba(245, 245, 245, 0.20);
-  width: 100%
+  width: 100%;
 `
 
 export const DarkGrayLine = styled(GrayLine)`background: rgba(17, 16, 12, 0.25)`
