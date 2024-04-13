@@ -7,6 +7,7 @@ const WeekDays = styled.div`
   justify-content: space-between;
   padding-bottom: 35px;
 `;
+
 export const CalendarWeekDays = () => {
   const { t } = useTranslation();
   return (

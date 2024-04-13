@@ -91,6 +91,7 @@ export const IconSecondaryButton = styled(SecondaryButton)`
   gap: 8px;
   border-radius: 4px;
   flex-shrink: 0;
+  z-index: 10;
 `
 
 export const IconTetriaryButton = styled(IconSecondaryButton)`

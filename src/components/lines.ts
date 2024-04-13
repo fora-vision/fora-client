@@ -12,4 +12,5 @@ export const VerticalGrayLine = styled.div`
   width: 1px;
   background: rgba(245, 245, 245, 0.20);
   height: 100%;
+  z-index: 0;
 `

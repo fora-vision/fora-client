@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { OutsideMonthDay, Day } from '../../components/calendar/Day'
 
-export const renderDays = (date, displayMonth, displayYear) => {
+export const renderDays = (date, displayMonth, displayYear, events) => {
   const today = dayjs()
   const currentDay = today.date()
   const currentMonth = today.month();
@@ -33,4 +33,3 @@ export const renderDays = (date, displayMonth, displayYear) => {
 
   return days;
 };
-

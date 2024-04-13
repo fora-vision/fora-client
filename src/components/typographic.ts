@@ -27,9 +27,9 @@ export const H2Regular = styled(H2)`
 `
 
 export const P = styled.p.withConfig({
-  shouldForwardProp: (prop) => !['transparent'].includes(prop)
+  shouldForwardProp: (prop) => !['transparent', 'font'].includes(prop)
 }) <IPProps>`
-  font-size: 16px;
+  font-size: ${({ font }) => (font ? `${font}px` : '16px')};
   font-style: normal;
   font-weight: ${(p) => (p.fontWeight ? p.fontWeight : 400)};
   line-height: 145%;
@@ -37,11 +37,11 @@ export const P = styled.p.withConfig({
 `;
 
 export const BoldP = styled(P)`
-    font-weight: 700;
+  font-weight: 700;
 `
 
 export const YellowBoldP = styled(BoldP)`
-    color: #F6D658;
+  color: #F6D658;
 `
 
 export const BlackP = styled(P)`color: #11100E`
@@ -68,4 +68,3 @@ export const BoldBlackPSmall = styled(PSmall)`
 export const YellowA = styled.a`
   color: #F6D658;
 `
-

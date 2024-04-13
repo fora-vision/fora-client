@@ -6,8 +6,8 @@ export const schedulerTime = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:0
 export const Time = () => {
   return (
     <TimeWrapper>
-      {schedulerTime.map(time => {
-        return <PSmall transparent={0.65}>{time}</PSmall>
+      {schedulerTime.map((time, index) => {
+        return <PSmall key={index} transparent={0.65}>{time}</PSmall>
       })}
     </TimeWrapper>
   )
