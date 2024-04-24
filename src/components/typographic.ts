@@ -27,13 +27,14 @@ export const H2Regular = styled(H2)`
 `
 
 export const P = styled.p.withConfig({
-  shouldForwardProp: (prop) => !['transparent', 'font'].includes(prop)
+  shouldForwardProp: (prop) => !['transparent', 'font', 'color'].includes(prop)
 }) <IPProps>`
   font-size: ${({ font }) => (font ? `${font}px` : '16px')};
   font-style: normal;
   font-weight: ${(p) => (p.fontWeight ? p.fontWeight : 400)};
   line-height: 145%;
   opacity: ${(p) => (p.transparent ? p.transparent : 1)};
+  color:  ${(p) => (p.color ? p.color : "")};
 `;
 
 export const BoldP = styled(P)`

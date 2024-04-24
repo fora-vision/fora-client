@@ -1,5 +1,16 @@
 import dayjs from 'dayjs';
-import { OutsideMonthDay, Day } from '../../components/calendar/Day'
+import { OutsideMonthDay, Day, DayDots, Dot } from '../../components/calendar/Day'
+import { useState } from 'react';
+import { CalendarEvent } from '../../components/calendar/CalendarEvent/CalendarEvent';
+import { CalendarEventsList } from '../../components/calendar/CalendarEventsList';
+
+const isEventOnDay = (day, month, year, event) => {
+  const eventStart = dayjs(event.startDate);
+  const eventEnd = dayjs(event.endDate);
+  const checkDate = dayjs(new Date(year, month, day)).startOf('day');
+
+  return checkDate.isSame(eventStart) || checkDate.isSame(eventEnd) || (checkDate.isAfter(eventStart) && checkDate.isBefore(eventEnd));
+};
 
 export const renderDays = (date, displayMonth, displayYear, events) => {
   const today = dayjs()
@@ -16,12 +27,9 @@ export const renderDays = (date, displayMonth, displayYear, events) => {
     days.push(<OutsideMonthDay key={`prev-month-day-${previousMonthLastDay - i + 1}`}>{previousMonthLastDay - i + 1}</OutsideMonthDay>);
   }
   for (let i = 1; i <= daysInMonth; i++) {
+    let dayEvents = events.filter(event => isEventOnDay(i, displayMonth, displayYear, event));
     const isToday = i === currentDay && displayMonth === currentMonth && displayYear === currentYear;
-    days.push(
-      <Day key={`day-${i}`} isToday={isToday}>
-        {i}
-      </Day>
-    );
+    days.push(<CalendarEventsList i={i} isToday={isToday} dayEvents={dayEvents} />);
   }
   const lastDayOfMonthWeekday = date.endOf('month').day();
   if (lastDayOfMonthWeekday !== 0) {
