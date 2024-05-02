@@ -1,6 +1,7 @@
 import { WorkoutsItemsWrapper } from "./Styled"
 import { WorkoutItem } from "./WorkoutItem"
 import { FewWorkouts } from "./FewWorkouts";
+import { WorkoutType } from "../../hooks/use-workoutsByDate.hook";
 
 export interface IScheduleWorkout {
   name: string,
@@ -10,20 +11,29 @@ export interface IScheduleWorkout {
   courseName: string
 }
 
-function groupWorkoutsByStartTime(workouts: IScheduleWorkout[]): Record<string, IScheduleWorkout[]> {
-  const groupedWorkouts: Record<string, IScheduleWorkout[]> = {};
+export const timestampToHours = (timestamp: number) => {
+  const date = new Date(timestamp * 1000);
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
+function groupWorkoutsByStartTime(workouts: WorkoutType[]): Record<string, WorkoutType[]> {
+  const groupedWorkouts: Record<string, WorkoutType[]> = {};
   workouts.forEach(workout => {
-    if (groupedWorkouts[workout.startTime]) {
-      groupedWorkouts[workout.startTime].push(workout);
+    const formattedTime = timestampToHours(workout.timestamp)
+
+    if (groupedWorkouts[formattedTime]) {
+      groupedWorkouts[formattedTime].push(workout);
     } else {
-      groupedWorkouts[workout.startTime] = [workout];
+      groupedWorkouts[formattedTime] = [workout];
     }
   });
 
   return groupedWorkouts;
 }
 
-export const WorkoutsItems = ({ workouts }: { workouts: IScheduleWorkout[] }) => {
+export const WorkoutsItems = ({ workouts }: { workouts: WorkoutType[] }) => {
   const groupedWorkouts = groupWorkoutsByStartTime(workouts);
 
   return (

@@ -42,6 +42,7 @@ export interface ICourse {
     exercises_complete: number;
     level?: number;
     program?: IProgram;
+    course_id: number;
 }
 
 export interface IUser {

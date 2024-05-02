@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { IScheduleWorkout } from './WorkoutsItems'
+import { timestampToHours } from './WorkoutsItems'
 import { WorkoutItem } from './WorkoutItem'
 import { schedulerTime } from './Time'
 import { IconTetriaryButton } from '../buttons'
@@ -8,6 +8,7 @@ import { ReactComponent as NextIcon } from '../../images/upcomming-trainings/nex
 import { ReactComponent as PrevIcon } from '../../images/upcomming-trainings/prev-icon.svg'
 import { StatusWrapper } from '../Statuses'
 import { BoldBlackPSmall } from '../typographic'
+import { WorkoutType } from '../../hooks/use-workoutsByDate.hook'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -43,14 +44,15 @@ const BadgeWrapper = styled(StatusWrapper) <{ $top: number }>`
   top: ${({ $top }) => `calc(${$top * 71}px - 10px)`};
 `
 
-export const FewWorkouts = ({ workouts }: { workouts: IScheduleWorkout[] }) => {
+export const FewWorkouts = ({ workouts }: { workouts: WorkoutType[] }) => {
   const totalWorkouts = workouts.length;
   const [selectedWorkout, setSelectedWorkout] = useState(0);
   const isSelectLast = selectedWorkout === totalWorkouts - 1;
   const isSelectFirst = selectedWorkout === 0;
 
   const itemsWidth = totalWorkouts * 75;
-  const startingHour = schedulerTime.findIndex(time => time === workouts[0].startTime);
+  const formattedTime = timestampToHours(workouts[0].timestamp)
+  const startingHour = schedulerTime.findIndex(time => time === formattedTime);
 
   const handleNext = () => {
     if (isSelectLast) {

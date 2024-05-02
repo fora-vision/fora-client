@@ -30,6 +30,7 @@ export const CalendarControl = ({ date, cbNextMonth, cbPrevMonth }: { date: any,
   const year = date.year();
   const month = date.month();
   const monthName = months[month];
+
   return (
     <Wrapper>
       <Date>

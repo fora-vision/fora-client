@@ -4,6 +4,7 @@ import { CourseCalendar } from "../../calendar/CourseCalendar"
 import { CoursesSection, DashboardWrapper, YourCoursesWrapper } from "./CourseDashboard"
 import { ComponentSkeleton } from "../../skeletons"
 import styled from "styled-components"
+import dayjs from "dayjs"
 
 const HeaderCourses = styled.div`
     display: flex;
@@ -17,7 +18,7 @@ export const DashboardSkeleton = () => {
     const { t } = useTranslation()
     return (
         <DashboardWrapper>
-            <CourseCalendar />
+            <CourseCalendar date={dayjs()} handleNextMonth={() => { }} handlePrevMonth={() => { }} />
             <YourCoursesWrapper>
                 <HeaderCourses>
                     <H2Regular>{t('pages.dashboard.yourCourses')}</H2Regular>
