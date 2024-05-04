@@ -29,7 +29,7 @@ export const renderDays = (date, displayMonth, displayYear, events) => {
   for (let i = 1; i <= daysInMonth; i++) {
     let dayEvents = events.filter(event => isEventOnDay(i, displayMonth, displayYear, event));
     const isToday = i === currentDay && displayMonth === currentMonth && displayYear === currentYear;
-    days.push(<CalendarEventsList i={i} isToday={isToday} dayEvents={dayEvents} />);
+    days.push(<CalendarEventsList key={`current-month-day-${previousMonthLastDay - i + 1}`} i={i} isToday={isToday} dayEvents={dayEvents} />);
   }
   const lastDayOfMonthWeekday = date.endOf('month').day();
   if (lastDayOfMonthWeekday !== 0) {

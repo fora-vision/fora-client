@@ -22,7 +22,7 @@ export const CourseProgress = ({ course }: { course: ICourse | IExpandedCourse }
   const { t } = useTranslation();
   // const totalLessons = course.workouts_count || '-';
   // const doneLessons = course.workout_num || '-';
-  const totalLessons = course.workouts_count || 0;
+  const totalLessons = course.program?.workouts.length || course.workouts_count || 0;
   const doneLessons = course.workout_num || 0;
   const lessonsProgress = countTotalProgress(course) || 0
   return (

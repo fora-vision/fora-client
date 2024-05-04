@@ -80,5 +80,6 @@ export interface IExpandedCourse {
     ranking: number;
     status: number;
     users: IUser[];
+    course_id: number;
 }
 

@@ -6,9 +6,12 @@ import { FormButton, FormWrapper, InputWrapper, ProfileSectionWrapper } from './
 import { EmailModal } from './EmailModal'
 import { useToggle } from '../../../hooks/use-toggle.hook'
 import { validateEmail } from '../../../utils/validation-utils'
+import { changeEmail } from '../../../utils/API/auth/api-auth'
+import { sessionStore } from '../../../store/sessionStore'
 
 export const EmailSection = ({ profile }: { profile: IProfile }) => {
   const { t } = useTranslation()
+  const token = sessionStore.getSessionCode()
   const [isModal, toggleModal] = useToggle()
   const [email, setEmail] = useState(profile.email)
   const [newEmail, setNewEmail] = useState('')
@@ -17,8 +20,12 @@ export const EmailSection = ({ profile }: { profile: IProfile }) => {
     setNewEmail(email)
   }, [email])
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (token) {
+      const response = await changeEmail(newEmail, token)
+      console.log(response)
+    }
   }
 
   const isEmailValid = validateEmail(newEmail)

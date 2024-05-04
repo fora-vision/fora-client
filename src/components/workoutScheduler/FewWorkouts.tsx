@@ -75,13 +75,11 @@ export const FewWorkouts = ({ workouts }: { workouts: WorkoutType[] }) => {
     {!isSelectFirst && <CustonPrevButton $top={startingHour} onClick={handlePrev}>
       <PrevIcon />
     </CustonPrevButton>}
-    {/* <Wrapper> */}
     <FewWorkoutsWrapper width={itemsWidth} $top={startingHour}>
       {workouts.map((workout, ind) => {
         return <WorkoutItem key={ind} workout={workout} fewWorkouts number={ind + 1} selected={selectedWorkout} />
       })}
     </FewWorkoutsWrapper>
-    {/* </Wrapper> */}
     {!isSelectLast && <CustonNextButton $top={startingHour} onClick={handleNext}>
       <NextIcon />
     </CustonNextButton>}

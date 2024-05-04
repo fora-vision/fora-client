@@ -24,6 +24,5 @@ export const useDashboardPage = () => {
     fetchCourses().then(() => { setCoursesLoading(false) }).catch((error) => { console.log(error) })
   }, [])
 
-
   return { username, level, courses, coursesLoading, toggleJoin, isJoin, courseCode, setCourseCode }
 }
