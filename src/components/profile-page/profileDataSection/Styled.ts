@@ -5,7 +5,7 @@ export const ButtonWrapper = styled.div`
   margin-top: 24px;
   width: 100%;
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
 `
 
 export const InputsWrapper = styled.div`

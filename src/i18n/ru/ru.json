@@ -192,7 +192,7 @@
     "finished": "Закончен",
     "finishedForDays": "за {{days}} дней",
     "inProgress": "В процессе",
-    "expired": "Просроченно",
+    "expired": "Закончился",
     "unavailable": "Недоступно"
   },
   "course": {
