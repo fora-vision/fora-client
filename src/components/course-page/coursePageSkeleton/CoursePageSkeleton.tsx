@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { CoursePageContent } from '../../../pages/course/Styled'
 import { ComponentSkeleton } from '../../skeletons'
 
-const TabletSkeleton = styled(ComponentSkeleton)`
+export const TabletSkeleton = styled(ComponentSkeleton)`
   @media(max-width: 1200px) {
     width: 100% !important;
   }

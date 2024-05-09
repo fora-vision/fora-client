@@ -7,6 +7,7 @@ import { PSmall } from '../typographic';
 import { PureWrapper } from '../wrappers';
 import { CourseHand } from './CourseHand';
 import { useLeaderboard } from "../../hooks/use-leaderboard.hook";
+import { TabletSkeleton } from './coursePageSkeleton/CoursePageSkeleton';
 
 const Wrapper = styled(PureWrapper)`
   width: 290.2px;
@@ -29,7 +30,11 @@ const InfoText = styled(PSmall)`
 
 export const CourseLeaderboard = ({ course }: { course: IExpandedCourse }) => {
   const { t } = useTranslation()
-  const { users, myName, sortedUsers, myUser, totalUsers } = useLeaderboard(course)
+  const { loading, users, myName, sortedUsers, myUser, totalUsers } = useLeaderboard(course)
+
+  if (loading) {
+    return <><TabletSkeleton height={550} width={316.2} /></>
+  }
 
   return (
     <Wrapper>

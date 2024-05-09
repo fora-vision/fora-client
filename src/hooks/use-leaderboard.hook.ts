@@ -8,8 +8,10 @@ type CourseType = ICourse | IExpandedCourse;
 
 export const useLeaderboard = (course: CourseType) => {
   const [leaderboard, setLeaderboard] = useState<{ users: ILeaderboardUser[] }>({ users: [] })
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true)
     const fetchLeaderboard = async () => {
       const leaderboard = await getCourseLeaderboard(course.course_id || course.id)
       return leaderboard
@@ -18,6 +20,8 @@ export const useLeaderboard = (course: CourseType) => {
       setLeaderboard(res)
     }).catch(error => {
       console.log(error)
+    }).finally(() => {
+      setLoading(false)
     })
   }, [course.course_id, course.id])
 
@@ -29,5 +33,5 @@ export const useLeaderboard = (course: CourseType) => {
   const myPlace = sortedUsers.findIndex(user => user.name === myName) + 1;
   const totalUsers = users.length;
 
-  return { users, myName, sortedUsers, myUser, totalUsers, myPlace }
+  return { loading, users, myName, sortedUsers, myUser, totalUsers, myPlace }
 }
