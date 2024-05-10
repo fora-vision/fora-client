@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+import { Wrapper } from '.'
 import { PSmall } from '../typographic'
-import { DifficultLevelSticks } from './DifficultLevelSticks'
-import { Wrapper } from './Level'
+
+import { DifficultLevelSticks } from './levelSticks'
 
 const DifficultWrapper = styled(Wrapper)`
     gap: 6px;

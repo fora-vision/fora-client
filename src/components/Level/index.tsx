@@ -1,30 +1,31 @@
 import styled from 'styled-components'
-import { H2 } from '../typographic'
+import { P } from '../typographic'
+import { UserLevelStick } from './UserLevelStick'
 import { PureWrapper } from '../wrappers'
-import LevelStick from './level-stick'
-
 
 export const Wrapper = styled(PureWrapper)`
   border-radius: 2px;
-  padding: 16px; 
+  padding: 6px; 
   display: flex;
-  gap: 4px;
+  gap: 3px;
   align-items: center;
 `
 
-const LevelScore = styled(H2)`
-  padding-left: 8px;
+const LevelScore = styled(P)`
+  padding-left: 3px;
+  line-height: normal;
+  font-size: 10px;
 `
 
-export const Level = ({ score }: { score: number }) => {
+export const UserLevel = ({ score }: { score: number }) => {
   const exactScore = Math.round(score)
   return (
     <Wrapper>
       {Array(5).fill(null).map((_, index) => (
-        <LevelStick key={index} active={index < exactScore} />
+        <UserLevelStick key={index} active={index < exactScore} />
       ))}
       <LevelScore>
-        {score ? score : '∞'}
+        {score ? score : '-'}
       </LevelScore>
     </Wrapper>
   )

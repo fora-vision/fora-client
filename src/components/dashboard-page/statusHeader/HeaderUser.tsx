@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import { Level } from '../../level/Level'
+
 import { AccountPhoto } from '../../header/account-panel/AccountPhoto'
+import { Level } from '../../Level/level'
+
 import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from './Styled'
 
 interface IHeaderUser {

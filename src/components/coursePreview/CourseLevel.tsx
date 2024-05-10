@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { InfoBlock } from './CoursePreview'
 import { PSmall } from '../typographic'
-import { DifficultLevel } from '../level/DifficultLevel'
+
 import { IExpandedCourse } from '../../interfaces/ICourse'
+import { DifficultLevel } from '../Level/difficult-level'
 
 export const CourseLevel = ({ course }: { course: IExpandedCourse }) => {
   const { t } = useTranslation()

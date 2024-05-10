@@ -4,7 +4,7 @@ import { ILeaderboardUser } from '../../interfaces/ICourse'
 import { PSmall } from '../typographic'
 // import { Trend } from './leaderboard/Trend'
 // import { Position } from './leaderboard/Position'
-import { UserLevel } from '../level/UserLevel'
+import { UserLevel } from '../Level/userLevel'
 // import { CourseHand } from './CourseHand'
 
 export const Wrapper = styled.div`

@@ -11,5 +11,6 @@ const ActiveStick = styled(Stick)`
   background: #F6D658
 `
 
-export const LevelStick = ({ active = false }: { active?: Boolean }) => active ? <ActiveStick /> : <Stick />
+const LevelStick = ({ active = false }: { active?: Boolean }) => active ? <ActiveStick /> : <Stick />
 
+export default LevelStick

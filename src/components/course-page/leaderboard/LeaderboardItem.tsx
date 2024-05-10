@@ -3,9 +3,11 @@ import { ILeaderboardUser } from '../../../interfaces/ICourse'
 import { GrayLine } from '../../lines'
 import { Position } from './Position'
 // import { Trend } from './Trend'
-import { UserLevel } from '../../level/UserLevel'
+
 import { PSmall } from '../../typographic'
 import { You } from './You'
+import { UserLevel } from '../../Level'
+
 
 export const Wrapper = styled.div`
   padding: 16px 16px 10px 16px;
