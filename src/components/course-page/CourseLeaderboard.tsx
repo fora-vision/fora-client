@@ -8,6 +8,7 @@ import { PureWrapper } from '../wrappers';
 import { CourseHand } from './CourseHand';
 import { useLeaderboard } from "../../hooks/use-leaderboard.hook";
 import { TabletSkeleton } from './coursePageSkeleton/CoursePageSkeleton';
+import PositionChangeChart from './line-chart';
 
 const Wrapper = styled(PureWrapper)`
   width: 290.2px;
@@ -37,16 +38,19 @@ export const CourseLeaderboard = ({ course }: { course: IExpandedCourse }) => {
   }
 
   return (
-    <Wrapper>
-      <YourPosition user={myUser} />
-      <UsersList>
-        {sortedUsers.map((user, index) => {
-          return <LeaderboardItem key={index} user={user} index={index} totalUsers={totalUsers} myName={myName} />
-        })}
-      </UsersList>
-      {users.length === 0 && <CourseHand />}
-      {users.length === 0 && <InfoText transparent={0.75}>{t('pages.course.leaderboardDescription')}</InfoText>}
-    </Wrapper >
+    <UsersList>
+      <PositionChangeChart sortedUsers={sortedUsers} myUser={myUser} />
+      <Wrapper>
+        <YourPosition user={myUser} sortedUsers={sortedUsers} />
+        <UsersList>
+          {sortedUsers.map((user, index) => {
+            return <LeaderboardItem key={index} user={user} index={index} totalUsers={totalUsers} myName={myName} />
+          })}
+        </UsersList>
+        {users.length === 0 && <CourseHand />}
+        {users.length === 0 && <InfoText transparent={0.75}>{t('pages.course.leaderboardDescription')}</InfoText>}
+      </Wrapper >
+    </UsersList>
   )
 }
 

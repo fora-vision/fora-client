@@ -17,6 +17,7 @@ import { useState } from 'react'
 import { sessionStore } from '../../store/sessionStore'
 import { Loader } from '../loader/Loader'
 import { getRoomUrl } from '../../utils/API/courses/api-courses'
+import { useDashboardPage } from '../../hooks/use-dashboardPage.hook'
 
 const Wrapper = styled.div`
   width: 316px;
@@ -51,13 +52,15 @@ export const CourseInfo = ({ course }: { course: IExpandedCourse }) => {
   const [isLoadingExercise, toggleLoadingExercise] = useToggle()
   const [courseLink, setCourseLink] = useState('')
   const token = sessionStore.getSessionCode()
+  const { courses } = useDashboardPage()
+  const userCourse: any = courses.find((item: IExpandedCourse) => item.name === course.name)
 
   const handleLink = async (e: React.MouseEvent) => {
     e.stopPropagation()
     if (token) {
       toggleLoadingExercise()
       try {
-        const result = await getRoomUrl(token, course.id, course.workout_num)
+        const result = await getRoomUrl(token, userCourse.id, userCourse.workout_num)
         setCourseLink(result.url)
         toggleSafetyModal()
       } catch (error) {

@@ -29,7 +29,7 @@ export const ModalWrapper = styled.div`
   top: 0;
   left: 0;
   background: rgba(17, 16, 14, 0.75);
-  z-index: 5;
+  z-index: 51;
 `
 
 export const Stack = styled.div.withConfig({

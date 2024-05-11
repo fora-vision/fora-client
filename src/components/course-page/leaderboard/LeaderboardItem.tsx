@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 `
 
 export const LeaderboardItem = ({ user, index, totalUsers, myName }: { user: ILeaderboardUser, index: number, totalUsers: number, myName?: string }) => {
+
   return (
     <>
       <Wrapper>

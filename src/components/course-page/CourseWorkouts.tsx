@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { IExpandedCourse } from '../../interfaces/ICourse'
+import TrainingDurationChart from './chart';
 import { WorkoutCard } from './workout-card/WorkoutCard';
 
 const Wrapper = styled.div`
@@ -13,6 +14,7 @@ export const CourseWorkouts = ({ course }: { course: IExpandedCourse }) => {
   const workouts = course.program.workouts;
   return (
     <Wrapper>
+      <TrainingDurationChart />
       {workouts.map((workout, index) => {
         return <WorkoutCard key={index} workout={workout} />
       })}

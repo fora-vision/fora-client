@@ -5,6 +5,7 @@ import { PSmall } from '../typographic'
 // import { Trend } from './leaderboard/Trend'
 // import { Position } from './leaderboard/Position'
 import { UserLevel } from '../Level/userLevel'
+import { Position } from './leaderboard/Position'
 // import { CourseHand } from './CourseHand'
 
 export const Wrapper = styled.div`
@@ -28,13 +29,14 @@ const PUpSmall = styled(PSmall)`
   text-transform: uppercase;
 `
 
-export const YourPosition = ({ user }: { user?: ILeaderboardUser }) => {
+export const YourPosition = ({ user, sortedUsers }: { user?: ILeaderboardUser, sortedUsers: ILeaderboardUser[] }) => {
   const { t } = useTranslation()
+  const userPlace = sortedUsers.findIndex(item => item.name === user?.name) + 1
   return user ? <Wrapper>
     <PUpSmall>{t('pages.course.yourPosition')}</PUpSmall>
     <User>
       {/* <Trend position={user.position} previousPosition={user.previousPosition} /> */}
-      {/* <Position position={user.position} /> */}
+      <Position position={userPlace} />
       <PSmall>{user.name}</PSmall>
       <UserLevel score={user.score} />
     </User>

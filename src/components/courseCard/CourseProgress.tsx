@@ -3,7 +3,7 @@ import { H1, P } from "../typographic"
 import { useTranslation } from "react-i18next"
 import { ProgressLine } from "../progress/ProgressLine"
 import { ICourse, IExpandedCourse } from "../../interfaces/ICourse"
-import { countTotalProgress } from "../../utils/course-utils"
+import { useDashboardPage } from "../../hooks/use-dashboardPage.hook"
 
 const ProgressInfo = styled.div`
   display: flex;
@@ -20,11 +20,13 @@ const NumericalProgress = styled.div`
 
 export const CourseProgress = ({ course }: { course: ICourse | IExpandedCourse }) => {
   const { t } = useTranslation();
+  const { courses } = useDashboardPage()
+  const userCourse: any = courses.find((item: IExpandedCourse) => item.name === course.name)
   // const totalLessons = course.workouts_count || '-';
   // const doneLessons = course.workout_num || '-';
-  const totalLessons = course.program?.workouts.length || course.workouts_count || 0;
-  const doneLessons = course.workout_num || 0;
-  const lessonsProgress = countTotalProgress(course) || 0
+  const totalLessons = userCourse?.workouts_count || 0;
+  const doneLessons = userCourse?.workout_num || 0;
+  const lessonsProgress = Number(((doneLessons / totalLessons) * 100).toFixed(0)) || 0
   return (
     <div>
       <ProgressInfo>
