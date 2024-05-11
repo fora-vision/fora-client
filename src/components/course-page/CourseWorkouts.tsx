@@ -10,11 +10,12 @@ const Wrapper = styled.div`
   gap: 16px;
 `
 
-export const CourseWorkouts = ({ course }: { course: IExpandedCourse }) => {
+export const CourseWorkouts = ({ course, workoutsDays }: { course: IExpandedCourse, workoutsDays: any }) => {
   const workouts = course.program.workouts;
+
   return (
     <Wrapper>
-      <TrainingDurationChart />
+      <TrainingDurationChart workoutsDays={workoutsDays} />
       {workouts.map((workout, index) => {
         return <WorkoutCard key={index} workout={workout} />
       })}

@@ -6,7 +6,7 @@ import { CourseInfo } from '../../components/course-page/CourseInfo';
 import { CourseWorkouts } from '../../components/course-page/CourseWorkouts';
 import { CourseLeaderboard } from '../../components/course-page/CourseLeaderboard';
 import { useEffect } from 'react';
-import { getCourse } from '../../utils/API/courses/api-courses';
+import { getCourse, getCourseWorkouts } from '../../utils/API/courses/api-courses';
 import { sessionStore } from '../../store/sessionStore';
 import { IExpandedCourse } from '../../interfaces/ICourse';
 import { YellowBoldP } from '../../components/typographic';
@@ -17,6 +17,7 @@ export const CoursePage = () => {
   const [course, setCourse] = useState<IExpandedCourse | null>(null)
   const [courseLoading, setCourseLoading] = useState(false)
   const [courseError, setCourseError] = useState(false)
+  const [workoutsDays, setWorkoutDays] = useState([])
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -26,6 +27,8 @@ export const CoursePage = () => {
       if (token && courseId) {
         try {
           const courseFromApi = await getCourse(token, courseId)
+          const workoutsFromApi = await getCourseWorkouts(token, courseId)
+          setWorkoutDays(workoutsFromApi)
           setCourse(courseFromApi)
         } catch (error) {
           setCourseError(true)
@@ -43,10 +46,10 @@ export const CoursePage = () => {
       <CoursePageSkeleton isLoading={courseLoading} />
       {course && <CoursePageContent>
         <CourseInfo course={course} />
-        <CourseWorkouts course={course} />
+        <CourseWorkouts course={course} workoutsDays={workoutsDays} />
         <CourseLeaderboard course={course} />
       </CoursePageContent>}
       {courseError && <YellowBoldP>Курс недоступен</YellowBoldP>}
     </CoursePageContainer>
   )
-} 
+}
