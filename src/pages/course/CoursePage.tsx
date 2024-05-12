@@ -52,4 +52,4 @@ export const CoursePage = () => {
       {courseError && <YellowBoldP>Курс недоступен</YellowBoldP>}
     </CoursePageContainer>
   )
-}
+} 
