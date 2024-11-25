@@ -12,7 +12,7 @@ export const isValidName = (name: string) => {
 export const isValidDate = (date: string) => {
   if (!/^\d{2}\/\d{2}\/\d{4}$/.test(date)) return false;
   const [day, month, year] = date.split('/').map(Number);
-  if (year < 1900 || year > 2009) return false;
+  if (year < 1900 || year > 2024) return false;
   const formattedDate = date.split('/').reverse().join('-');
   const parsedDate = dayjs(formattedDate, 'DD/MM/YYYY');
   return parsedDate.isValid() && parsedDate.date() === day && parsedDate.month() + 1 === month && parsedDate.year() === year;

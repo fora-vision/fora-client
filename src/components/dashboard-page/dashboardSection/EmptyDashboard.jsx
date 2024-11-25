@@ -3,6 +3,7 @@ import { H2Regular } from "../../typographic"
 import { PrimaryButton } from "../../buttons"
 import { ReactComponent as RunningManIllustration } from '../../../images/illustrations/man-running.svg'
 import { CourseCalendar } from "../../calendar/CourseCalendar"
+import dayjs from "dayjs"
 
 const DashboardWrapper = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ const IllustrationSection = styled.div`
 export const EmptyDashboard = ({ toggleModal }) => {
   return (
     <DashboardWrapper>
-      <CourseCalendar />
+      <CourseCalendar date={dayjs()} handleNextMonth={() => { }} handlePrevMonth={() => { }} />
       <YourCoursesWrapper>
         <H2Regular>Ваши курсы</H2Regular>
         <CoursesJoin>
