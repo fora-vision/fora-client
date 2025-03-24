@@ -57,8 +57,8 @@ export const CardActions = ({ course }: { course: ICourse }) => {
       <CardActionsWrapper>
         <OverallProgress>
           <CourseProgress course={course} />
-          {lessonsProgress === 100 ?
-            <SecondaryButton disabled>{t('components.courseCard.openCourse')}</SecondaryButton>
+          {lessonsProgress >= 100 ?
+            <SecondaryButton disabled>{t('components.courseCard.startTraining')}</SecondaryButton>
             : <PrimaryButton onClick={handleLink} disabled={isLoadingExercise}>
               {isLoadingExercise ? <Loader /> : <>
                 {t('components.courseCard.startTraining')}

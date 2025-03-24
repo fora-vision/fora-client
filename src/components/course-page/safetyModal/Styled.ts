@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+interface StackProps {
+  flexDirection?: 'row' | 'column';
+  gap?: string;
+  alignItems?: string
+}
+
 export const JoinModal = styled.div`
   display: flex;
   width: 664px;
@@ -26,11 +32,14 @@ export const ModalWrapper = styled.div`
   z-index: 5;
 `
 
-export const Stack = styled.div`
+export const Stack = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['flexDirection', 'gap', 'alignItems'].includes(prop)
+}) <StackProps>`
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-`
+  flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
+  gap: ${({ gap }) => gap || '8px'};
+  align-items:  ${({ alignItems }) => alignItems || ''};
+`;
 
 export const ButtonSection = styled.div`
   width: 100%;

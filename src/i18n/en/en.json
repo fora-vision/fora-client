@@ -89,7 +89,10 @@
       "change": "Change",
       "uploadAnother": "Please upload another image: wrong format.",
       "imageSize": "Please upload another image: file size exceeded ({{size}}Mb).",
-      "preview": "Preview"
+      "preview": "Preview",
+      "codeSuccess": "Code accepted. E-mail changed.",
+      "ok": "Ok",
+      "confirmEmailChange": "Confirm e-mail change"
     },
     "sorry": {
       "needBigger": "We need something bigger...",
@@ -166,6 +169,7 @@
     "code": {
       "invalid": "The code is invalid. Please enter another one.",
       "length": "The code must be 6 characters long. You have entered ",
+      "lengthFour": "The code must be 4 characters long. You have entered ",
       "courseLength": "The course code must contain 4 characters"
     },
     "alreadyRegistered": "This e-mail address is already in use. Please enter another one or login.",

@@ -27,10 +27,12 @@ const ExpiredWrapper = styled(StatusWrapper)`
     border: 1px solid #C84848;
     background: #623434;
 `
+
 const UnavailableWrapper = styled(StatusWrapper)`
     border: 1px solid rgba(245, 245, 245, 0.04);
     background: rgba(245, 245, 245, 0.20);
 `
+
 const SuccessStatus = ({ days }: { days: number }) => {
     const { t } = useTranslation();
     return <SuccessWrapper>

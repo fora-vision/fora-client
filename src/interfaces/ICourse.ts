@@ -42,6 +42,7 @@ export interface ICourse {
     exercises_complete: number;
     level?: number;
     program?: IProgram;
+    course_id: number;
 }
 
 export interface IUser {
@@ -79,5 +80,6 @@ export interface IExpandedCourse {
     ranking: number;
     status: number;
     users: IUser[];
+    course_id: number;
 }
 

@@ -14,3 +14,7 @@ export const FormWrapper = styled.form`
   align-items: center;
   justify-content: space-between;
 `
+
+export const CodeWrapper = styled.div`
+  padding: 8px 0 24px 0;
+`

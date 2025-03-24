@@ -25,4 +25,5 @@ export interface IProfile {
   stars: number;
   username: string,
   weight: number;
+  group?: string;
 }

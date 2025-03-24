@@ -3,10 +3,11 @@ import { PureWrapper } from "../wrappers";
 
 export const Schedule = styled.div`
   display: flex;
-  gap: 20px;
-  margin-top: 32px;
+  gap: 5px;
+  margin-top: 16px;
   max-height: 500px;
-  overflow: scroll;
+  overflow-x: scroll;
+  height: 700px;
 `
 
 export const TimeWrapper = styled.div`
@@ -20,8 +21,11 @@ export const WorkoutsWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   margin-right: 8px;
+  padding-left: 15px;
   height: 100%;
   position: relative;
+  height: 150%;
+  overflow: hidden
 `
 
 export const Dividers = styled.div`
@@ -46,15 +50,35 @@ export const WorkoutsItemsWrapper = styled.div`
 interface IWorkoutItemProp {
   top: number;
   duration: number;
+  width: number;
+  number: number;
+  selected?: number;
 }
 
 export const WorkoutItemWrapper = styled(PureWrapper).withConfig({
-  shouldForwardProp: (prop) => !['top', 'duration'].includes(prop)
+  shouldForwardProp: (prop) => !['top', 'duration', 'width', 'number', 'selected'].includes(prop)
 }) <IWorkoutItemProp>`
-  padding: 12px;
-  position: absolute;
-  width: 93%;
-  top: ${({ top }) => `${top * 71}px`};
-  z-index: 10000000;
-  height: ${({ duration }) => `${duration * 50}px`};
+  background-color: #1A1917;
+  padding: 10px 12px;
+  position: ${({ number }) => `${number > 0 ? 'relative' : 'absolute'}`};
+  width: ${({ width }) => `${width}%`};
+  top: ${({ top, number }) => `${number ? 0 : `${top * 71}px`}`};
+  z-index: 1;
+  height: ${({ duration }) => `${duration * 55}px`};
+  min-height: 40px;
+  transform: translate(${({ selected }) => `-${selected ? selected * 100 : 0}%`}, 0);
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
+export const WorkoutNameWrapper = styled.div`
+    border-radius: 40px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #2C2B29;
+    background: #232220;
 `

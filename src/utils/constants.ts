@@ -15,6 +15,10 @@ export const sexOptions = [
   i18n.t('components.select.female')
 ];
 
+export const mainColors = {
+  yellow: "#F6D658"
+}
+
 export const fakeCourse = {
   max_users_count: 22,
   name: 'Nikita Boss',

@@ -1,12 +1,11 @@
-import { useState } from "react"
 import styled from "styled-components"
-import dayjs from "dayjs"
+import dayjs, { Dayjs } from "dayjs"
 import { CalendarControl } from "./CalendarControl"
 import { GrayLine } from "../lines"
-import { useTranslation } from "react-i18next"
 import { P } from "../typographic"
 import { Calendar } from "./Calendar"
 import { PureWrapper } from "../wrappers"
+import { useTranslation } from "react-i18next"
 
 const FutureCalendar = styled(PureWrapper)`
   min-width: 392px;
@@ -34,18 +33,10 @@ const TodaySection = styled.div`
   justify-content: space-between;
 `
 
-export const CourseCalendar = () => {
-  const [date, setDate] = useState(dayjs())
+export const CourseCalendar = ({ date, handleNextMonth, handlePrevMonth }: { date: Dayjs, handleNextMonth: () => void, handlePrevMonth: () => void }) => {
   const today = dayjs().format('DD/MM/YYYY')
   const { t } = useTranslation();
-  const handleNextMonth = () => {
-    const nextMonthDate = dayjs(date).add(1, 'month');
-    setDate(nextMonthDate)
-  }
-  const handlePrevMonth = () => {
-    const prevMonthDate = dayjs(date).subtract(1, 'month');
-    setDate(prevMonthDate)
-  }
+
   return (
     <Wrapper>
       <CalendarControl date={date} cbNextMonth={handleNextMonth} cbPrevMonth={handlePrevMonth} />

@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0
   }
 
-  *:focus {
+  input:focus {
     outline: 1px solid #F6D658
   }
 

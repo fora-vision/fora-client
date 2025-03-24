@@ -5,8 +5,9 @@ import { PSmall } from '../typographic';
 const WeekDays = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 35px;
+  padding-bottom: 15px;
 `;
+
 export const CalendarWeekDays = () => {
   const { t } = useTranslation();
   return (

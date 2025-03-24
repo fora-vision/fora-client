@@ -13,7 +13,7 @@ export const Authentication = () => {
   const { email, emailError, isEmailSent, isSending, handleEmail, setEmail } = useAuthPage()
 
   return (
-    <PageContainer>
+    <PageContainer style={{ paddingTop: '60px' }}>
       <LogInWrapper>
         <WelcomeToHeader />
         {isEmailSent ?

@@ -33,7 +33,7 @@ export const CourseCard = ({ course }: { course: ICourse }) => {
   const navigate = useNavigate()
   const courseStatus = getCourseStatus(course.status);
   const handleClick = () => {
-    navigate(`/course/${course.id}`)
+    navigate(`/course/${course.course_id}`)
   }
   return (
     <CardWrapper onClick={handleClick}>

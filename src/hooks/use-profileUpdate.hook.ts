@@ -8,7 +8,7 @@ import { setValidatedName, setValidatedNumber } from '../utils/validation-utils'
 export const useProfileUpdate = (profile: IProfile) => {
   const splittedName = profile.name.split(' ')
   const [name, setName] = useState<string>(splittedName[0])
-  const [group, setGroup] = useState<string>("")
+  const [group, setGroup] = useState<string>(profile.group || "")
   const [lastName, setLastName] = useState<string>(splittedName[1])
   const [height, setHeight] = useState<number>(profile.height)
   const [weight, setWeight] = useState<number>(profile.weight)
@@ -41,7 +41,8 @@ export const useProfileUpdate = (profile: IProfile) => {
     const updatedData = {
       name: `${name} ${lastName}`,
       height: height,
-      weight: weight
+      weight: weight,
+      group: group
     }
     if (token) {
       setIsUpdating(true)

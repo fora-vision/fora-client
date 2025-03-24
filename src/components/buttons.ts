@@ -1,5 +1,9 @@
 import { styled } from "styled-components";
 
+interface ISecondaryButton {
+  theme: string
+}
+
 export const ButtonPattern = styled.button<{ width?: string }>`
   cursor: pointer;
   font-size: 16px;  
@@ -36,18 +40,18 @@ export const PrimaryButton = styled(ButtonPattern)`
   }  
 `
 
-export const SecondaryButton = styled(ButtonPattern)`
-  background: rgba(245, 245, 245, 0.04);
+export const SecondaryButton = styled(ButtonPattern) <ISecondaryButton>`
   color: #FFF;
   padding: 18px;
   gap: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-color: ${({ theme }) => (theme === 'green' ? '#5FB768' : 'rgba(255, 255, 255, 0.03)')};
+  background: ${({ theme }) => (theme === 'green' ? '#487048' : 'rgba(245, 245, 245, 0.04)')};
   &:not(:disabled) {
     &:hover {
-      background: rgba(245, 245, 245, 0.20);
+      background: ${({ theme }) => (theme === 'green' ? '#475D47' : 'rgba(245, 245, 245, 0.20)')};
     }
     &:active {
-      background: rgba(245, 245, 245, 0.20);
+      background: ${({ theme }) => (theme === 'green' ? '#475D47' : 'rgba(245, 245, 245, 0.20)')};
       color: rgba(245, 245, 245, 0.20);
     }
   }
@@ -91,6 +95,7 @@ export const IconSecondaryButton = styled(SecondaryButton)`
   gap: 8px;
   border-radius: 4px;
   flex-shrink: 0;
+  z-index: 10;
 `
 
 export const IconTetriaryButton = styled(IconSecondaryButton)`
