@@ -12,7 +12,7 @@ export const PersonalDataSection = ({ isCheck, toggleCheck, error }) => {
   return (
     <ProcessingPersonalData>
       <Checkbox isCheck={isCheck} toggleCheck={toggleCheck} error={error} />
-      <P>Соглашаюсь с <YellowA href="https://fora.vision/tos" target='_blank'>Обработкой персональных данных</YellowA></P>
+      <P>Соглашаюсь с <YellowA href="https://fora.vision/tos" target='_blank'>Обработкой персональных данных</YellowA> и <YellowA href="https://fora.vision/tos1" target='_blank'>политикой по их обработке</YellowA></P>
     </ProcessingPersonalData>
   )
 }
