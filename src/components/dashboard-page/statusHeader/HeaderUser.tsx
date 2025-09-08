@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Level } from "../../level/Level";
+import { Level } from "../../view-level/Level";
 import { AccountPhoto } from "../../header/account-panel/AccountPhoto";
 import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from "./Styled";
 

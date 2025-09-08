@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ILeaderboardUser } from "../../../interfaces/ICourse";
 import { GrayLine } from "../../lines";
 import { Position } from "./Position";
-import { UserLevel } from "../../level/UserLevel";
+import { UserLevel } from "../../view-level/UserLevel";
 import { PSmall } from "../../typographic";
 import { You } from "./You";
 

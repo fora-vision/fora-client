@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { LevelStick } from "../level/LevelStick";
+import { LevelStick } from "./LevelStick";
 import { H2 } from "../typographic";
 import { PureWrapper } from "../wrappers";
 

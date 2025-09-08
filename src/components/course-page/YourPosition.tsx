@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { ILeaderboardUser } from "../../interfaces/ICourse";
 import { PSmall } from "../typographic";
-import { UserLevel } from "../level/UserLevel";
+import { UserLevel } from "../view-level/UserLevel";
 
 export const Wrapper = styled.div`
   padding: 16px;
