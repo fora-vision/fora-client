@@ -21,6 +21,23 @@ class UserStore {
         localStorage.removeItem("userProfile");
     }
 
+    saveUserProfile() {
+        if (this.userProfile) {
+            localStorage.setItem("userProfile", JSON.stringify(this.userProfile));
+        }
+    }
+
+    updateAvatar(avatarUrl) {
+        if (this.userProfile) {
+            this.userProfile.avatar = avatarUrl;
+            this.saveUserProfile();
+        } else {
+            // Optionally handle the case where there is no user profile loaded
+            console.error("Cannot update avatar, no user profile is loaded.");
+        }
+    }
+
+
     getUserProfile() {
         const storedProfile = localStorage.getItem("userProfile");
         return JSON.parse(storedProfile);

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { PureLabel, } from '../inputs'
-import { useToggle } from '../../hooks/hookToggle'
+import { useToggle } from '../../hooks/use-toggle.hook'
 import { Description } from '../inputDescription/Description'
 import { Dropdown } from './Dropdown'
 

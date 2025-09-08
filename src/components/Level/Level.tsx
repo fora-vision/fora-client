@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import { LevelStick } from './LevelStick'
 import { H2 } from '../typographic'
+import { PureWrapper } from '../wrappers'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(PureWrapper)`
   border-radius: 2px;
-  border: 1px solid rgba(245, 245, 245, 0.04);
   padding: 16px; 
-  background: rgba(245, 245, 245, 0.04);
   display: flex;
   gap: 4px;
   align-items: center;

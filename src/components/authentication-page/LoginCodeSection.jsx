@@ -9,7 +9,7 @@ import { sessionStore } from '../../store/sessionStore'
 import { getUserInfo } from '../../utils/API/user/api-user'
 import { useNavigate } from 'react-router-dom'
 import { userStore } from '../../store/profileStore.jsx'
-import { useToggle } from '../../hooks/hookToggle'
+import { useToggle } from '../../hooks/use-toggle.hook'
 import { Loader } from '../loader/Loader'
 
 const Wrapper = styled.div`

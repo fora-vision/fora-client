@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 import foraLogo from '../../images/Fora-logo.png'
 import { HeaderAccount } from './HeaderAccount'
@@ -16,6 +17,9 @@ const HeaderContainer = styled.div`
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
+  @media(max-width: 1000px) {
+    padding: 24px 20px;
+  }
 `
 
 const HeaderLogo = styled.a`
@@ -30,7 +34,8 @@ const HeaderLogo = styled.a`
 `
 
 export const Header = () => {
-  const handleLogoClick = () => { console.log('logo click') };
+  const navigate = useNavigate()
+  const handleLogoClick = () => { navigate('/dashboard') };
   return (
     <HeaderWrapper>
       <HeaderContainer>

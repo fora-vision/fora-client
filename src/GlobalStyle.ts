@@ -29,4 +29,35 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: #F5F5F5;
   } 
+
+  ul {
+    padding: 0 0 0 30px;
+    margin: 0
+  }
+
+  ul::marker {
+    padding: 0
+  }
+
+  input:focus {
+    outline: 1px solid #F6D658
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #F5F5F50A;
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 245, 0.04);
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #F5F5F514;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
 `

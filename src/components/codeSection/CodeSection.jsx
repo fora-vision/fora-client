@@ -4,7 +4,7 @@ import OTPInput from 'react-otp-input'
 import { P } from '../typographic'
 import { TetriaryButton } from '../buttons'
 import { ReactComponent as PasteIcon } from '../../images/left-icon.svg'
-import { CodeInput } from './CodeInput'
+import { CodeInput } from './CodeInput.tsx'
 import { ErrorField } from '../errorField/ErrorField'
 import { SuccessField } from '../successField/SuccessField'
 
@@ -32,12 +32,14 @@ const CodeWrapper = styled.div`
 export const CodeSection = ({ state, setState, error, nums, success }) => {
   const { t } = useTranslation();
   const numInputs = nums || 6
+
   async function handlePaste() {
     try {
       const text = await navigator.clipboard.readText();
       setState(text);
     } catch { setState('error') }
   }
+
   return (
     <Code>
       <CodeLabel>
@@ -48,8 +50,8 @@ export const CodeSection = ({ state, setState, error, nums, success }) => {
           value={state}
           onChange={setState}
           numInputs={numInputs}
-          renderInput={(props) => <CodeInput {...props} />}
-          containerStyle={{ gap: '8px', justifyContent: 'center', width: '100%', alignContent: 'center' }}
+          renderInput={(props) => <CodeInput $nums={nums} {...props} />}
+          containerStyle={{ gap: '8px', justifyContent: 'space-between', width: '100%', alignContent: 'center' }}
         />
       </CodeWrapper>
       {error && <ErrorField message={error} />}

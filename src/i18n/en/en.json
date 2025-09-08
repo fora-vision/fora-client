@@ -30,7 +30,8 @@
       "enterAnotherCode": "Enter another code",
       "enterCode": "Please enter a code to access the course",
       "cancel": "Cancel",
-      "continue": "Continue"
+      "continue": "Continue",
+      "upcomingWorkouts": "Upcoming workouts"
     },
     "reset": {
       "forgotPassword": "Forgot your password?",
@@ -56,11 +57,53 @@
       "height": "Height",
       "weight": "Weight",
       "sex": "Sex",
-      "password": "Password"
+      "password": "Password",
+      "group": "Group/class (for students and apprentices)",
+      "optionally": "Optionally"
+    },
+    "course": {
+      "yourPosition": "Your position",
+      "you": "You",
+      "trainingProgram": "Training Program",
+      "minutes": "minutes",
+      "repeats": "repeats",
+      "leaderboardDescription": "As soon as someone makes it through the first practice, the leaderboard will appear here. Let's go for the championship!",
+      "leaderboard": "Leaderboard"
+    },
+    "profile": {
+      "myProfile": "My profile",
+      "logout": "Log out",
+      "currentEmail": "Current e-mail",
+      "save": "Save",
+      "dragPhoto": "Drag the photo here or select it in explorer",
+      "select": "Select",
+      "avatarUpload": "Avatar Upload",
+      "requirements": "Requirements:",
+      "brightFace": "Face is bright, clear and legible;",
+      "yourPhoto": "The photo is really you. Fake images are not allowed;",
+      "maxSize": "Maximum image size 1 MB;",
+      "photoFormat": "Acceptable format - jpeg, jpg, png, tiff.",
+      "cancel": "Cancel",
+      "uploaded": "Uploaded",
+      "mb": "MB",
+      "change": "Change",
+      "uploadAnother": "Please upload another image: wrong format.",
+      "imageSize": "Please upload another image: file size exceeded ({{size}}Mb).",
+      "preview": "Preview",
+      "codeSuccess": "Code accepted. E-mail changed.",
+      "ok": "Ok",
+      "confirmEmailChange": "Confirm e-mail change"
+    },
+    "sorry": {
+      "needBigger": "We need something bigger...",
+      "foraNotSupport": "Unfortunately, Fora is not supported on smartphone screens.",
+      "useLaptop": "Please use a laptop or tablet to do the workouts.",
+      "home": "Home"
     }
   },
   "header": {
-    "logout": "Log out"
+    "logout": "Log out",
+    "profile": "Profile"
   },
   "components": {
     "courseCard": {
@@ -126,6 +169,7 @@
     "code": {
       "invalid": "The code is invalid. Please enter another one.",
       "length": "The code must be 6 characters long. You have entered ",
+      "lengthFour": "The code must be 4 characters long. You have entered ",
       "courseLength": "The course code must contain 4 characters"
     },
     "alreadyRegistered": "This e-mail address is already in use. Please enter another one or login.",
@@ -158,6 +202,49 @@
     "trainingNumber": "Number of workouts",
     "users": "Users",
     "difficulty": "Difficulty",
-    "courseFound": "Course found."
+    "courseFound": "Course found.",
+    "yourPosition": "Your position"
+  },
+  "exercises": {
+    "star": "Star",
+    "pushups": "Pushups",
+    "twisting": "Twisting",
+    "squats": "Squats",
+    "side_plank-straight": "Side plank straight",
+    "side_plank-back": "Side plank back",
+    "jumping": "Jumping",
+    "knees_raising": "Knees raising",
+    "side_leglifts-right": "Side leglifts right",
+    "side_leglifts-left": "Side leglifts left",
+    "hip_thrust": "Hip thrust",
+    "burpee": "Burpee",
+    "folding_bed": "Folding bed",
+    "toe_touches": "Toe touches",
+    "leglifts": "Leglifts",
+    "lunges-right": "Lunges right",
+    "lunges-left": "Lunges left",
+    "knee_tightening": "Knee tightening",
+    "reverse_pushups": "Reverse pushups",
+    "superman_lie": "Superman lie",
+    "angel_wings": "Angel wings",
+    "superman_side": "Superman side",
+    "sit_up": "Sit up"
+  },
+  "safety": {
+    "instruction": "Safety instructions",
+    "pleaseRead": "Please read the instructions before you start training",
+    "eligibility": "Persons who have no medical contraindications for strength and fitness training are allowed to take part in the classes. If you have any medical contraindications, you should contact your doctor for consultation and clarification of the possibility to perform certain exercises.",
+    "wellbeing": "In case of any indisposition before or during exercise, the exerciser should refrain from further exercise.",
+    "sobriety": "The exerciser should be sober during the exercise.",
+    "footwear": "It is recommended to wear clean sports shoes, comfortable closed shoes with rubber and non-slip soles. It is forbidden to use shoes with high soles or heels, with spikes, to train barefoot or in open shoes.",
+    "attire": "Exercise should be done in athletic clothing, tailored to fit and not constricting movement.",
+    "equipment": "It is recommended to perform exercises in sitting, lying down, lying down on a personal gymnastic mat. Standing exercises (squats, lunges, running in place, etc.) should be performed on the floor to avoid slipping of the mat.",
+    "accessories": "Before starting the exercise, it is recommended to remove objects that pose a danger when performing exercises (watches, dangling earrings, piercings, etc.), remove prickly and other foreign objects from your pockets.",
+    "gum": "It is strictly forbidden to use chewing gum to avoid harm to health.",
+    "warmup": "It is recommended to perform a set of 5-8 general exercises (joint gymnastics) as a warm-up before starting the exercises.",
+    "intensity": "Dosage of load (number of repetitions, approaches, series, pace of movements, amplitude of movements, etc.) is selected strictly individually, taking into account the level of physical health, physical fitness and the current state of the organism of the athlete. REMEMBER that during the exercises and after their completion there MUST NOT be strong pain sensations in the muscles and joints, fatigue and heaviness in the muscles is allowed.",
+    "recovery": "Muscle pain may occur on the following days after the exercises. However, these sensations should not be sharp and restrain movements. These muscle sensations usually appear the next day or the day after and subside by day 4-5.",
+    "pain": "The occurrence of significant pain sensations indicates that the performed load did not correspond to the capabilities of the trainee, and it is necessary to contact the trainer to adjust the load. If painful sensations occur during exercise, stop exercising and consult a specialist to identify the cause of the pain and eliminate it.",
+    "familiar": "I am familiarized with the instruction"
   }
 }

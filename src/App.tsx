@@ -14,6 +14,9 @@ import { Reset } from "./pages/reset/Reset";
 import { Signup } from "./pages/signup/Signup";
 import { sessionStore } from "./store/sessionStore";
 import { Loading } from "./pages/loading/Loading";
+import { CoursePage } from "./pages/course/CoursePage";
+import { Profile } from "./pages/profile/Profile";
+import { SorryMobile } from "./pages/sorry-mobile/SorryMobile";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +30,15 @@ function App() {
 
     loadSessionCode();
   }, []);
+
+  if (window.screen.width < 550) {
+    return (
+      <div>
+        <GlobalStyle />
+        <SorryMobile />
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (
@@ -80,6 +92,26 @@ function App() {
                   <Navigate to="/authentication" />
                 ) : (
                   <Dashboard />
+                )
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                !sessionStore.sessionCode ? (
+                  <Navigate to="/authentication" />
+                ) : (
+                  <Profile />
+                )
+              }
+            />
+            <Route
+              path="course/:courseId"
+              element={
+                sessionStore.sessionCode ? (
+                  <CoursePage />
+                ) : (
+                  <Navigate to="/authentication" />
                 )
               }
             />

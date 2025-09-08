@@ -5,7 +5,7 @@ export const countAverageCourseDone = (courses: ICourse[]) => {
         if (course.workout_num === 0) {
             return 0;
         }
-        return (course.workouts_count / course.workout_num) * 100;
+        return (course.workout_num / course.workouts_count) * 100;
     });
     const nonZeroPercentages = totalPercentages.filter(percentage => percentage !== Infinity);
     const result = nonZeroPercentages.reduce((total, percentage) => total + percentage, 0) / nonZeroPercentages.length

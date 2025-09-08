@@ -2,13 +2,16 @@ import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import { H2Regular } from "../../typographic"
 import { TetriaryButton } from "../../buttons"
-import { CourseCalendar } from "../../calendar/CourseCalendar"
 import { CourseCard } from "../../courseCard/CourseCard"
+import { CalendarAndScheduler } from "../../calendarAndScheduler/CalendarAndScheduler"
 
 export const DashboardWrapper = styled.div`
   display: flex;
   justify-content: space-between; 
   gap: 32px;
+  @media(max-width: 1400px) {
+    flex-direction: column;
+  }
 `
 
 export const YourCoursesWrapper = styled.div`
@@ -32,9 +35,10 @@ export const CoursesSection = styled.div`
 
 export const CoursesDashboard = ({ courses, toggleModal }) => {
   const { t } = useTranslation()
+
   return (
     <DashboardWrapper>
-      <CourseCalendar />
+      <CalendarAndScheduler />
       <YourCoursesWrapper>
         <HeaderCourses>
           <H2Regular>{t('pages.dashboard.yourCourses')}</H2Regular>

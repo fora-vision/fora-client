@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { P } from '../typographic'
 import { AccountToolbar } from './account-panel/AccountToolbar'
-import { useToggle } from '../../hooks/hookToggle'
+import { useToggle } from '../../hooks/use-toggle.hook'
 import { userStore } from '../../store/profileStore'
 
 const AccountMenu = styled.div`

@@ -1,24 +1,26 @@
-import styled from 'styled-components'
-import { P } from '../../typographic'
-import { Level } from '../../Level/Level'
+import { useNavigate } from 'react-router-dom'
+import { Level } from '../../level/Level'
 import { AccountPhoto } from '../../header/account-panel/AccountPhoto'
+import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from './Styled'
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`
+interface IHeaderUser {
+  username: string,
+  level: number
+}
 
-const HeaderUsername = styled(P)`
-  padding-right: 15px;
-`
+export const HeaderUser = ({ username, level }: IHeaderUser) => {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/profile')
+  }
 
-export const HeaderUser = ({ username, level }: { username: string, level: number }) => {
   return (
-    <Wrapper>
-      <AccountPhoto />
+    <HeaderUserWrapper onClick={handleClick}>
+      <PhotoWrapper>
+        <AccountPhoto />
+      </PhotoWrapper>
       <HeaderUsername>{username}</HeaderUsername>
       <Level score={level} />
-    </Wrapper>
+    </HeaderUserWrapper>
   )
 }

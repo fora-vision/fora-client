@@ -12,7 +12,7 @@ export const isValidName = (name: string) => {
 export const isValidDate = (date: string) => {
   if (!/^\d{2}\/\d{2}\/\d{4}$/.test(date)) return false;
   const [day, month, year] = date.split('/').map(Number);
-  if (year < 1900 || year > 2009) return false;
+  if (year < 1900 || year > 2024) return false;
   const formattedDate = date.split('/').reverse().join('-');
   const parsedDate = dayjs(formattedDate, 'DD/MM/YYYY');
   return parsedDate.isValid() && parsedDate.date() === day && parsedDate.month() + 1 === month && parsedDate.year() === year;
@@ -28,4 +28,16 @@ export const validateWeight = (weight: number) => {
   const min = 30;
   const max = 300;
   return weight >= min && weight <= max;
+};
+
+export const setValidatedName = (value: string, setter: (value: string) => void) => {
+  if (/^[A-Za-zА-Яа-я-]*$/.test(value)) {
+    setter(value);
+  }
+};
+
+export const setValidatedNumber = (value: string, setter: (value: number) => void) => {
+  if (/^\d*\.?\d*$/.test(value)) {
+    setter(value === '' ? 0 : parseFloat(value));
+  }
 };

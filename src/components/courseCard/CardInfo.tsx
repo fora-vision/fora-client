@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+
 import { useTranslation } from 'react-i18next'
 import { H1, H2, P, PSmall } from '../typographic'
 import { VerticalGrayLine } from '../lines'
@@ -6,51 +6,17 @@ import { ReactComponent as LeaderboardIcon } from '../../images/leaderboard-icon
 import { ReactComponent as GroupIcon } from '../../images/group-icon.svg'
 import { ICourse } from '../../interfaces/ICourse'
 import dayjs from 'dayjs'
-
-const CardInfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-start;
-`
-
-const CourseInfo = styled.div`
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: #252525;
-  padding: 12px 16px;  
-  display: flex;
-  gap: 24px;
-`
-
-const CourseMetrics = styled.div`
-  padding: 8px 16px;
-  display: inline-flex;
-  gap: 24px;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  opacity: 0.75;
-  background: #252525;
-`
-
-const MetricBox = styled.div`
-  display: flex;
-  gap: 4px;
-  align-items: center;
-`
-
-const TotalLessonsInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-`
+import { useLeaderboard } from '../../hooks/use-leaderboard.hook'
+import { CardInfoWrapper, CourseInfo, CourseMetrics, MetricBox, TotalLessonsInfo } from './Styled'
 
 export const CardInfo = ({ course }: { course: ICourse }) => {
   const { t } = useTranslation();
+  const { myPlace } = useLeaderboard(course)
+
   const totalLessons = course.workouts_count;
-  const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM')
+  const formattedStartDate = dayjs.unix(course.start_date).format('DD/MM');
   const formattedDeadline = dayjs.unix(course.deadline).format('DD/MM');
-  const courseLeaderboard = '-'; // с апи пока что не приходит позиция будет course.ranking 
+
   return (
     <CardInfoWrapper>
       <CourseInfo>
@@ -70,7 +36,7 @@ export const CardInfo = ({ course }: { course: ICourse }) => {
       <CourseMetrics>
         <MetricBox>
           <LeaderboardIcon />
-          <P>{courseLeaderboard}</P>
+          <P>{myPlace}</P>
         </MetricBox>
         <MetricBox>
           <GroupIcon />

@@ -1,20 +1,24 @@
-interface IExercise {
+export interface IExercise {
     type: string;
     label: string;
     value: number;
     modificators: any[]; // Замените any на соответствующий тип, если это возможно
 }
 
-interface ISet {
-    repeats: number;
+export interface ISet {
+    repeats?: number;
     name: string;
-    exercises: IExercise[];
+    exercises?: IExercise[];
+    time?: number;
 }
 
-interface IWorkout {
+export interface IWorkout {
     name: string;
     program_video_link: string;
     sets: ISet[];
+    status: number;
+    deadline: number;
+    start_date: number;
 }
 
 interface IProgram {
@@ -36,7 +40,24 @@ export interface ICourse {
     deadline: number;
     start_date: number;
     exercises_complete: number;
+    level?: number;
+    program?: IProgram;
+    course_id: number;
 }
+
+export interface IUser {
+    id: number;
+    name: string;
+    level: number;
+    position: number;
+    previousPosition: number;
+};
+
+export interface ILeaderboardUser {
+    name: string;
+    score: number;
+    avatar_url: string | null;
+};
 
 export interface IExpandedCourse {
     max_users_count: number;
@@ -54,4 +75,11 @@ export interface IExpandedCourse {
     credites: number;
     author: IAuthor;
     level: number;
+    workout_num: number;
+    workouts_count: number;
+    ranking: number;
+    status: number;
+    users: IUser[];
+    course_id: number;
 }
+
