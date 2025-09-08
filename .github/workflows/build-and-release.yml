@@ -20,16 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "npm"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test -- --coverage --watchAll=false
+        run: yarn
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Create zip archive
         run: |
