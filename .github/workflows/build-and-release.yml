@@ -35,42 +35,29 @@ jobs:
       - name: Create zip archive
         run: |
           cd build
-          if [[ "${{ github.ref_type }}" == "tag" ]]; then
-            zip -r ../fora-client-${{ github.ref_name }}.zip .
-          else
-            zip -r ../fora-client-${{ github.sha }}.zip .
-          fi
+          zip -r ../fora-web-build.zip .
+          cd ..
+
+      - name: Get commit info
+        id: commit
+        run: |
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "date=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_OUTPUT
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            fora-client-${{ github.ref_name }}.zip
-            fora-client-${{ github.sha }}.zip
-          name: |
-            ${{ github.ref_type == 'tag' && github.ref_name || format('Build {0}', github.sha) }}
+          tag_name: build-${{ steps.commit.outputs.sha }}
+          name: Build ${{ steps.commit.outputs.sha }}
           body: |
-            ${{ github.ref_type == 'tag' && format('## Fora Client {0}', github.ref_name) || format('## Build {0}', github.sha) }}
+            **Commit:** ${{ steps.commit.outputs.sha }}
+            **Message:** ${{ steps.commit.outputs.message }}
+            **Date:** ${{ steps.commit.outputs.date }}
 
-            ### What's Changed
-            - Built React application
-            - All tests passed
-            - Production-ready build included
-
-            ### Installation
-            1. Download the appropriate zip file for your needs:
-              - **Version release**: `fora-client-${{ github.ref_name }}.zip` (if this is a tagged release)
-              - **Latest build**: `fora-client-${{ github.sha }}.zip` (if this is a main branch commit)
-            2. Extract the contents
-            3. Serve the files using any static file server
-
-            ### Build Details
-            - Node.js version: 18
-            - Build date: ${{ github.event.head_commit.timestamp }}
-            - Commit: ${{ github.sha }}
-            - Branch: ${{ github.ref_name }}
-            - Trigger: ${{ github.ref_type }}
+            This is an automated build release for commit ${{ steps.commit.outputs.sha }}.
+          files: fora-web-build.zip
           draft: false
-          prerelease: ${{ github.ref_type != 'tag' }}
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
