@@ -1,18 +1,18 @@
-import { useNavigate } from 'react-router-dom'
-import { Level } from '../../level/Level'
-import { AccountPhoto } from '../../header/account-panel/AccountPhoto'
-import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from './Styled'
+import { useNavigate } from "react-router-dom";
+import { Level } from "../../level/Level";
+import { AccountPhoto } from "../../header/account-panel/AccountPhoto";
+import { HeaderUserWrapper, HeaderUsername, PhotoWrapper } from "./Styled";
 
 interface IHeaderUser {
-  username: string,
-  level: number
+  username: string;
+  level: number;
 }
 
 export const HeaderUser = ({ username, level }: IHeaderUser) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/profile')
-  }
+    navigate("/profile");
+  };
 
   return (
     <HeaderUserWrapper onClick={handleClick}>
@@ -22,5 +22,5 @@ export const HeaderUser = ({ username, level }: IHeaderUser) => {
       <HeaderUsername>{username}</HeaderUsername>
       <Level score={level} />
     </HeaderUserWrapper>
-  )
-}
+  );
+};
