@@ -1,5 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
-
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -60,4 +59,10 @@ export const GlobalStyle = createGlobalStyle`
   *::-webkit-scrollbar-corner {
     background-color: transparent;
   }
-`
+
+  @media(max-width: 960px) {
+    .mobile-hidden {
+      display: none;
+    }
+  }
+`;

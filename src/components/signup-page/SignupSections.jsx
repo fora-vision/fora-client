@@ -53,14 +53,10 @@ export const NameSection = ({ name, setName, lastName, setLastName, birth, setBi
   )
 }
 
-export const BodySection = ({ height, setHeight, weight, setWeight, sex, setSex, errorHeight, errorWeight, errorSex }) => {
+export const BodySection = ({ sex, setSex, errorSex }) => {
   const { t } = useTranslation();
   return (
     <InputsSectionWrapper>
-      <LabeledInput label={t('pages.signup.height')} id="height" placeholder={'175'} state={height} setState={setHeight} />
-      {errorHeight && <ErrorField message={errorHeight} />}
-      <LabeledInput label={t('pages.signup.weight')} id="weight" placeholder={'60'} state={weight} setState={setWeight} />
-      {errorWeight && <ErrorField message={errorWeight} />}
       <LabeledSelect label={t('pages.signup.sex')} state={sex} setState={setSex} options={sexOptions} />
       {errorSex && <ErrorField message={errorSex} />}
     </InputsSectionWrapper>

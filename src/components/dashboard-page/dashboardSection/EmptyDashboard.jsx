@@ -41,7 +41,7 @@ export const EmptyDashboard = ({ toggleModal }) => {
       <YourCoursesWrapper>
         <H2Regular>Ваши курсы</H2Regular>
         <CoursesJoin>
-          <PrimaryButton width={'434px'} onClick={toggleModal}>Присоединится к курсу </PrimaryButton>
+          <PrimaryButton maxWidth={'434px'} onClick={toggleModal}>Присоединится к курсу </PrimaryButton>
         </CoursesJoin>
         <IllustrationSection>
           <RunningManIllustration />

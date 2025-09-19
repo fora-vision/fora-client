@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
-import foraLogo from '../../images/Fora-logo.png'
+import foraLogo from '../../images/logo.jpg'
 import { HeaderAccount } from './HeaderAccount'
 
 const HeaderWrapper = styled.div`
@@ -40,7 +40,7 @@ export const Header = () => {
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLogo onClick={handleLogoClick}>
-          <img src={foraLogo} alt='logo' />
+          <img src={foraLogo} alt='logo' style={{ borderRadius: 4, width: 40, height: 40 }} />
         </HeaderLogo>
         <HeaderAccount />
       </HeaderContainer>

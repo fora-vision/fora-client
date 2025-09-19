@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 
 interface ISecondaryButton {
-  theme: string
+  theme: string;
 }
 
 export const ButtonPattern = styled.button<{ width?: string }>`
   cursor: pointer;
-  font-size: 16px;  
-  color: #11100E;
+  font-size: 16px;
+  color: #11100e;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -19,64 +19,83 @@ export const ButtonPattern = styled.button<{ width?: string }>`
   border-radius: 4px;
   border: 1px solid rgba(245, 245, 245, 0.04);
   width: ${(button) => (button.width ? button.width : "100%")};
-`
+`;
 
 export const PrimaryButton = styled(ButtonPattern)`
-  background: #F6D658; 
+  background: #f6d658;
   box-shadow: 0px 6px 24px 2px rgba(246, 214, 88, 0.12);
   &:not(:disabled) {
     &:hover {
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #F6D658;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.2) 100%
+        ),
+        #f6d658;
     }
     &:active {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #F6D658;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.3) 0%,
+          rgba(0, 0, 0, 0.3) 100%
+        ),
+        #f6d658;
     }
-  };
+  }
   &:disabled {
     cursor: default;
-    color: #11100E;
-    background: linear-gradient(0deg, rgba(17, 16, 14, 0.75) 0%, rgba(17, 16, 14, 0.75) 100%), #F6D658;
+    color: #11100e;
+    background: linear-gradient(
+        0deg,
+        rgba(17, 16, 14, 0.75) 0%,
+        rgba(17, 16, 14, 0.75) 100%
+      ),
+      #f6d658;
     box-shadow: none;
-  }  
-`
+  }
+`;
 
-export const SecondaryButton = styled(ButtonPattern) <ISecondaryButton>`
-  color: #FFF;
+export const SecondaryButton = styled(ButtonPattern)<ISecondaryButton>`
+  color: #fff;
   padding: 18px;
   gap: 10px;
-  border-color: ${({ theme }) => (theme === 'green' ? '#5FB768' : 'rgba(255, 255, 255, 0.03)')};
-  background: ${({ theme }) => (theme === 'green' ? '#487048' : 'rgba(245, 245, 245, 0.04)')};
+  border-color: ${({ theme }) =>
+    theme === "green" ? "#5FB768" : "rgba(255, 255, 255, 0.03)"};
+  background: ${({ theme }) =>
+    theme === "green" ? "#487048" : "rgba(245, 245, 245, 0.04)"};
   &:not(:disabled) {
     &:hover {
-      background: ${({ theme }) => (theme === 'green' ? '#475D47' : 'rgba(245, 245, 245, 0.20)')};
+      background: ${({ theme }) =>
+        theme === "green" ? "#475D47" : "rgba(245, 245, 245, 0.20)"};
     }
     &:active {
-      background: ${({ theme }) => (theme === 'green' ? '#475D47' : 'rgba(245, 245, 245, 0.20)')};
-      color: rgba(245, 245, 245, 0.20);
+      background: ${({ theme }) =>
+        theme === "green" ? "#475D47" : "rgba(245, 245, 245, 0.20)"};
+      color: rgba(245, 245, 245, 0.2);
     }
   }
   &:disabled {
     cursor: default;
-    background: rgba(245, 245, 245, 0.20);
-    color: rgba(245, 245, 245, 0.20);
+    background: rgba(245, 245, 245, 0.2);
+    color: rgba(245, 245, 245, 0.2);
   }
-`
+`;
 
 export const TetriaryButton = styled(ButtonPattern)`
   width: auto;
-  color: #FFF;
+  color: #fff;
   font-weight: 400;
   background: rgba(245, 245, 245, 0.04);
   padding: 6px 16px;
   gap: 2px;
   background: rgba(245, 245, 245, 0.04);
   &:hover {
-    background: rgba(245, 245, 245, 0.20);
+    background: rgba(245, 245, 245, 0.2);
   }
   &:active {
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.1);
   }
-`
+`;
 
 export const IconButton = styled(PrimaryButton)`
   width: 54px;
@@ -85,7 +104,7 @@ export const IconButton = styled(PrimaryButton)`
   gap: 8px;
   border-radius: 4px;
   flex-shrink: 0;
-`
+`;
 
 export const IconSecondaryButton = styled(SecondaryButton)`
   box-sizing: border-box;
@@ -96,25 +115,25 @@ export const IconSecondaryButton = styled(SecondaryButton)`
   border-radius: 4px;
   flex-shrink: 0;
   z-index: 10;
-`
+`;
 
 export const IconTetriaryButton = styled(IconSecondaryButton)`
   width: 36px;
   height: 36px;
   padding: 8px;
-`
+`;
 
 export const LoginViaButton = styled(ButtonPattern)`
-  background: #F5F5F5;
+  background: #f5f5f5;
   height: 56px;
   gap: 8px;
-`
+`;
 
 export const LogOutButton = styled(ButtonPattern)`
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: #252525;
-  box-shadow: 0px -8px 32px 0px rgba(255, 255, 255, 0.10);
+  box-shadow: 0px -8px 32px 0px rgba(255, 255, 255, 0.1);
   padding: 8px 16px;
   gap: 8px;
-  color: #D06060;
-` 
+  color: #d06060;
+`;

@@ -47,10 +47,6 @@ export const Signup = () => {
   const [birth, setBirth] = useState('')
   const [birthError, setBirthError] = useState('')
 
-  const [height, setHeight] = useState('')
-  const [errorHeight, setErrorHeight] = useState('')
-  const [weight, setWeight] = useState('')
-  const [errorWeight, setErrorWeight] = useState('')
   const [sex, setSex] = useState('')
   const [errorSex, setErrorSex] = useState('')
 
@@ -71,12 +67,11 @@ export const Signup = () => {
       nameError={nameError}
       lastNameError={lastNameError}
       birthError={birthError} />,
-    <BodySection height={height} setHeight={setHeight} weight={weight} setWeight={setWeight}
+    <BodySection  
       sex={sex}
       setSex={setSex}
-      errorHeight={errorHeight}
-      errorWeight={errorWeight}
-      errorSex={errorSex} />
+      errorSex={errorSex}
+      />
   ];
 
   const handleBack = () => {
@@ -151,18 +146,6 @@ export const Signup = () => {
   };
 
   const sendBody = async () => {
-    if (!validateHeight(height)) {
-      setErrorHeight(t('errorMessages.height'))
-      return;
-    } else {
-      setErrorHeight('')
-    }
-    if (!validateWeight(weight)) {
-      setErrorWeight(t('errorMessages.weight'))
-      return;
-    } else {
-      setErrorWeight('')
-    }
     if (!sex) {
       setErrorSex(t('errorMessages.sex'))
       return;
@@ -176,8 +159,8 @@ export const Signup = () => {
       avatar: '',
       local: '',
       sex: sexOptions.indexOf(sex),
-      weight: Number(weight),
-      height: Number(height),
+      weight: 80,
+      height: 180,
       body_type: '',
       birthday_year: Number(birth.slice(6, 10)),
       birthday_month: Number(birth.slice(3, 5)),

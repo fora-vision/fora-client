@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { styled } from 'styled-components'
-import logoPath from '../../images/Fora-logo.png'
+import logoPath from '../../images/logo.jpg'
 import twoSlashes from '../../images/authentication/two-slashes.png'
 import { H2, P } from '../typographic'
 
@@ -16,7 +16,7 @@ export const WelcomeToHeader = () => {
   const { t } = useTranslation();
   return (
     <WelcomeHeaderWrapper>
-      <img src={logoPath} alt="Fora" width={'36px'} />
+      <img src={logoPath} alt="Fora" width={'36px'} style={{ borderRadius: 4 }} />
       <img src={twoSlashes} alt="two-slashes" width={'16.84px'} height={'46.36px'} />
       <div>
         <H2>{t('pages.auth.welcome')} FORA</H2>

@@ -25,12 +25,14 @@ export const Dashboard = () => {
           courses={courses}
           coursesLoading={coursesLoading}
         />
+
         <Courses
           coursesLoading={coursesLoading}
           courses={courses}
           toggleJoin={toggleJoin}
         />
       </PageContainer>
+
       {isJoin && (
         <JoinCourseModal
           code={courseCode}
