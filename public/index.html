@@ -11,8 +11,34 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.jpg" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.cdnfonts.com/css/gravity" rel="stylesheet" />
     <title>Fora</title>
+
+    <style>
+      @font-face {
+        font-family: "Gravity";
+        src: url("%PUBLIC_URL%/gravity/Gravity-Regular.otf") format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gravity";
+        src: url("%PUBLIC_URL%/gravity/Gravity-Bold.otf") format("opentype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gravity";
+        src: url("%PUBLIC_URL%/gravity/Gravity-Light.otf") format("opentype");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      * {
+        font-family: "Gravity", sans-serif;
+      }
+    </style>
   </head>
 
   <body>
