@@ -28,6 +28,7 @@ jobs:
       - name: Build project
         run: yarn build --no-warnings
         env:
+          DISABLE_ESLINT_PLUGIN: true
           ESLINT_NO_DEV_ERRORS: true
           NODE_ENV: production
           CI: false
